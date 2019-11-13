@@ -1,6 +1,6 @@
 <img src="img/thepodlets.png" width="200"> 
 
-#The Podlets
+# The Podlets
 
 Exploring Cloud Native, one buzzword at a time!
 
