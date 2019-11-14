@@ -2,8 +2,60 @@
 episode_id: 001-cloud-native
 episode_number: 1
 title: Cloud Native
-description: Welcome to the first episode of The Kubelets Podcast! On the show today we’re kicking it off with some introductions to who we all are, how we got involved in VMware and a bit about our career histories up to this point.
-notes: Welcome to the first episode of The Kubelets Podcast! On the show today we’re kicking it off with some introductions to who we all are, how we got involved in VMware and a bit about our career histories up to this point. We share our vision for this podcast and explain the unique angle from which we will approach our conversations, a way that will hopefully illuminate some of the concepts we discuss in a much greater way. We also dive into our various experiences with open source, share what some of our favorite projects have been and then we define what the term “cloud native” means to each of us individually. The contribution that the Cloud Native Computing Foundation (CNCF) is making in the industry is amazing, and we talk about how they advocate the programs they adopt and just generally impact the community. We are so excited to be on this podcast and to get feedback from you, so do follow us on Twitter and be sure to tune in for the next episode! 
+description: Today we’re kicking it off with some introductions to who we all are, and share our vision for this podcast. W explain the unique angle from which we will approach our conversations, a way that will hopefully illuminate some of the concepts we discuss in a much greater way. Mostly though, we are discussing cloud native!
+notes: Welcome to the first episode of The Podlets Podcast! On the show today we’re kicking it off with some introductions to who we all are, how we got involved in VMware and a bit about our career histories up to this point. We share our vision for this podcast and explain the unique angle from which we will approach our conversations, a way that will hopefully illuminate some of the concepts we discuss in a much greater way. We also dive into our various experiences with open source, share what some of our favorite projects have been and then we define what the term “cloud native” means to each of us individually. The contribution that the Cloud Native Computing Foundation (CNCF) is making in the industry is amazing, and we talk about how they advocate the programs they adopt and just generally impact the community. We are so excited to be on this podcast and to get feedback from you, so do follow us on Twitter and be sure to tune in for the next episode!
+hosts: 
+    - name: Carlisia Campos
+      url: https://twitter.com/carlisia 
+    - name: Kris Nóva
+      url: https://twitter.com/carlisia
+    - name: Josh Rosso
+      url: https://twitter.com/carlisia
+    - name: Duffie Cooley
+      url: https://twitter.com/carlisia
+    - name: Nicholas Lane
+      url: https://twitter.com/carlisia
+points:
+    - An introduction to us, our career histories and how we got into the cloud native realm.
+    - Contributing to open source and everyone’s favorite project they have worked on.
+    - What the purpose of this podcast is and the unique angle we will approach topics from.
+    - The importance of understanding the “why” behind tools and concepts.
+    - How we are going to be interacting with our audience and create a feedback loop.
+    - Unpacking the term “cloud native” and what it means to each of us.
+    - Differentiating between the cloud native apps and cloud native infrastructure.
+    - The ability to interact with APIs as the heart of cloud natives.
+    - More about the Cloud Native Computing Foundation (CNCF) and their role in the industry.
+    - Some of the great things that happen when a project is donated to the CNCF.
+    - The code of conduct that you need to adopt to be part of the CNCF.
+    - And much more!
+links:
+    - url: Kubernetes — https://kubernetes.io/
+    - url: The Podlets on Twitter — https://twitter.com/thepodlets 
+    - url: VMware — https://www.vmware.com/
+    - url: Nicholas Lane on LinkedIn — https://www.linkedin.com/in/nicholas-ross-lane
+    - url: Red Hat — https://www.redhat.com/
+    - url: CoreOS — https://coreos.com/
+    - url: Duffie Cooley on LinkedIn — https://www.linkedin.com/in/mauilion
+    - url: Apache Mesos — http://mesos.apache.org/
+    - url: Kris Nova on LinkedIn — https://www.linkedin.com/in/kris-nova
+    - url: SolidFire — https://www.solidfire.com/
+    - url: NetApp — https://www.netapp.com/us/index.aspx
+    - url: Microsoft Azure — https://azure.microsoft.com/
+    - url: Carlisia Campos on LinkedIn — https://www.linkedin.com/in/carlisia
+    - url: Fastly — https://www.fastly.com/
+    - url: FreeBSD — https://www.freebsd.org/
+    - url: OpenStack — https://www.openstack.org/
+    - url: Open vSwitch — https://www.openvswitch.org/
+    - url: Istio — https://istio.io/
+    - url: The Kublets on GitHub — https://github.com/heptio/thekubelets
+    - url: Cloud Native Infrastructure on Amazon — https://www.amazon.com/Cloud-Native-Infrastructure-Applications-Environment/dp/1491984309
+    - url: Cloud Native Computing Foundation — https://www.cncf.io/
+    - url: Terraform — https://www.terraform.io/
+    - url: KubeCon — https://www.cncf.io/community/kubecon-cloudnativecon-events/
+    - url: The Linux Foundation — https://www.linuxfoundation.org/
+    - url: Sysdig — https://sysdig.com/opensource/falco/
+    - url: OpenEBS — https://openebs.io/
+    - url: Aaron Crickenberger — https://twitter.com/spiffxp
 # video: https://www.youtube.com/embed/dQw4w9WgXcQ
 # related: 
 # - 002-container-orchestration
@@ -14,7 +66,7 @@ EPISODE 01
 
 [INTRODUCTION]
 
-[00:00:08] ANNOUNCER: Welcome to The Kubelets Podcast, a weekly show that explores Cloud Native one buzzword at a time. Each week, experts in the field will discuss cloud native concepts to help you on your journey. This space moves fast and we shouldn’t reinvent the wheel. If you’re using, building, or managing technology, this podcast is for you.
+[00:00:08] ANNOUNCER: Welcome to The Podlets Podcast, a weekly show that explores Cloud Native one buzzword at a time. Each week, experts in the field will discuss cloud native concepts to help you on your journey. This space moves fast and we shouldn’t reinvent the wheel. If you’re using, building, or managing technology, this podcast is for you.
 
 [EPISODE]
 
@@ -128,7 +180,7 @@ The other thing I'll say is that I firmly believe that you can't – that you do
 
 [00:14:25] NL: I think a GitHub repo makes a lot of sense. I also wouldn't mind doing some social media malarkey, maybe having a Twitter account that we run or something like that, where people can ask questions too.
 
-[00:14:36] CC: Yes. Yes to all of that. Yeah. Having an issue list that in a repo that people can just add comments, praises, thank you, questions, suggestions for concepts to talk about and say like, “Hey, I have no clue what this means. Can you all talk about it?” Yeah, we'll talk about it. Twitter. Yes. Interact with those on Twitter. I believe our Twitter handle is TheKubelets.
+[00:14:36] CC: Yes. Yes to all of that. Yeah. Having an issue list that in a repo that people can just add comments, praises, thank you, questions, suggestions for concepts to talk about and say like, “Hey, I have no clue what this means. Can you all talk about it?” Yeah, we'll talk about it. Twitter. Yes. Interact with those on Twitter. I believe our Twitter handle is @ThePodlets.
 
 [00:15:02] KN: Oh, we already have one. Nice.
 
@@ -138,7 +190,7 @@ The other thing I'll say is that I firmly believe that you can't – that you do
 
 [00:15:13] NL: Oh, perfect.
 
-[00:15:14] CC: heptio/thekubelets.
+[00:15:14] CC: https://github.com/vmware-tanzu/thepodlets.
 
 [00:15:18] DC: The other thing I like that we do in TGIK is this HackMD thing. Although, I'm trying to figure out how we could really make that work for us in a show that's recorded every week like this one. I think, maybe what we could do is have it so that when people can listen to the recording, they could go to the HackMD document, put questions in or comments around things if they would like to hear more about, or maybe share their perspectives about these topics. Maybe in the following week, we could just go back and review what came in during that period of time, or during the next session.
 
@@ -384,6 +436,6 @@ With open source, you can be a part of the voice of that project, right? You can
 
 [END OF EPISODE]
 
-[00:49:52] KN: Thank you for listening to The Kubelets Cloud Native Podcast. Find us on Twitter @TheKubelets and on the kubelets.io website, where you'll find transcripts and show notes. We'll be back next week. Stay tuned by subscribing.
+[00:49:52] KN: Thank you for listening to The Podlets Cloud Native Podcast. Find us on Twitter @thepodlets and on the https://thepodlets.io website, where you'll find transcripts and show notes. We'll be back next week. Stay tuned by subscribing.
 
 [END]

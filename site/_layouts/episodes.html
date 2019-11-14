@@ -22,7 +22,7 @@
               <!-- VIDEO -->
               {% if page.video %}
               <div class="row justify-content-center">
-                <div class="col mb-3">
+                <div class="col mb-15">
                   <h2>Video</h2>
                 </div>
               </div>
@@ -39,12 +39,12 @@
               <!-- AUDIO -->
               {% if page.episode_id %}
               <div class="row justify-content-center">
-                <div class="col mb-3">
+                <div class="col mb-15">
                   <h2>Audio</h2>
                 </div>
               </div>
               <div class="row justify-content-center">
-                <div class="col mb-5">
+                <div class="col mb-2">
                   <iframe src="https://omny.fm/shows/{{ site.podcast }}/{{ page.episode_id }}/embed?style=artwork" width="100%" height="180" title="{{ page.title }}"></iframe>
                 </div>
               </div>              
@@ -53,18 +53,71 @@
               <!-- EPISODE NOTES -->
               {% if page.notes %}
               <div class="row justify-content-center">
-                <div class="col mb-3"><h2 class="h3">Episode Notes</h2></div>
+                <div class="col mb-15"><h2 class="h3">Episode Notes</h2></div>
               </div>
               <div class="row justify-content-center">
-                <div class="col mb-5">
+                <div class="col mb-2">
                   {{ page.notes | markdownify }}
                 </div>
               </div>
               {% endif %}
+
+              <!-- EPISODE HOSTS -->
+              {% if page.hosts %}
+              <div class="row justify-content-center">
+                <div class="col mb-15"><h2 class="h3">Hosts</h2></div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col mb-2">
+                    <font size="3">
+                      {% for host in page.hosts %}
+                        <li><a href="{{ host.url }}" target="_blank">{{ host.name }}</a></li>
+                      {% endfor %}
+                    </font>
+                </div>
+              </div>
+              {% endif %}
+
+              <!-- EPISODE KEY POINTS -->
+              {% if page.points %}
+              <div class="row justify-content-center">
+                <div class="col mb-15"><h2 class="h3">Key Points from This Episode</h2></div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col mb-2">
+                    <font size="3">
+                      {% for point in page.points %}
+                        <li>{{ point }}</a></li>
+                      {% endfor %}
+                    </font>
+                </div>
+              </div>
+              {% endif %}
+
+              <!-- EPISODE LINKS -->
+              {% if page.links %}
+              <div class="row justify-content-center">
+                <div class="col mb-15"><h2 class="h3">Links Mentioned in Today’s Episode</h2></div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col mb-2">
+                    <font size="3">
+                      {% for link in page.links %}
+                        <li><a href="{{ link.url }}" target="_blank">{{ link.url }}</a></li>
+                      {% endfor %}
+                    </font>
+                </div>
+              </div>
+              <ul>
+  
+              </ul>
+              {% endif %}
+
+              
               
               <!-- TRANSCRIPT -->
               <div class="row justify-content-center">
-                <div class="col mb-3">
+                <div class="col mb-15">
                   <h2 data-toggle="collapse" class="h3 color-dark-green collapsed" href="#transcriptPanel" role="button" aria-expanded="false" aria-controls="transcriptPanel">
                     Transcript
                     <i class="carat"><img src="/img/carat.svg" alt=""/></i>
@@ -72,7 +125,7 @@
                 </div>
               </div>
               <div class="row justify-content-center collapse" id="transcriptPanel">
-                <div class="col mb-5">
+                <div class="col mb-2">
                   {{ content | markdownify }}
                 </div>
               </div>
