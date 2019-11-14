@@ -1,0 +1,28 @@
+<div class="host-card">
+  <div class="row">
+    <div class="col-3">
+      <img src="{{ person.image }}" alt="{{ person.first_name }} {{ person.last_name }}" class="rounded-circle"  />
+    </div>
+    <div class="col-9">
+      <h4 class="h3">{{ person.first_name }} {{ person.last_name }}</h4>
+      {% if person.jobtitle %}
+        <h5>{{ person.jobtitle }}</h5>
+      {% endif %}
+      <p>{{ person.content | markdownify }}</p>
+      <div class="social-links">
+        {% if person.twitter %}
+        <a href="{{person.twitter}}" target="_blank"><img src="/img/icon-twitter-round-blue.png" alt="View {{ person.first_name }} {{ person.last_name }} Twitter Profile"/></a>
+        {% endif %}
+        {% if person.linkedin %}
+        <a href="{{person.linkedin}}" target="_blank"><img src="/img/icon-linkedin-round-blue.png" alt="View {{ person.first_name }} {{ person.last_name }} LinkedIn Profile"/></a>
+        {% endif %}
+        {% if person.github %}
+        <a href="{{person.github}}" target="_blank"><img src="/img/icon-github-round-blue.png" alt="View {{ person.first_name }} {{ person.last_name }} GitHub Profile"/></a>
+        {% endif %}
+        {% if person.website %}
+        <a href="{{ person.website }}" target="_blank">{{ person.website }}</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>  
+</div>

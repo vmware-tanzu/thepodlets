@@ -1,0 +1,37 @@
+<div class="podcast-links">
+  <div class="container">
+    <div class="row">
+      <div class="col py-4">
+        <h2>Listen & Watch</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8 podcast-icons">
+        <div class="row mb-0 mb-md-3">
+          {% for primary in site.podcast_links.primary %}
+          <div class="col-md-4 mb-3 mb-md-0 text-center">
+            <a href="{{primary.url}}" class="pill" target="_blank"><img src="/img/logos/{{primary.icon}}.png" alt="{{primary.alt}}"/></a>
+          </div>
+          {% endfor %}
+        </div>
+        <div class="row">
+          {% for secondary in site.podcast_links.secondary %}
+          <div class="col-md-3 mb-3 mb-md-0 text-center">
+            <a href="{{secondary.url}}" class="pill" target="_blank"><img src="/img/logos/{{secondary.icon}}.png" alt="{{secondary.alt}}"/></a>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="col-md-4 divider">
+        <h4 class="eyebrow">Also On:</h4>
+        <ul class="tertiary-list">
+          {% for tertiary in site.podcast_links.tertiary %}
+          <li>
+            <a href="{{tertiary.url}}" target="_blank"><img src="/img/logos/{{tertiary.icon}}.png" alt="{{tertiary.alt}}"/>{{ tertiary.alt }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

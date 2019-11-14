@@ -1,0 +1,53 @@
+---
+layout: default
+title: All Episodes
+id: episodes
+---
+<div class="default-container">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h1>All Episodes</h1>
+      </div>
+    </div>
+  </div>
+  <div class="section section-card promo-cards">
+    <div class="section-content">
+      <div class="row" id="ajax-target">
+        {% for episode in site.episodes %}
+          {% include episode-card.html %}
+        {% endfor %}
+      </div>
+      {% if site.episodes.size > 1000 %}
+      <div class="row">
+        <div class="col mt-5 text-center">
+          <a href="#" class="btn btn-primary load-more" data-current="1" data-count="2">Load More</a>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  {% include podcast-links.html %}
+  {% include modal.html %}
+</div>
+<script id="episode-template" type="text/x-custom-template">
+  <div class="col col-md-4">
+    <div class="card card-light mb-3 mb-md-0 shadow-sm episode-card">
+      <div class="card-body match-height">
+        <strong>Episode {{ episode.episode_number }}</strong>
+        <div class="card-description">
+          <h5>
+            <a href="{{ episode.url }}">{{ episode.title }}</a>
+          </h5>
+          <p>
+            {{ episode.description | truncate: 110 }}
+            {% if episode.description.size > 110 %}
+              <a href="{{ episode.url }}">See More</a>
+            {% endif %}
+          </p>
+        </div>
+        <a href="#" data-toggle="modal" data-target="#playerModal" data-episode="{{ episode.episode_id }}" data-number="{{episode.episode_number}}" data-title="{{ episode.title }}" data-description="{{ episode.description }}" class="play-episode"><img src="/img/btn-play.svg" alt="">Play Episode</a>
+      </div>
+    </div>
+  </div>
+</script>

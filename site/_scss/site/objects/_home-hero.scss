@@ -1,0 +1,63 @@
+.home-hero {
+  box-shadow: 0 10px 10px -10px rgba(0,0,0, .1);
+  background-color: $white;
+  background-repeat: no-repeat;
+  background-position: top center;
+  @include media-breakpoint-down(sm) {
+    background-image: none !important;
+  }
+  @include media-breakpoint-up(md) {
+    min-height: 457px;  
+  }
+  color: $black;
+  h1,
+  h2,
+  h3 {
+    color: $black;
+    font-weight: $font-weight-light;
+  }
+  .section-content {
+    margin-top: 15px;
+    .hero-content,
+    .hero-cta {       
+      @include media-breakpoint-up(md) {
+        @include make-col-ready();
+        @include make-col(4);
+      }
+    }
+    .hero-content {
+      .badge {
+        max-width: 120px;
+        display: block;
+      }
+    }
+  }
+
+  .hero-cta {
+    display: block;
+    margin-bottom: 70px;
+    @include media-breakpoint-up(md) { 
+      display: flex;
+      flex-direction: row;
+      justify-content: left;
+    }
+    .btn {
+      @include media-breakpoint-up(md) { 
+        min-width: 250px;
+      }
+      padding: {
+        top: 16px;
+        bottom: 16px;
+      }
+      margin: 0 32px 0 0;
+    }
+  }
+  
+  .section-card {
+    margin-top: 68px;
+    .section-content {
+      background-color: transparent;
+      padding: 0;
+    }
+  }
+}

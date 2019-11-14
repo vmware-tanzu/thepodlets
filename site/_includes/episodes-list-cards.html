@@ -1,0 +1,14 @@
+<div class="row">
+{% assign episodes = site.episodes | reverse %}
+{% for episode in episodes %}
+    {% include episode-card.html %}
+        {% if limit > 0 and forloop.index >= limit %}
+         {% break %}
+        {% endif %}
+        {% assign row = forloop.index | modulo: 3 %}
+{% if row == 0 %}
+</div>
+<div class="row mt-4">
+{% endif %}
+{% endfor %}
+</div>

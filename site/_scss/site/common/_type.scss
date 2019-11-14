@@ -1,0 +1,77 @@
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: $font-weight-light;
+}
+
+h1,
+.h1 {
+  @include rem(50px);
+  color: $midnight-blue;
+  @include media-breakpoint-down(sm) {
+    font-size: 1.625rem;
+  }
+}
+
+h2,
+.h2 {
+  color: $dark-green;
+  margin-bottom: 2rem;
+  @include rem(30px);
+  font-weight: $font-weight-normal;
+  line-height: 38px;
+}
+
+h3,
+.h3 {
+  @include rem(22px);
+  font-weight: $font-weight-normal;
+  line-height: 38px;
+}
+
+h5 {
+  font-size: 1.375rem;
+  margin-bottom: 1.25rem;
+}
+
+strong {
+  font-weight: $font-weight-semibold;
+}
+
+%eyebrow,
+.eyebrow {  
+  color: #9A9A9A;
+  font-size: 12px;
+  font-weight: $font-weight-medium;
+  letter-spacing: .171em;
+  text-transform: uppercase;
+}
+a.eyebrow {
+  color: $link-color;
+  font-weight: $font-weight-semibold;
+}
+
+.b1,
+.b2 {
+  color: $dark-green;
+  @include rem(28px);
+  font-weight: $font-weight-light;
+  line-height: 40px;
+}
+
+.b4 {
+  @include rem(22px);
+  letter-spacing: 0;
+  line-height: 30px;
+}
+
+p,
+.b3 {
+  @include rem(16px);
+  font-weight: $font-weight-light;
+  line-height: 24px;
+}

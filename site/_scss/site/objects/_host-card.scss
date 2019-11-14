@@ -1,0 +1,31 @@
+.host-card {
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #C7C4C4;
+  img {
+    max-width: 100%;
+  }
+  h4 { // h3 style
+    color: $dark-green;
+    margin-bottom: 0;
+  }
+  h5 { // h4 style
+    color: $dark-green;
+    font-size: 16px;
+    font-weight: $font-weight-semibold;
+  }
+  p {
+    color: $dark-green;
+  }
+  .social-links {
+    img {
+      width: 27px;
+      height: auto;
+    }
+    a {
+      margin-left: 8px;
+      font-size: 12px;
+      line-height: 27px;
+    }
+  }
+}

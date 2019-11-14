@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col">
+    <h2 class="mb-2">The {{ site.title }} Team</h2>    
+  </div>
+</div>
+<div class="row thumbnail-grid mt-5">
+{% for person in site.hosts %}
+  {% if person.current %}
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="media thumbnail-item">
+        <img src="{{ person.image }}" class="rounded-circle" alt="{{ person.first_name }} {{ person.last_name }}" />
+        <div class="media-body align-self-center">
+          <h3>{{ person.first_name }} {{ person.last_name }}</h3>
+          {{ person.jobtitle | markdownify }}
+          {% if person.twitter or person.linkedin %}
+          <div class="social-links">
+            {% if person.twitter %}
+            <a href="{{person.twitter}}" target="_blank"><img src="/img/icon-twitter-round-white.png" alt=""/></a>
+            {% endif %}
+            {% if person.github %}
+            <a href="{{person.github}}" target="_blank"><img src="/img/icon-github-round-white.png" alt=""/></a>
+            {% endif %}
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endfor %}
+</div>

@@ -1,0 +1,49 @@
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+a {
+  &.dark {
+    color: $body-color !important;
+  }
+  &.light {
+    color: $white !important;
+  }
+}
+
+iframe {
+  border: 0;
+}
+
+// fake font awesome for networks that don't have FA equivilents 
+i.-icon {
+  opacity: .5;
+  &:before {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+  &.google-play {
+    &:before {
+      background-image: url('/img/i-google-play.svg');
+    }
+  }
+  &.itunes {
+    &:before {
+      background-image: url('/img/i-itunes.png');
+    }
+  }
+}
+.site-footer .social-links li:hover {
+  i.-icon {
+    opacity: 1;  
+  }
+}

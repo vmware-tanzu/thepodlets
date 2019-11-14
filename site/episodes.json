@@ -1,0 +1,16 @@
+---
+layout: none
+---
+{
+  "episodes" : [
+    {% for episode in site.episodes %}
+    {
+      "title": "{{ episode.title }}",
+      "number": {{ episode.episode_number }},
+      "description": "{{ episode.description }}",
+      "id": " {{ episode.episode_id }}",
+      "url": "{{ episode.url }}"
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
