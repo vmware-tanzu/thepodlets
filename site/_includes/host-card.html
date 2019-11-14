@@ -13,11 +13,11 @@
         {% if person.twitter %}
         <a href="{{person.twitter}}" target="_blank"><img src="/img/icon-twitter-round-blue.png" alt="View {{ person.first_name }} {{ person.last_name }} Twitter Profile"/></a>
         {% endif %}
-        {% if person.linkedin %}
-        <a href="{{person.linkedin}}" target="_blank"><img src="/img/icon-linkedin-round-blue.png" alt="View {{ person.first_name }} {{ person.last_name }} LinkedIn Profile"/></a>
-        {% endif %}
         {% if person.github %}
         <a href="{{person.github}}" target="_blank"><img src="/img/icon-github-round-blue.png" alt="View {{ person.first_name }} {{ person.last_name }} GitHub Profile"/></a>
+        {% endif %}
+        {% if person.linkedin %}
+        <a href="{{person.linkedin}}" target="_blank"><img src="/img/icon-linkedin-round-blue.png" alt="View {{ person.first_name }} {{ person.last_name }} LinkedIn Profile"/></a>
         {% endif %}
         {% if person.website %}
         <a href="{{ person.website }}" target="_blank">{{ person.website }}</a>

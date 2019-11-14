@@ -4,8 +4,18 @@
 .jekyll-metadata
 .bundle
 .vscode
+.vs
 
 *.log
 *.js.map
 *.css.map
+.ruby-version
+
+# Jekyll compiled data
+site/_site
+site/.sass-cache
+site/.jekyll
+site/.jekyll-metadata
+site/.bundle
+site/vendor
 .ruby-version

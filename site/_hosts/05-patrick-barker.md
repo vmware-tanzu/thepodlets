@@ -9,4 +9,3 @@ github: https://github.com/pbarker
 website: http://smartic.us
 current: true
 ---
-Software Engineer

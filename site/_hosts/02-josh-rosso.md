@@ -9,4 +9,3 @@ github: https://github.com/octetz
 website: https://octetz.com/
 current: true
 ---
-Software Engineer working in the field
