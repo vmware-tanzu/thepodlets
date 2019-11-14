@@ -9,4 +9,3 @@ linkedin: https://www.linkedin.com/in/michael-gasch-10603298/
 website: https://www.mgasch.com/
 current: true
 ---
-Software Engineer

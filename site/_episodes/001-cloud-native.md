@@ -2,7 +2,7 @@
 episode_id: 001-cloud-native
 episode_number: 1
 title: Cloud Native
-description: Today we’re kicking it off with some introductions to who we all are, and share our vision for this podcast. W explain the unique angle from which we will approach our conversations, a way that will hopefully illuminate some of the concepts we discuss in a much greater way. Mostly though, we are discussing cloud native!
+description: Today we’re kicking it off with some introductions to who we all are, and share our vision for this podcast. We explain the unique angle from which we will approach our conversations, a way that will hopefully illuminate some of the concepts we discuss in a much greater way. Mostly though, we are discussing cloud native!
 notes: Welcome to the first episode of The Podlets Podcast! On the show today we’re kicking it off with some introductions to who we all are, how we got involved in VMware and a bit about our career histories up to this point. We share our vision for this podcast and explain the unique angle from which we will approach our conversations, a way that will hopefully illuminate some of the concepts we discuss in a much greater way. We also dive into our various experiences with open source, share what some of our favorite projects have been and then we define what the term “cloud native” means to each of us individually. The contribution that the Cloud Native Computing Foundation (CNCF) is making in the industry is amazing, and we talk about how they advocate the programs they adopt and just generally impact the community. We are so excited to be on this podcast and to get feedback from you, so do follow us on Twitter and be sure to tune in for the next episode!
 hosts: 
     - name: Carlisia Campos

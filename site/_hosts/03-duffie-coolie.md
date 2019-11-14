@@ -9,4 +9,3 @@ github: github.com/mauilion
 website: http://www.mauilion.dev
 current: true
 ---
-Software Engineer

@@ -8,4 +8,3 @@ github: https://github.com/opowbow
 linkedin: https://www.linkedin.com/in/olive-power-488870138/
 current: true
 ---
-Software Engineer

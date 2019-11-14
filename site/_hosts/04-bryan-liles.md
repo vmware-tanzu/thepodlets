@@ -9,4 +9,3 @@ linkedin: https://www.linkedin.com/in/bryanliles/
 website: http://smartic.us
 current: true
 ---
-Software Engineer
