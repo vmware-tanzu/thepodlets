@@ -32,7 +32,7 @@ footer_social_links:
     url: https://spotify.com/
   RSS:
     fa_icon: fa fa-rss
-    url: feed.xml
+    url: https://www.omnycontent.com/d/playlist/3451a52d-88b7-400a-9a02-aa610027e5d0/6662044f-706b-4890-a3f8-aa9a0004642b/bf774da5-66a7-4b5d-b0e9-aa9a0004aa39/podcast.rss
 # used for the common "Listen & Watch" links throughout the site.
 podcast_links:
   primary:
@@ -63,7 +63,7 @@ podcast_links:
     url: https://twitter.com/thepodlets
     alt: Twitter
   - icon: rss-lg
-    url: /feed.xml
+    url: https://www.omnycontent.com/d/playlist/3451a52d-88b7-400a-9a02-aa610027e5d0/6662044f-706b-4890-a3f8-aa9a0004642b/bf774da5-66a7-4b5d-b0e9-aa9a0004aa39/podcast.rss
     alt: RSS
 # assign highlighted episodes here by episode ID. limited to 3 on home page, selected from the top down.
 # also appears on the about page.
