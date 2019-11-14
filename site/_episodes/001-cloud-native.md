@@ -8,13 +8,13 @@ hosts:
     - name: Carlisia Campos
       url: https://twitter.com/carlisia 
     - name: Kris Nóva
-      url: https://twitter.com/carlisia
+      url: https://twitter.com/kris-nova
     - name: Josh Rosso
-      url: https://twitter.com/carlisia
+      url: https://twitter.com/joshrosso
     - name: Duffie Cooley
-      url: https://twitter.com/carlisia
+      url: https://twitter.com/mauilion
     - name: Nicholas Lane
-      url: https://twitter.com/carlisia
+      url: https://twitter.com/soggiest
 points:
     - An introduction to us, our career histories and how we got into the cloud native realm.
     - Contributing to open source and everyone’s favorite project they have worked on.
