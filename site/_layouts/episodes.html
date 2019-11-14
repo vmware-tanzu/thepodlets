@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include head.html %}
+
+<body id="episode">
+  <div class="container-fluid">
+    <div class="site-container">
+      {% include site-header.html %}
+      <div class="default-container">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8">
+              <h1 class="mb-4">{{ page.title }}</h1>
+              <p class="b2">{{ page.description }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="container py-5">
+          <div class="row">
+            <div class="col-md-6" id="episode-info">
+              
+              <!-- VIDEO -->
+              {% if page.video %}
+              <div class="row justify-content-center">
+                <div class="col mb-3">
+                  <h2>Video</h2>
+                </div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col mb-5">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="{{ page.video }}"></iframe>
+                  </div>
+                </div>
+              </div>
+              {% endif %}
+              
+              
+              <!-- AUDIO -->
+              {% if page.episode_id %}
+              <div class="row justify-content-center">
+                <div class="col mb-3">
+                  <h2>Audio</h2>
+                </div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col mb-5">
+                  <iframe src="https://omny.fm/shows/{{ site.podcast }}/{{ page.episode_id }}/embed?style=artwork" width="100%" height="180" title="{{ page.title }}"></iframe>
+                </div>
+              </div>              
+              {% endif %}
+              
+              <!-- EPISODE NOTES -->
+              {% if page.notes %}
+              <div class="row justify-content-center">
+                <div class="col mb-3"><h2 class="h3">Episode Notes</h2></div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col mb-5">
+                  {{ page.notes | markdownify }}
+                </div>
+              </div>
+              {% endif %}
+              
+              <!-- TRANSCRIPT -->
+              <div class="row justify-content-center">
+                <div class="col mb-3">
+                  <h2 data-toggle="collapse" class="h3 color-dark-green collapsed" href="#transcriptPanel" role="button" aria-expanded="false" aria-controls="transcriptPanel">
+                    Transcript
+                    <i class="carat"><img src="/img/carat.svg" alt=""/></i>
+                  </h2>
+                </div>
+              </div>
+              <div class="row justify-content-center collapse" id="transcriptPanel">
+                <div class="col mb-5">
+                  {{ content | markdownify }}
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 offset-md-1">
+              {% if page.related %}
+              <h2>Related Episodes</h2>
+              {% for related in page.related %}
+                {% assign episode = site.episodes | where:"episode_id", related  | first %}
+                {% include episode-card-sidebar.html %}
+              {% endfor %}
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        {% include podcast-links.html %}
+        {% include modal.html %}
+      </div>
+      {% include footer.html %}
+    </div>
+  </div>
+</body>
+
+</html>

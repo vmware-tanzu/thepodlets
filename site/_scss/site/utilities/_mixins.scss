@@ -1,0 +1,4 @@
+// converts a pixel size to rem.
+@mixin rem($size) {
+  font-size: #{$size/$base-font-size}rem;
+}

@@ -1,0 +1,197 @@
+.site-header {
+  background: $header-background;
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 8px;
+    background-image: linear-gradient(to right, #78be20 0%, #00c1d5 23%, #0091da 56%, #1d428a 82%, #7f35b2 100%);
+  }
+  .site-header-content {
+    position: relative;
+    display: flex;
+    margin: 0 auto;
+    padding: 17px 0 18px 0;
+    max-width: $section-content-max-width;
+    @include media-breakpoint-down(lg) {
+      padding: {
+        left: $grid-gutter-width / 2 + $section-padding-x;
+        right: $grid-gutter-width / 2 + $section-padding-x;
+      }  
+    }
+  }
+  .site-name {
+    display: flex;
+    @include rem(18px);
+    @include media-breakpoint-up(md) {
+    @include rem(24px);
+    }
+    @include media-breakpoint-up(lg) {
+      @include rem(28px);
+    }
+    font-weight: $font-weight-light;
+    align-items: center;
+    a {
+      color: $brand-gray;
+      text-decoration: none;
+      &:hover {
+        color: $purple;
+      }
+    }
+    letter-spacing: 0.5px;
+    .vmlogo {
+      max-width: 25%;
+      @include media-breakpoint-up(md) {
+        max-width: 90px;
+      }
+      @include media-breakpoint-up(lg) {
+        max-width: none;
+      }
+      display: inline-block;
+      margin-right: 22px;
+    }
+  }
+  .logo {
+    height: 45px;
+    width: auto;
+  }
+
+  .nav-mobile-link {
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    margin-top: -6px;
+    a {
+      display: block;
+      width: 23px;
+      height: 12px;
+      border-top: 4px solid $header-foreground;
+      border-bottom: 4px solid $header-foreground;
+      &.selected {
+        border-color: $header-foreground-selected;
+      }
+    }
+
+    @include media-breakpoint-down(sm) {
+      display: block;
+    }
+  }
+
+  .nav-menu {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    list-style: none;
+    margin: 0;
+    margin-left: 50px;
+    padding: 0;
+
+    @include media-breakpoint-down(sm) {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      margin: 0;
+      padding: 30px;
+      min-height: 250px;
+      background: $header-background;
+      box-shadow: 3px 2px 4px 2px rgba(0,0,0,0.25);
+
+      &.on {
+        display: block;
+        z-index: 1000;
+      }
+
+      li {
+        font-size: 1.5rem;
+      }
+    }
+
+    li {
+      margin-right: 35px;
+      position: relative;
+      a {
+        font-weight: $font-weight-light;
+        font-size: .875rem;
+      }
+      &:last-child {
+        margin-right: 0;
+        &::after {
+          display: none;
+        }
+      }
+      &.with-divider {
+        @include media-breakpoint-up(md) {
+          &::after {
+            position: absolute;
+            content: "";
+            width: 1px;
+            background-color: #004A70;
+            right: -15px;
+            top: 7px;
+            height: 15px;
+          }
+        }
+      }
+      &.selected {
+        a {
+          color: $header-foreground-selected;
+          font-weight: $font-weight-semibold;
+          &:hover {
+            color: $header-foreground-selected;
+            text-decoration: none;
+          }
+        }
+      }
+
+      a {
+        color: $header-foreground;
+
+        &:hover {
+          color: $header-foreground;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+//search input wrapper
+$search-border-color: #CECECE;
+$search-background-color: #F4F8FA;
+.search-toolbar__search-input-wrapper {
+  border: 1px solid $search-border-color;
+  background-color: $search-background-color;
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+  @include media-breakpoint-up(md) {
+    margin-top: 0;  
+  }
+  .search-toolbar__search-input {
+    flex: 1;
+    input {
+      border: none;
+      padding: 6px 10px;
+      outline: none;
+      background-color: $search-background-color;
+      font-size: 14px;
+      @include media-breakpoint-up(md) {
+        font-size: 16px;
+      }
+    }
+  }
+  button {
+    padding: 0 23px;
+    border: none;
+    border-left: 2px solid $search-border-color;
+    background-color: transparent;
+    background-image: url('/img/icon-search-blue.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    text-indent: -9999999px;
+    height: calc(100% - 10px);
+  }
+}

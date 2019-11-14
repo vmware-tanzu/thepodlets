@@ -1,0 +1,101 @@
+---
+layout: default
+id: home
+hero:
+  banner: /img/heroes/hero-podlets-home.svg
+  headline: The Podlets
+  content: Exploring Cloud Native,<br/> one buzzword at a time!
+highlighted:
+  headline: Highlighted Episodes
+latest:
+  headline: Latest Episodes
+---
+<div class="home-hero bg-color-{{ site.hero.background-color }}" style="background-image: url('{{ page.hero.banner }}')">
+  <div class="section">
+    <div class="section-content">
+      <div class="hero-content">
+        <img src="/img/podlets-icon-round.png" alt="" class="mb-4 badge"/>
+        <h1 class="mb-3">
+          {{ page.hero.headline }}
+        </h1>
+        <p class="b2">{{ page.hero.content }}</p>
+      </div>
+      {% if page.hero.cta_link1.url or page.hero.cta_link2.url %}
+      <div class="hero-cta mt-4">
+        {% if page.hero.cta_link1.url %}
+        <a href="{{ page.hero.cta_link1.url }}" class="btn btn-primary mb-3 mb-sm-0">{{ page.hero.cta_link1.text }}</a>
+        {% endif %}
+        {% if page.hero.cta_link2.url %}  
+          <a href="{{ page.hero.cta_link2.url }}" class="btn btn-outline-light">{{ page.hero.cta_link2.text }}</a>
+        {% endif %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div> <!-- /home-hero -->
+<div class="d-none d-md-block">
+  {% include podcast-links.html %}  
+</div>
+<!-- Highlighted Episodes -->
+{% if site.highlighted %}
+<div class="section section-card promo-cards">
+  <div class="section-content">
+    <div class="row">
+      <div class="col-md-9">
+        <h2>{{ page.highlighted.headline }}</h2>
+        {% if page.highlighted.introduction %}
+          <p>{{ page.highlighted.introduction }}</p>
+        {% endif %}
+      </div>
+      <div class="col-md-3 text-right">
+        <p><a href="{% link episodes.html %}" class="eyebrow">View All Episodes</a></p>
+      </div>
+    </div>
+    <div class="row">
+      {% for highlighted in site.highlighted limit:3 %}
+        {% assign episode = site.episodes | where:"episode_id", highlighted | first %}
+        {% include episode-card.html %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endif %}
+
+<!-- Latest Episodes -->
+<div class="section section-card promo-cards">
+  <div class="section-content">
+    <div class="row">
+      <div class="col-md-9">
+        <h2>{{ page.latest.headline }}</h2>
+        {% if page.latest.introduction %}
+          <p>{{ page.latest.introduction }}</p>
+        {% endif %}
+      </div>
+      <div class="col-md-3 text-right">
+        <p><a href="{% link episodes.html %}" class="eyebrow">View All Episodes</a></p>
+      </div>
+    </div>
+    <div class="row">
+      {% assign latest = site.episodes | reverse %}
+      {% for episode in latest limit:3 %}
+        {% include episode-card.html %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<div class="team-section-outer">
+  <div class="section section-contributors">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 offset-md-1">
+          {% include hosts-home.html %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="d-block d-md-none">
+  {% include podcast-links.html %}  
+</div>
+{% include modal.html %}

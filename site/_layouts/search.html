@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include head.html %}
+<body id="search">
+  <div class="container-fluid">
+    <div class="site-container">
+      {% include site-header.html %}
+        <div class="default-container">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <h1>Search Results</h1>                
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <div class="search-toolbar">
+                  <form id="" role="search" method="get" action="/">
+                    <div class="search-toolbar__search-input-wrapper">
+                      <div class="search-toolbar__search-input">
+                        <label for="s" class="sr-only">Search</label>
+                        <input name="s" type="text" value="" autocomplete="off" placeholder="Search">
+                      </div>
+                      <button type="submit">Search</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="section section-card promo-cards">
+            <div class="section-content">
+              <div class="row" id="ajax-target">
+                <!-- site.episodes must match search results -->
+                {% for episode in site.episodes %}
+                  {% include episode-card.html %}
+                {% endfor %}
+              </div>
+              {% if site.episodes.size > 1000 %}
+              <div class="row">
+                <div class="col mt-5 text-center">
+                  <a href="#" class="btn btn-primary load-more" data-current="1" data-count="2">Load More</a>
+                </div>
+              </div>
+              {% endif %}
+            </div>
+          </div>
+      {% include podcast-links.html %}
+      </div>
+    {% include footer.html %}
+    </div>
+  </div>
+  {% include modal.html %}
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include head.html %}
+<body id="{{ page.id }}">
+  <div class="container-fluid">
+    <div class="site-container">
+      {% include site-header.html %}
+      <div class="secondary-hero bg-color-white">
+        <div class="container">
+          <div class="row-fluid">
+            <img src="/img/heroes/hero-podlets-secondary.svg" class=""/>
+          </div>
+        </div>
+      </div> 
+      <div class="default-container">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="row">
+                <div class="col pb-5">
+                  <h1>{{ page.title }}</h1>
+                  <p class="b2">
+                    {{ content }}
+                  </p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <h2 class="midnight-blue">The Podlets Team</h2>
+                  {% for person in site.hosts %}
+                    {% if person.current %}
+                      {% include host-card.html %}
+                    {% endif %}
+                  {% endfor %}
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <h2>Past Hosts</h2>
+                  {% for person in site.hosts %}
+                    {% if person.current == false %}
+                      {% include host-card.html %}
+                    {% endif %}
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 offset-md-1">
+              {% if site.highlighted %}
+              <h3>Highlighted Episodes</h3>
+              {% for highlighted in site.highlighted %}
+                {% assign episode = site.episodes | where:"episode_id", highlighted | first %}
+                {% include episode-card-sidebar.html %}
+              {% endfor %}
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>        
+      {% include podcast-links.html %}
+      {% include modal.html %}
+    {% include footer.html %}
+    </div>
+  </div>
+</body>
+</html>

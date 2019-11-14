@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="839px" height="469px" viewBox="0 0 839 469" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title>pattern + pattern copy Mask</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="21.7729296%" y1="66.8315032%" x2="76.6659453%" y2="34.0994464%" id="linearGradient-1">
+            <stop stop-color="#22418C" offset="0%"></stop>
+            <stop stop-color="#7F35B1" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="22.4573385%" y1="66.4197492%" x2="77.5375954%" y2="33.5833379%" id="linearGradient-2">
+            <stop stop-color="#20428B" offset="0%"></stop>
+            <stop stop-color="#814BB5" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Designs" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Homepage" transform="translate(-601.000000, -1571.000000)">
+            <g id="Contributors" transform="translate(0.000000, 1571.000000)">
+                <g id="pattern-+-pattern-copy-Mask">
+                    <g transform="translate(368.000000, -15.000000)" id="Fill-1">
+                        <polygon fill="url(#linearGradient-1)" points="886.943245 0 382 505 724.05809 505 1229 0.000667469392 1229 0"></polygon>
+                        <polygon fill="url(#linearGradient-2)" opacity="0.675558036" points="600.999206 116 0 717 407.128212 717 1008.12583 116"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

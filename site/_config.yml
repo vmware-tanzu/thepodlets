@@ -1,0 +1,129 @@
+# Site settings
+title: Podlets
+email:
+author: Podlets Authors
+description:
+url:
+logo: podlets-logo.png
+vm_logo: vm-logo.png
+gh_repo: https://github.com/vmware/Kubelets/
+hero: 
+  background-color: white
+footer:
+  title: Getting Started
+  content: To help you get started, see the documentation.
+  cta_title: 
+  cta_url: /docs/master
+  cta_text: Documentation
+  vm-link: http://vmware.github.io/
+podcast: the-podlets
+footer_social_links:
+  Google Play:
+    fa_icon: -icon google-play
+    url: https://www.googleplay.xom
+  Twitter:
+    fa_icon: fab fa-twitter
+    url: https://twitter.com/thepodlets
+  iTunes:
+    fa_icon: -icon itunes
+    url: https://itunes.com/
+  Spotify:
+    fa_icon: fab fa-spotify
+    url: https://spotify.com/
+  RSS:
+    fa_icon: fa fa-rss
+    url: feed.xml
+# used for the common "Listen & Watch" links throughout the site.
+podcast_links:
+  primary:
+  - icon: youtube 
+    url: https://youtube.com/
+    alt: YouTube
+  - icon: itunes
+    url: https://itunes.com/
+    alt: iTunes
+  - icon: spotify
+    url: https://spotify.com/
+    alt: Spotify
+  secondary:
+  - icon: overcast
+    url: https://youtube.com
+    alt: Overcast
+  - icon: google-podcasts
+    url: https://itunes.com/
+    alt: Google Podcasts
+  - icon: android
+    url: https://spotify.com/
+    alt: Android
+  - icon: google-play
+    url: https://www.google.com/
+    alt: Google Play
+  tertiary: 
+  - icon: twitter-lg
+    url: https://twitter.com/thepodlets
+    alt: Twitter
+  - icon: rss-lg
+    url: /feed.xml
+    alt: RSS
+# assign highlighted episodes here by episode ID. limited to 3 on home page, selected from the top down.
+# also appears on the about page.
+highlighted: 
+- 001-cloud-native
+- 002-container-orchestration
+  
+
+defaults:
+  - scope:
+      path: "" # an empty string here means all files in the project
+      type: "posts" 
+    values:
+      layout: "posts"
+  - scope:
+      path: "" # an empty string here means all files in the project
+      type: "episodes" 
+    values:
+      layout: "episodes"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+
+collections:
+  episodes:
+    output: true
+  hosts:
+    output: false
+
+# Build settings
+permalink: :title/
+sass:
+  sass_dir: css
+  style: :compressed
+
+# Use the following plug-ins
+plugins:
+  - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
+  - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
+  - jekyll-relative-links # Used to auto generate md links to html links
+  - jekyll-optional-front-matter # Parse Markdown files that do not have front-matter callouts
+  - jekyll-readme-index # use README.md as index.html
+  - jekyll-titles-from-headings # pull the page title from the first Markdown heading when none is specified.
+  - jekyll-paginate # pagination object for collections (e.g. posts)
+
+
+# Include these subdirectories
+include: 
+  - CONTRIBUTING.md
+  - README.md
+
+# Exclude these files from your production _site
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README-JEKYLL.md
+  - README-Podlets.md
+  - LICENSE
+  - CNAME
+  - Runbook.docx
+  - '*.sh'

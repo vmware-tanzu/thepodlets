@@ -1,0 +1,15 @@
+<div class="col-12">
+  <div class="container">
+    <div class="row my-3 border-bottom">
+      <div class="col-md-2">
+        <iframe src="https://omny.fm/shows/{{ site.podcast }}/{{ episode.episode_id }}/embed?size=square" width="100" height="100" title="{{ episode.title }}"></iframe>
+      </div>
+      <div class="col">
+        <h5>
+          <a href="{{ episode.url }}">Episode {{ episode.episode_number }}: {{ episode.title }}</a>
+        </h5>
+        <p>{{ episode.description }}</p>
+      </div>
+    </div>
+  </div>
+</div>
