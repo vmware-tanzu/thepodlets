@@ -56,11 +56,24 @@
                 <div class="col mb-3"><h2 class="h3">Episode Notes</h2></div>
               </div>
               <div class="row justify-content-center">
-                <div class="col mb-5">
+                <div class="col">
                   {{ page.notes | markdownify }}
                 </div>
               </div>
+              <div class="row">
+                <div class="col mb-5">
+                  {% if page.links %}
+                  <h3>Links</h3>
+                  <ul>
+                    {% for link in page.links %}
+                      <li><a href="{{ link.url }}" target="_blank">{{ link.name }}</a></li>
+                    {% endfor %}
+                  </ul>
+                  {% endif %}
+                </div>
+              </div>
               {% endif %}
+              
               
               <!-- TRANSCRIPT -->
               <div class="row justify-content-center">
