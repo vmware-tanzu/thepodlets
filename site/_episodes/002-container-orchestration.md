@@ -2,387 +2,754 @@
 episode_id: 002-container-orchestration
 episode_number: 2
 title: Making Sense of Container Orchestration
-description: In this episode, we dive into the exciting world of container orchestration in Kubernetes.
-notes: Welcome to the second episode of The Kubelets Podcast! In this episode, we dive into the exciting world of container orchestration in Kubernetes. We have all heard about container orchestration, but to truly understand this concept, we have to first understand what containers are and why they started! From definitions of containers and how they fit into the bigger cloud landscape, down to the nitty-gritty’s of managing and scaling container orchestration; this episode gives you strong foundation to better understand the functions and impacts of container orchestration today. Container orchestration in Kubernetes is so popular today but it can be difficult to how whether container orchestration is right for you. These are just some of the questions and topics we get into today, and if you’re looking for a solid base to begin your container orchestration process or enquiry – this is the episode for you! 
+description: Container orchestration in Kubernetes is so popular today but it can be difficult to know whether container orchestration is right for you. These are just some of the questions and topics we get into today.
+notes: Welcome to the second episode of The Podlets Podcast! In this episode, we dive into the exciting world of container orchestration in Kubernetes. We have all heard about container orchestration, but to truly understand this concept, we have to first understand what containers are and why they started! From definitions of containers and how they fit into the bigger cloud landscape, down to the nitty-gritty’s of managing and scaling container orchestration; this episode gives you strong foundation to better understand the functions and impacts of container orchestration today. Container orchestration in Kubernetes is so popular today but it can be difficult to know whether container orchestration is right for you. These are just some of the questions and topics we get into today, and if you’re looking for a solid base to begin your container orchestration process or enquiry – this is the episode for you! 
+hosts: 
+    - name: Carlisia Campos
+      url: https://twitter.com/carlisia 
+    - name: Josh Rosso
+      url: https://twitter.com/joshrosso
+    - name: Nicholas Lane
+      url: https://twitter.com/soggiest
+points:
+    - Discover why container orchestration first came about.
+    - Find out exactly what a container is and how it functions.
+    - Using a container versus a virtual machine or process.
+    - Managing container orchestration on a large scale.
+    - Learn how container orchestration acts on information.
+    - Managing actual state and expected state in container orchestration. 
+    - The key benefits of adopting container orchestration.
+    - The key difference between container orchestrators.
+    - A declarative way to approach resource limiting.
+    - How to distinguish between the project and the product.
+    - What is it that makes Kubernetes so popular today?
+    - How to make an informed decision about using Kubernetes.
+    - Find out when you should not be using container orchestration.
+links:
+    - url: Velero — https://github.com/vmware-tanzu/velero
+    - url: Youtube Premium — https://www.youtube.com/premium
+    - url: KubeCon China — https://01.org/events/2019/open-source-summit-china-kubecon/ cloudnativecon
+    - url: Steven Wong — https://twitter.com/cantbewong
+    - url: Cloud Native Social Hour — https://www.youtube.com/watch?v=wxBxcdeMOYE
+    - url: Kube Janitor — https://github.com/theMagicalKarp/kube-janitor
+    - url: Docker — https://www.docker.com/
+    - url: Mesosphere — https://d2iq.com/
+    - url: Red Hat — https://www.redhat.com/en
+    - url: Kubernetes VS Docker Swarm — https://thenewstack.io/kubernetes-vs-docker-swarm-whats- the-difference/
+    - url: Kubernetes Slack Channel — http://slack.k8s.io/
+    - url: Podlets Cloud Native Podcast — http://cloudnativepodcast.com/
+    - url: The Podlets on Twitter — https://twitter.com/thepodlets
+
 # video: https://www.youtube.com/embed/dQw4w9WgXcQ
 # related: # appears in sidebar, no limit in related episodes. identify by `episode_id`
 # - 001-cloud-native
 ---
 
-EPISODE 01
+EPISODE 02
 
 [INTRODUCTION]
 
-[00:00:08] ANNOUNCER: Welcome to The Kubelets Podcast, a weekly show that explores Cloud Native one buzzword at a time. Each week, experts in the field will discuss cloud native concepts to help you on your journey. This space moves fast and we shouldn’t reinvent the wheel. If you’re using, building, or managing technology, this podcast is for you.
+[0:00:08.7] ANNOUNCER: Welcome to The Podlets Podcast, a weekly show that explores Cloud Native one buzzword at a time. Each week, experts in the field will discuss and contrast distributed systems concepts, practices, tradeoffs and lessons learned to help you on your cloud native journey. This space moves fast and we shouldn’t reinvent the wheel. If you’re an engineer, operator or technically minded decision maker, this podcast is for you.
 
 [EPISODE]
 
-[00:00:32] KN: Welcome to the podcast.
+[0:00:41.3] NL: Hello and welcome back to The Podlets Podcast, Episode Two, Container Orchestration. My name is Nicholas and joining me today this week are Carlisia and Josh.
 
-[00:00:33] NL: Hi. I’m Nicholas Lane. I’m a cloud native Architect.
+[0:00:50.9] CC: Hello.
 
-[00:00:36] CC: Who do you work for, Nicholas?
+[0:00:50.9] NL: Hello.
 
-[00:00:38] NL: I've worked for VMware, formerly of Heptio.
+[0:00:52.0] CC: Good to be here again.
 
-[00:00:41] KN: I think we’re all VMware, formerly Heptio, aren’t we?
+[0:00:53.7] NL: Yeah. How was your week, everyone?
 
-[00:00:43] NL: Yes.
+[0:00:55.6] CC: Very good, lots of work.
 
-[00:00:45] CC: That is correct. It just happened that way. Now Nick, why don’t you tell us how you got into this space?
+[0:00:57.3] NL: Yeah, anything exciting happening in the world of Velero?
 
-[00:00:53] NL: Okay. I originally got into the cloud native realm working for Red Hat as a consultant. At the time, I was doing OpenShift consultancy. Then my boss, Paul, Paul London, left Red Hat and I decided to follow him to CoreOS, where I met Duffie and Josh. We were on the field engineering team there and the sales engineering team. Then from there, I found myself at Heptio and now with VMware. Duffie, how about you?
+[0:01:00.1] CC: Yes, we just got our alpha release for version 1.0 and we are looking for testers, yeah, we want testers.
 
-[00:01:21] DC: My name is Duffie Cooley. I'm also a cloud native architect at VMware, also recently Heptio and CoreOS. I've been working in technologies like cloud native for quite a few years now. I started my journey moving from virtual machines into containers with Mesos. I spent some time working on Mesos and actually worked with a team of really smart individuals to try and develop an API in front of that crazy Mesos thing. Then we realized, “Well, why are we doing this? There is one that's called Kubernetes. We should jump on that.” That's the direction in my time with containerization and cloud native stuff has taken. How about you Josh?
+[0:01:08.2] NL: Awesome.
 
-[00:01:58] JR: Hey, I’m Josh. I similar to Duffie and Nicholas came from CoreOS and then to Heptio and then eventually VMware. Actually got my start in the middleware business oddly enough, where we worked on the Egregious Spaghetti Box, or the ESB as it’s formally known. I got to see over time how folks were doing a lot of these, I guess, more legacy monolithic applications and that sparked my interest into learning a bit about some of the cloud native things that were going on. At the time, CoreOS was at the forefront of that. It was a natural progression based on the interests and had a really good time working at Heptio with a lot of the folks that are on this call right now. Kris, you want to give us an intro?
+[0:01:09.2] JR: I’ve been traveling a lot but it’s been good, we’re doing a lot of interesting work with some Kubernetes cluster running in an on premise datacenter which is something we see less and less, now that the cloud providers are kind of taking on their different offering. So it’s cool to hop back to kind of the bare metal and virtualization space and play around there.
 
-[00:02:39] KN: Sure. Hi, everyone. Kris Nova. I've been SRE DevOps infrastructure for about a decade now. I used to live in Boulder, Colorado. I came out of a couple startups there. I worked at SolidFire, we went to NetApp. I used to work on the Linux kernel there some. Then I was at Deis for a while when I first started contributing to Kubernetes. We got bought by Microsoft, left Microsoft, the Azure team. I was working on the original managed Kubernetes there. Left that team, joined up with Heptio, met all of these fabulous folks. I think, I wrote a book and I've been doing a lot of public speaking and some other junk along the way. Yeah. Hi. What about you, Carlisia?
+[0:01:27.6] NL: That’s cool. I’ve actually got a question for you guys, kind of irrespective of container orchestration, but how do you guys manage travel, right? How do you keep yourself entertained, how do you keep yourself happy while you’re traveling? For me, it’s a lot of podcasts which is great, now that I’m doing a podcast.
 
-[00:03:19] CC: All right. I think it's really interesting that all the guys are lined up on one call and all the girls on another call. 
+[0:01:43.0] CC: Yeah, I do podcasts. I signed up for YouTube premium so I can download videos. I watch the movies on the plane, I have a kindle with lots of books.
 
-[00:03:25] NL: We should have probably broken it up more.
+[0:01:56.2] NL: Yeah, that’s nice.
 
-[00:03:27] CC: I am a developer and have always been a developer. Before joining Heptio, I was working for Fastly, which is a CDN company. They’re doing – helping them build the latest generation of their TLS management system. At some point during my stay there, Kevin Stuart was posting on Twitter, joined Heptio. At this point, Heptio was about, I don't know, between six months in a year-old.
+[0:01:57.4] CC: Or I just sleep.
 
-I saw those tweets go by I’m like, “Yeah, that sounds interesting, but I'm happy where I am.” I have a very good friend, Kennedy actually. He saw those tweets and here he kept saying to me, “You should apply. You should apply, because they are great people. They did great things. Kubernetes is so hot.” I’m like, “I'm happy where I am.”
+[0:01:59.0] NL: I wish I could.
 
-Eventually, I contacted Kevin and he also said, “Yeah, that it would be a perfect match.” I two months later decided to apply. The people are amazing. I did think that Kubernetes was really hard, but my decision-making went towards two things. The people are amazing and some people who were working there I already knew from previous opportunities. Some of the people that I knew – I mean, I love everyone.
+[0:01:59.9] JR: Yeah, sleep is always the first goal, but I also signed up for YouTube Premium and the offline feature is fantastic so there’s so much good info on YouTube, you know? It’s great to like – go to the KubeCon Playlist and just choose offline and then you have all that time in the plane to really sift through talks and what not. It’s been really cool.
 
-The only thing was that it was an opportunity for me to work with open source. I definitely could not pass that up. I could not be happier to have made that decision now with VMware acquiring Heptio, like everybody here I’m at VMware. Still happy.
+[0:02:18.9] CC: Exactly.
 
-[00:05:10] KN: Has everybody here contributed to open source before?
+[0:02:19.8] NL: That’s a great idea. I’ve actually not used YouTube Premium for that. I’ve only ever used it for like meditation tracks, to use on the airplane. I spend some time in the plane kind of just in my own head a little bit kind of doing some internal self-care if you will.
 
-[00:05:14] NL: Yup, I have.
+[0:02:34.0] CC: Nice.
 
-[00:05:15] KN: What's everybody's favorite project they've worked on?
+[0:02:34.7] NL: But that gets boring.
+EPISODE 02
 
-[00:05:18] NL: That's an interesting question. From a business aspect, I really like Dex. Dex is an identity provider, or a middleware for identity provider. It provides an OIDC endpoint for multiple different identity providers. You can absorb them into Kubernetes. Since Kubernetes only has an OIDC – only accepts OIDC job tokens for authentication, that functionality that Dex provides is probably my favorite thing. Although, if I'm going to be truly honest, I think right now the thing that I'm the most excited about working on is my own project, which is starting to join like me, joining into my interest in doing Chaos engineering. What about you guys? What’s your favorite?
+[INTRODUCTION]
 
-[00:05:57] KN: I understood some of those words.
+[0:00:08.7] ANNOUNCER: Welcome to The Podlets Podcast, a weekly show that explores Cloud Native one buzzword at a time. Each week, experts in the field will discuss and contrast distributed systems concepts, practices, tradeoffs and lessons learned to help you on your cloud native journey. This space moves fast and we shouldn’t reinvent the wheel. If you’re an engineer, operator or technically minded decision maker, this podcast is for you.
 
-[00:06:00] NL: Those are things we'll touch on on different episodes.
+[EPISODE]
 
-[00:06:03] KN: Yeah. I worked on FreeBSD for a while. That was my first welcome to open source. I mean, that was back in the olden days of IRC clients and writing C. I had a lot of fun, and still I'm really close with a lot of folks in the FreeBSD community, so that always has a special place in my heart, I think, just that was my first experience of like, “Oh, this is how you work on a team and you work collaboratively together and it's okay to fail and be open.”
+[0:00:41.3] NL: Hello and welcome back to The Podlets Podcast, Episode Two, Container Orchestration. My name is Nicholas and joining me today this week are Carlisia and Josh.
 
-[00:06:30] NL: Nice.
+[0:00:50.9] CC: Hello.
 
-[00:06:31] KN: What about you, Josh?
+[0:00:50.9] NL: Hello.
 
-[00:06:32] JR: I worked on a project at CoreOS. Well, a project that's still out there called ALB Ingress controller. It was a way to bring the AWS ALBs, which are just layer 7 load balancers and take the Kubernetes API ingress, attach those two together so that the ALB could serve ingress.
+[0:00:52.0] CC: Good to be here again.
 
-The reason that it was the most interesting, technology aside, is just it went from something that we started just myself and a colleague, and eventually gained community adoption. We had to go through the process of just being us two worrying about our concerns, to having to bring on a large community that had their own business requirements and needs, and having to say no at times and having to encourage individuals to contribute when they had ideas and issues, because we didn't have the bandwidth to solve all those problems. It was interesting not necessarily from a technical standpoint, but just to see what it actually means when something starts to gain traction. That was really cool. Yeah, how about you Duffie?
+[0:00:53.7] NL: Yeah. How was your week, everyone?
 
-[00:07:30] DC: I've worked on a number of projects, but I find that generally where I fit into the ecosystem is basically helping other people adopt open source technologies. I spent a quite a bit of my time working on OpenStack and I spent some time working on Open vSwitch and recently in Kubernetes. Generally speaking, I haven't found myself to be much of a contributor to of code to those projects per se, but more like my work is just enabling people to adopt those technologies because I understand the breadth of the project more than the detail of some particular aspect.
+[0:00:55.6] CC: Very good, lots of work.
 
-Lately, I've been spending some time working more on the SIG Network and SIG-cluster-lifecycle stuff. Some of the projects that have really caught my interest are things like, Kind which is Kubernetes in Docker and working on KubeADM itself, just making sure that we don't miss anything obvious in the way that KubeADM is being used to manage the infrastructure again.
+[0:00:57.3] NL: Yeah, anything exciting happening in the world of Velero?
 
-[00:08:26] KN: What about you, Carlisia?
+[0:01:00.1] CC: Yes, we just got our alpha release for version 1.0 and we are looking for testers, yeah, we want testers.
 
-[00:08:27] CC: I realize it's a mission what I'm working on at VMware. That is coincidentally the project – the open source project that is my favorite. I didn't have a lot of experience with open source, just minor contributions here and there before this project. I'm working with Valero. It's a disaster recovery tool for Kubernetes. Like I said, it's open source. We’re coming up to version 1 pretty soon. The other maintainers are amazing, super knowledgeable and very experienced, mature. I have such a joy to work with them. My favorites.
+[0:01:08.2] NL: Awesome.
 
-[00:09:04] NL: That's awesome.
+[0:01:09.2] JR: I’ve been traveling a lot but it’s been good, we’re doing a lot of interesting work with some Kubernetes cluster running in an on premise datacenter which is something we see less and less, now that the cloud providers are kind of taking on their different offering. So it’s cool to hop back to kind of the bare metal and virtualization space and play around there.
 
-[00:09:05] DC: Should we get into the concept of cloud native and start talking about what we each think of this thing? Seems like a pretty loaded topic. There are a lot of people who would think of cloud native as just a generic term, we should probably try and nail it down here.
+[0:01:27.6] NL: That’s cool. I’ve actually got a question for you guys, kind of irrespective of container orchestration, but how do you guys manage travel, right? How do you keep yourself entertained, how do you keep yourself happy while you’re traveling? For me, it’s a lot of podcasts which is great, now that I’m doing a podcast.
 
-[00:09:19] KN: I'm excited for this one.
+[0:01:43.0] CC: Yeah, I do podcasts. I signed up for YouTube premium so I can download videos. I watch the movies on the plane, I have a kindle with lots of books.
 
-[00:09:21] CC: Maybe we should talk about what this podcast show is going to be?
+[0:01:56.2] NL: Yeah, that’s nice.
 
-[00:09:26] NL: Sure. Yeah. Totally.
+[0:01:57.4] CC: Or I just sleep.
 
-[00:09:27] CC: Since this is our first episode.
+[0:01:59.0] NL: I wish I could.
 
-[00:09:29] NL: Carlisia, why don't you tell us a little bit about the podcast?
+[0:01:59.9] JR: Yeah, sleep is always the first goal, but I also signed up for YouTube Premium and the offline feature is fantastic so there’s so much good info on YouTube, you know? It’s great to like – go to the KubeCon Playlist and just choose offline and then you have all that time in the plane to really sift through talks and what not. It’s been really cool.
 
-[00:09:31] CC: I will be glad to. The idea that we had was to have a show where we can discuss cloud native concepts. As opposed to talking about particular tools or particular project, we are going to aim to talk about the concepts themselves and approach it from the perspective of a distributed system idea, or issue, or concept, or a cloud native concept. 
+[0:02:18.9] CC: Exactly.
 
-From there, we can talk about what really is this problem, what people or companies have this problem? What usually are the solutions? What are the alternative ways to solve this problem? Then we can talk about tools that are out there that people can use. I don't think there is a show that approaches things from this angle. I'm really excited about bringing this to the community.
+[0:02:19.8] NL: That’s a great idea. I’ve actually not used YouTube Premium for that. I’ve only ever used it for like meditation tracks, to use on the airplane. I spend some time in the plane kind of just in my own head a little bit kind of doing some internal self-care if you will.
 
-[00:10:30] KN: It's almost like TGIK, but turned inside out, or flipped around where TGIK, we do tools first and we talk about what exactly is this tool and how do you use it, but I think this one, we're spinning that around and we're saying, “No, let's pick a broader idea and then let's explore all the different possibilities with this broader idea.”
+[0:02:34.0] CC: Nice.
 
-[00:10:50] CC: Yeah, I would say so.
+[0:02:34.7] NL: But that gets boring.
 
-[00:10:52] JR: From the field standpoint, I think this is something we often times run into with people who are just getting started with larger projects, like Kubernetes perhaps, or anything really, where a lot of times they hear something like the word Istio come out, or some technology. Often times, the why behind it isn't really considered upfront, it's just this tool exists, it's being talked about, clearly we need to start looking at it. Really diving into the concepts and the why behind it, hopefully will bring some light to a lot of these things that we're all talking about day-to-day.
+[0:02:36.0] CC: I meditate too, it’s great.
 
-[00:11:23] CC: Yeah. Really focusing on the what and the why. The how is secondary. That's what my vision of this show is.
+[0:02:38.2] NL: Yeah, it’s good. All right, anything interesting in the cloud native space that you guys have found in the last week?
 
-[00:11:33] KN: I like it.
+[0:02:43.6] CC: I have a talk that was accepted for KubeCon China.
 
-[00:11:34] NL: That's something that really excites me, because there are a lot of these concepts that I talk about in my day-to-day life, but some of them, I don't actually think that I understand pretty well. It's those words that you've heard a million times, so you know how to use them, but you don't actually know the definition of them.
+[0:02:47.4] NL: Awesome, congratulations.
 
-[00:11:48] CC: I'm super glad to hear you say that mister, because as a developer in many not a system – not having a sysadmin background. Of course, I did sysadmin things as a developer, but not it wasn't might day-to-day thing ever.
+[0:02:49.6] JR: Congrats.
 
-When I started working with Kubernetes, a lot of things I didn't quite grasp and that's a super understatement. I noticed that I mean, I can ask questions. No problem. I will dig through and find out and learn. The problem is that in talking to experts, a lot of the time when people, I think, but let me talk about myself. A lot of time when I ask a question, the experts jump right to the how. What is this? “Oh, this is how you do it.” I don't know what this is. Back off a little bit, right? Back up. I don't know what this is. Why is this doing this? I don't know.
+[0:02:50.6] CC: Yeah, it’s a joint talk with Steven Wong also from Thea Moore. We’re going to talk about data recovery, data protection, recovery, migration in Velero.
 
-If you tell me the how before I understand what that even is, I'm going to forget. That's what's going to happen. I mean, it’s great you're trying to make an effort and show me the how to do something. This is personal, the way I learn. I need to understand the how first. This is why I'm so excited about this show. It's going to be awesome. This is what we’re going to talk about.
+[0:03:03.9] NL: That’s great. He’s been coming to the Cloud Native Social Hour pretty regularly. That’s awesome to see some more cross interaction.
 
-[00:13:10] DC: Yeah, I agree. This is definitely one of the things that excites me about this topic as well, is that I find my secret super power is troubleshooting. That means that I can actually understand what the expected relationships between things should do, right? Rather than trying to figure out. Without really digging into the actual problem of stuff and what and the how people were going, or the people who were developing the code were trying to actually solve it, or thought about it. It's hard to get to the point where you fully understand that that distributed system. I think this is a great place to start.
+[0:03:11.6] CC: Yeah, he is awesome, so knowledgeable.
 
-The other thing I'll say is that I firmly believe that you can't – that you don't understand a thing if you can't teach it. This podcast for me is about that. Let's bring up all the questions and we should enable our audience to actually ask us questions somehow, and get to a place where we can get as many perspectives on a problem as we can, such that we can really dig into the detail of what the problem is before we ever talk about how to solve it. Good stuff.
+[0:03:14.0] NL: Great. And Josh?
 
-[00:14:09] CC: Yeah, absolutely.
+[0:03:15.5] JR: Very cool. I was actually looking this week since I’m in kind of the Kubernetes mindset, for something that can kind of add a TTL to any Kubernetes resource. So think of something like a service account in Kubernetes and I want to attach a TTL to it such that in four hours, it effectively got swept up and is no longer existent in the system.
 
-[00:14:11] KN: Speaking of a feedback loop from our audience and taking the problem first and then solution in second, how do we plan on interacting with our audience? Do we want to maybe start a GitHub repo, or what are we thinking?
+There’s some interesting ways that actually Kube ADM, one of the bootstrapping tools, does this. I was trying to kind of replicate that for their tokens, there’s a project by one of these Landau folks. Jacobs, I don’t know if that’s his last of first name, sorry in advance for butchering it, but he’s got a project called Kube Janitor that does effectively that.
 
-[00:14:25] NL: I think a GitHub repo makes a lot of sense. I also wouldn't mind doing some social media malarkey, maybe having a Twitter account that we run or something like that, where people can ask questions too.
+With annotations, you can put a TTL on them, your resources and then Kube Janitor will just come through and sweep that up. Which I thought a really cool idea. That was an interesting thing that I saw, it’s no new news, I think it’s been around for a while but it’s the first time that I had run into it.
 
-[00:14:36] CC: Yes. Yes to all of that. Yeah. Having an issue list that in a repo that people can just add comments, praises, thank you, questions, suggestions for concepts to talk about and say like, “Hey, I have no clue what this means. Can you all talk about it?” Yeah, we'll talk about it. Twitter. Yes. Interact with those on Twitter. I believe our Twitter handle is TheKubelets.
+[0:04:07.6] NL: Nice. For me, our cohost Duffy, turned me on to a tool called Chaos Blade. Recently, I’ve been getting more and more into Chaos engineering and this is apparently an easy to use Chaos engineering toolkit. Something I’ve only just started looking at but I’m pretty excited. I’ll probably play around with that a bit more.
 
-[00:15:02] KN: Oh, we already have one. Nice.
+[0:04:25.2] JR: Cool, awesome.
 
-[00:15:03] NL: Yes. See, I'm learning something new already.
+[0:04:26.9] NL: Yeah, this week on the podcast, we are talking about container orchestration and kind of what that is, right? For me, container orchestration is the idea that you need your workloads to run somewhere but you don’t necessarily need to care where they’re running and the way that this has been done traditionally, prior to container orchestration, was like scheduling VM’s or making sure these processes run on certain computers, right?
 
-[00:15:07] CC: We already have. I thought you were all were joking. We have the Kubernetes repo. We have a github repo called –
+There’s a lot of automation around that like, when containers came around, we needed some way to make sure that they’re running and it also enabled us to not need to care so much about how things get started in all that. Everything was kind of packaged in a container I think. They need to just be some way to run them. That’s kind of where container orchestration came in, is that kind of your guys’ take on that as well?
 
-[00:15:13] NL: Oh, perfect.
+[0:05:18.3] CC: Yeah, basically, when we say we are orchestrating containers, we basically tell them how to behave, right? For example, I have this container here and I’m going to declare that if it fails, I want it to come back up in this container over there, if you fail just keep that state, don’t do anything and then I might say hey, I want two of you, three of you, I want to – the orchestration part is really just dictating behavior and state.
 
-[00:15:14] CC: heptio/thekubelets.
+[0:05:48.6] NL: Yeah, absolutely.
 
-[00:15:18] DC: The other thing I like that we do in TGIK is this HackMD thing. Although, I'm trying to figure out how we could really make that work for us in a show that's recorded every week like this one. I think, maybe what we could do is have it so that when people can listen to the recording, they could go to the HackMD document, put questions in or comments around things if they would like to hear more about, or maybe share their perspectives about these topics. Maybe in the following week, we could just go back and review what came in during that period of time, or during the next session.
+[0:05:49.9] JR: Yeah. I think one interesting thing that came with the advent of containers is, we used to have this notion of you know, what server is my application going to land on or then eventually, you know, what virtual machine is my app eventually going to land on and we think kind of in this units of virtual machines and the paradigm shift a bit, at least in my experience has been now that you have the container unit and you can run many of those on one virtual machine, right?
 
-[00:15:49] KN: Yeah. Maybe we're merging the HackMD on the next recording.
+Your concern about orchestration is not just putting it on machine A and putting it on machine B but it’s kind of like packing multiple of this containers, perhaps on the same virtual machine or same host. The orchestration notion is beyond just the conventional system construct of a different host each time, it’s really interesting.
 
-[00:15:53] DC: Yeah.
+[0:06:34.0] NL: Yeah, I think it might be important for us actually to take a step back. I realized I kind of jumped right into it, but we should probably settle what a container is, right? Before we can talk about how we can orchestrate them.
 
-[00:15:53] KN: Okay. I like it.
+A container is basically just a tar ball honestly. That is a packaged application with the instructions for it to run on any system that can accept that tar ball. Containers are broken down into a couple of Linux constructs, C groups and name space, so C groups four, making sure the process runs in its own dedicated memory and then or just like isolated memory. Then name spaces for things like network isolation. 
 
-[00:15:55] DC: Josh, you have any thoughts? Friendster, MySpace, anything like that?
+So that the network traffic that’s going on in the container doesn’t cross over to other processes. Very controlled process initiation based on these instruction. That’s kind of what a container is, a lot of people think that they’re like, kind of like a VM, I’ve heard that a few times where like, “Oh how do I deploy it?” What’s the VMDK for a container? It’s just a process that runs on a computer in a very controlled fashion, that’s literally it. 
 
-[00:15:58] JR: No. I think we could pass on MySpace for now, but everything else sounds great.
+[0:07:43.9] JR: Yeah, it’s kind of interesting to think like, at what point in which we kind of started using containers and seeing containers. I’d be curious for either two of you, Carlisia especially, what was your first exposure to the unit of a container and why were you starting to consider using a container versus just a virtual machine or a process?
 
-[00:16:04] DC: Do we want to get into the meat of the episode?
+[0:08:03.0] CC: Frankly, I don’t remember. My first time seeing a container has been a long time but I don’t remember. But probably maybe trying to do some application like some toy application that – an example application. I remember that I was working on an application that we had the option to stuff it into a container as well, but I personally didn’t make the development. 
 
-[00:16:07] KN: Yeah.
+I wasn’t using it for development. My first usage of container really was about three years ago when I was working for CDN and a CDN as you might imagine has many different parts, so it has very low-level software running to higher level software, right? Really, sometimes, well, not sometimes, it has kernel level applications in systems, and it has API level system. For you to develop one part of it is it was really handy to be able to stuff our different systems into containers and have containers stuck to each other.
 
-[00:16:08] DC: Our true topic, what does cloud native mean to all of us? Kris, I'm interested to hear your thoughts on this. You might have written a book about this?
+We weren’t using the introduction. This was for development, but it was amazing, it was fantastic, we would have applications developed and go. Different systems that needed to talk to each other and we would have applications in C and I think that is to remember but it was amazing. Everything in containers and then we have a tool as well, they were sort of like Kubernetes, it wasn’t Kubernetes.
 
-[00:16:19] KN: I co-authored a book called Cloud Native Infrastructure, which it means a lot of things to a lot of people. It's one of those umbrella terms, like DevOps. It's up to you to interpret it. I think in the past couple of years of working in the cloud native space and working directly at the CNCF as a CNCF ambassador, Cloud Native Computing Foundation, they're the open source nonprofit folks behind this term cloud native.
+It was developed in house. That orchestrated all of these things and you know, we simply failed, bringing back up and did a bunch of other things as well. I cannot explain the difference of working like that. It’s so much faster and so I could be a lot more autonomous, being able to run everything myself. I didn’t depend on having access to its server. I ran everything on my laptop, it was fantastic.
 
-I think the best definition I've been able to come up with is when you're designing software and you start your main function to be built around the cloud, or to be built around what the cloud enables us to do in the services a cloud to offer you, that is when you start to look at cloud native engineering. I think all cloud native infrastructure is, it's designing software that manages and mutates infrastructure in that same way. I think the underlying theme here is we're no longer caddying configurations disk and doing system D restarts. Now we're just sending HTTPS API requests and getting messages back.
+[0:10:17.6] NL: Awesome. The first time I ran into a container was back when I was working for Red Hat, right when Open Shift Three CEO came out, that’s when Open Shift kind of moved from the in-house version of Open Shift to adopting Kubernetes. I had been working mostly in the virtualization like infrastructure world like doing a Red Hat enterprise virtualization manager, which is kind of like a Red Hat take on B Sphere, you know, kind of.
 
-Hopefully, if the cloud has done what we expect it to do, that broadcast some broader change. As software engineers, we can count on those guarantees to design our software around. I really think that you need to understand that it's starting with the main function first and completely engineering your app around these new ideas and these new paradigms and not necessarily a migration of a non-cloud native app. 
+I was very used to virtualization and spinning things up. There is some aspects of creating a VM and creating a container that were very similar. It took me awhile for my brain to click. Once I started using open chip to kind of click into like, “Oh this is how they’re different, right?” Whereas, if you’ve just started looking at it, “Well what’s kind of the difference?” They’re all just like, in my command line, they all just come up as like lists of units, right? 
 
-I mean, you technically could go through and do it. Sure, we've seen a lot of people do it, but I don't think that's technically cloud native. That's cloud alien. Yeah. I don't know. That's just my thought.
+This is a processing unit, that’s a processing unit right there. They’re kind of similar but once you start really getting into the use of it, it was so much different. I had heard like during this process of switching over to these two tools, I had heard of Docker and I was like, it’s something I’ll take a look at and finally, by shifting over to it, I finally was starting to – like oh this is what docker is, this is how we use these and then like, kind of digging into containers there.
 
-[00:18:01] DC: Are you saying that cloud native approach is a greenfield approach generally? To be a cloud native application, you're going to take that into account in the DNA of your application?
+It was an interesting switch from an infrastructure standpoint to like, this is how people use containers and then that kind of actually started getting me into development. Now that I didn’t have to care about all this overhead of like where do I put my application, if I want my application around on my computer versus your computer, how do I make sure that the packages are the same bubble?
 
-[00:18:12] KN: Right. That's exactly what I'm saying.
+Once there was that easy way to kind of say, I just want this run everywhere, no matter what, hopefully, that really just like, fascinated me and it kind of took off from there. Josh, what about you?
 
-[00:18:14] CC: It's interesting that never said – mentioned cloud alien, because that plays into the way I would describe the meaning of cloud native. I mean, what it is, I think Nova described it beautifully and it's a lot of – it really shows her know-how. For me, if I have to describe it, I will just parrot things that I have read, including her book. What it means to me, what it means really is I'm going to use a metaphor to explain what it means to me.
+[0:12:11.6] JR: Yeah, my experience wasn’t to dissimilar. What was interesting is the space I was working in was a lot of legacy Java applications, so we kind of came into containers probably a little bit later than what some of you all did. What was always interesting about it is, you know, we started to really see the value of containers just like Carlisia was saying, we started packaging these apps up and they ran the same in every environment and just really changed our workflow around. 
 
-Given my accent, I’m obviously not an American born, and so I'm a foreigner. Although, I do speak English pretty well, but I'm not native. English is not my native tongue. I speak English really well, but there are certain hiccups that I'm going to have every once in a while. There are things that I'm not going to know what to say, or it's going to take me a bit long to remember.
+Initially, it was just like, let’s figure out a way to simply start these containers on different hosts, whether it be like Answerable or even someone going out a host and typing Docker Run, you know, that was how we got these processes to start. As the adoption of containers grew and more and more containers started to come to life in this company, the need for orchestration finally became obvious, right?
+I had heard about this project called Kubernetes, I’d heard a bit about Swarm, Mesos and it was always just like I don’t understand why you’d ever need something this complex, right? But eventually you hit this like inflection point where it just becomes insanely obvious, that your life is potentially going to be just chaos without something that can actually figure out, hey, you need to run this container, let me figure out where to put it and make sure that it starts.
 
-I rarely run into not understanding it, something in English, but it happens sometimes. That's the same with the cloud native application. If it hasn't been built to run on cloud native platforms and systems, you can migrate an application to cognitive environment, but it's not going to fully utilize the environments, like a native app would. That's my take.
+I thought that was like a really interesting progression. It used to be really hard also to navigate the options because there were a lot of options and there still are, there’s Swarm Kubernetes, Open Shift, Mesos, so on and so forth.
 
-[00:19:47] KN: Cloud immigrant.
+[0:13:31.9] NL: Yeah, that’s actually a good point to what I’m talking about is that, container orchestration, it seems like we’re all kind of building up to the same point where when containers were kind of taking off, everyone started to see like this is great. But how do I do this at scale? Even like remotely at scale. 
 
-[00:19:48] CC: Cloud immigrant. Is Nick a cloud alien?
+A bunch of people started doing their own thing. So there was Kubernetes, which is the open source version aboard with some changes to make a more friendly for other people, there’s Docker, Docker Swarm and then Mesos, Rancher. But then, Carlisia, your team had their own orchestration, a lot of other companies have their own orchestration as well so it’s not just – you don’t need like this project to do or any of these projects to do container orchestration. You can do it on your own if you need to, right? 
 
-[00:19:51] KN: Yeah.
+For example, you could take a look at Uber, they aren’t using a project, they’ve rolled their own container orchestration at scale and I think that’s the same, that’s crazy to me but that’s awesome for them to have pulled that off, right?
 
-[00:19:53] CC: Are they cloud native alien, or cloud native aliens. Yeah.
+[0:14:29.4] CC: Yeah, absolutely. When I think of container orchestration, there is the management part and the scaling part because when you think about management for example, I might need a whole set of services to be up and running before I can run the set of services. The orchestration is going to manage that for me. Make sure that the services come up, they’re up and now this set gets kicked off.
 
-[00:19:58] JR: On that point, I'd be curious if you all feel there is a need to discern the notion of cloud native infrastructure, or platforms, then the notion of cloud native apps themselves. Where I'm going with this, it's funny hearing the Greenfield thing and what you said, Carlisia, with the immigration, if you will, notion.
+If I don’t need to scale, I still need to do this, right? There is usually some sort of dependency. Then in the scaling part which is also – I mean, it’s important for a lot of companies but it’s not important for a lot of companies smaller sized companies, right? 
 
-Oftentimes, you see these very cloud native platforms, things, the amount of Kubernetes, or even Mesos or whatever it might be. Then you see the applications themselves. Some people are using these platforms that are cloud native to be a forcing function, to make a lot of their legacy stuff adopt more cloud native principles, right? There’s this push and pull. It's like, “Do I make my app more cloud native? Do I make my infrastructure more cloud native? Do I do them both at the same time?” Be curious what your thoughts are on that, or if that resonates with you at all.
+[0:15:18.7] JR: Maybe we can talk a bit about what kind of information container orchestration works with to determine what it should do, if that sort of makes sense? Like what kinds of things are we telling these systems about and then what is it doing to act on that information?
 
-[00:20:51] KN: I've got a response here, if I can jump in. Of course, Nova with opinions. Who would have thought? I think what I'm hearing here, Josh is as we're using these cloud native platforms, we're forcing the hand of our engineers. In a world where we may be used to just send this blind DNS request out so whatever, and we would be ignorant of where that was going, now in the cloud native world, we know there's the specific DNS implementation that we can count on. It has this feature set that we can guarantee our software around.
+[0:15:38.0] NL: Yeah, please, go ahead and dive into that a bit more.
 
-I think it's a little bit of both and I think that there is definitely an art to understanding, yes, this is a good idea to do both applications and infrastructure. I think that's where you get into this what it needs to be a cloud native engineer. Just in the same traditional legacy infrastructure stack, there's going to be good engineering choices you can make and there's going to be bad ones and there's many different schools of thought over do I go minimalist? Do I go all in at once? What does that mean? I think we're seeing a lot of folks try a lot of different patterns here. I think there's pros and cons though.
+[0:15:41.0] JR: Yeah, I guess it seems like the common approach that we run into, at least with Kubernetes and I think it’s true for a lot of these different systems, is the notion of reconciling state, right? We start of kind of with declarative definition if you will of what we want the world to look like and that could be some app running with some amount of replicas and you want it to have a certain amount of CPU and memory available.
 
-[00:21:55] CC: Do you want to talk about this pros and cons? Do you see patterns that are more successful for some kinds of company versus others?
+Then, these orchestrators usually can just take that declarative notion and sort of act on it, right? I know Nicholas, you’re really close to Kubernetes, would you want to speak to like how exactly it acts on those things like when you give it that declarative API object? What it’s going to do behind the scenes?
 
-[00:22:02] KN: I mean, I think going back to the greenfield thing that we were talking about earlier, I think if you are lucky enough to build out a greenfield application, you're able to bake in greenfield infrastructure management instead as well. That's where you get these really interesting hybrid applications, just like Kubernetes, that span the course of infrastructure and application. If we were to go into Kubernetes and say, “I wanted to define a service of type load balancer,” it’s actually going to go and create a load balancer for you and actually mutate that underlying infrastructure.
+[0:16:24.6] NL: Yeah, in Kubernetes, there’s a couple of different systems at play. This is something that I find really fascinating. There’s a lot of reconciliation loops in many different places. In Kubernetes when you first declare to Kubernetes that you want something to happen, you talk to the API server.
 
-The only way we were able to get that power and get that paradigm is because on day one, we said we're going to do that as software engineers; taking the infrastructure where you were hidden behind the firewall, or hidden behind the load balancer in the past. The software would have no way to reason about it. They’re blind and greenfield really is going to make or break your ability to even you take the infrastructure layers.
+The API server then modifies the etcd data store, right? The data store is just, simply ley value pair brain, it’s like the brain of your Kubernetes, right? Only the API server, as far as I’m aware and remembering off the top of my head, that’s the only thing that actually directly communicates to the etcd server. That might be incorrect but for the purpose of this – 
 
-[00:22:55] NL: I think that's a good distinction to make, because something that I've been seeing in the field a lot is that the users will do cloud native practices, but they’ll use a tool to do the cloud native for them, right? They'll use something along the lines of HashiCorp’s Terraform to create the VMs and the load balancers for them. It's something I think that people forget about is that the application themselves can ask for these resources as well. Terraform is just using an API and your code can use an API to the same API, in fact. I think that's an important distinction.
+[0:17:04.3] CC: I think that’s correct.
 
-It forces the developer to think a little bit like a sysadmin sometimes. I think that's a good melding of the dev and operations into this new word. Regrettably, that word doesn't exist right now.
+[0:17:06.8] NL: Okay, good. I was suddenly second guessing myself. The API directly can be considered sort of make the changes. Then the controller manager is in a reconciliation loop, saying like, here’s what I think the world looks like and if the world changes based on what etcd is saying, the controller manager maintains actual state and etcd controls expected states. This is where we want to be. If actual state and expected state are different, the controller manager reconciles that. Either it will delete something or add something to the cluster at large to make sure that that state exists.
 
-[00:23:42] KN: That word can be cloud native.
+[0:17:47.6] CC: Based on what’s in the etcd database?
 
-[00:23:44] DC: Cloud here to me breaks down into a different set of topics as well. I remember seeing a talk by Brandon Phillips a few years ago. In his talk, he was describing – he had some numbers up on the screen and he was talking about the fact that we were going to quickly become overwhelmed by the desire to continue to develop and put out more applications for our users. 
+[0:17:50.4] NL: Yes, exactly. It will – the controller manager, based on all the many controllers that are just themselves reconciliation nubs, if any of them are you know, different, it will then kick of something to the schedule which will then inform the various nodes in the cluster, what changes they need to do to reconcile state. Those changes occur, control managers sees that actual state matches expected state and everyone’s fat, dumb and happy.
 
-His point was that every day, there's another 10,000 new users of the Internet, new consumers that are showing up on the Internet, right? Globally, I think it's something to the tune of about 350,000 of the people in this room, right? People who understand infrastructure, people who understand how to interact with applications, or to build them, those sorts of things.
+[0:18:17.3] CC: We actually didn’t talk much about other container orchestrators other than Kubernetes but I’m wondering because I’m not familiar with any others, but others come to mind, Docker, Swarm and Mesosphere, do they operate in the same way? 
 
-There really aren't a lot of people who are in that space today, right? We're surrounded by them all the time, but they really just globally aren't that many. His point is that if we don't radically change the way that we think about the development as the deployment and the management of all of these applications that we're looking at today, we're going to quickly be overrun, right? There aren't going to be enough people on the planet to solve that problem without thinking about the problem in a fundamentally different way.
+[0:18:36.7] NL: Josh, I think you had some more experience than I did with at least, I believe it was Mesosphere?
 
-For me, that's where the cloud native piece comes in. With that, comes a set of primitives, right? You need some way to automate, or to write software that will manage other software. You need the ability to manage the lifecycle of that software in a resilient way that can be managed. There are lots of platforms out there that thought about this problem, right? There are things like Mesos, there are things like Kubernetes. There's a number of different shots on goal here. There are lots of things that I've really tried to think about that problem in a fundamentally different way.
+[0:18:41.8] JR: No, unfortunately not.
 
-I think of those primitives that being able to actually manage the lifecycle of software, being able to think about packaging that software in such a way that it can be truly portable, the idea that you have some API abstraction that brings again, that portability, such that you can make use of resources that may not be hosted on your infrastructure on your own personal infrastructure, but also in the cloud, like how do we actually make that API contract so complete that you can just take that application anywhere? These are all part of that cloud native definition in my opinion.
+[0:18:43.1] NL: I thought – okay, I thought that you had used in your previous life, you’d use at least one other?
 
-[00:25:59] KN: This is so fascinating, because the human race totally already learned this lesson with the Linux kernel in the 90s, right? We had all these hardware manufacturers coming out and building all these different hardware components with different interfaces. Somebody said, “Hey, you know what? There's a lot of noise going on here. We should standardize these and build a contract.” That contract then implemented control loops, just like in Kubernetes and then Mesos. Poof, we have the Linux kernel now. We're just distributed Linux kernel version 2.0. The human race is here repeating itself all over again.
+[0:18:49.0] JR: No, we did some small proof of concepts on Swarm but we never go very far along with it.
 
-[00:26:33] NL: Yeah. It seems like the blast radius of Linux kernel 2.0 is significantly higher than the Linux kernel itself. That made it sound like I was like, pooh-poohing what you're saying. It’s more like, we're learning the same lesson, but at a grander scale now.
+[0:18:54.1] NL: Yeah, I actually, to be honest, I don’t really know much of the difference between like Rancho Lab, Mesosphere and Docker Swarm. I believe that they all act very similarly to Kubernetes but in slightly different way and this is something that I meant to take a look at before, talking about it but I just ran out of time, I’ll be honest.
 
-[00:26:51] KN: Yeah. I think that's a really elegant way of putting it.
+[0:19:12.8] CC: I guess we’re going to need Part Two to this episode.
 
-[00:26:54] DC: You do raise a good point. If you are embracing on a cloud native infrastructure, remember that little changes are big changes, right? Because you're thinking about managing the lifecycle of a thousand applications now, right? If you're going full-on cloud native, you're thinking about operating at scale, it's a byproduct of that. Little changes that you might be able to make to your laptop are now big changes that are going to affect a fleet of thousand machines, right?
+[0:19:15.7] NL: This is a big topic, we’ll definitely have to come back and kind of launch on this a bit more. I think they’re all orchestration and all these orchestrators work in the same function, right? Or the same fashion. There’s what you want to happen, what actually exists, how do we get that change to occur, right? 
 
-[00:27:21] KN: We see this in Kubernetes all the time, where a new version of Kubernetes comes out and something totally unexpected happens when it is ran at scale. Maybe it worked on 10 nodes, but when we need to fire up a thousand nodes, what happens then?
+[0:19:33.8] CC: Was that what you meant, Josh?
 
-[00:27:33] NL: Yeah, absolutely. That actually brings up something that to me, defines cloud native as well. A lot of my definition of cloud native follows in suit with Kris Nova's book, or Kris Nova, because your book was what introduced me to the phrase cloud native. It makes sense that your opinion informs my opinion, but something that I think that we were just starting to talk about a little bit is also the concept of stability. 
+[0:19:35.4] JR: Yeah, exactly. I think the one thing to add too is the systems are generally making like really informed decisions when trying to reconcile desired state. By really informed decisions, I mean, they’re obviously aware of a lot about the compute resources available to them.
 
-Cloud native applications and infrastructure means coding with instability in mind. It's not being guaranteed that your VM will live forever, because it's on somebody else's hardware, right? Their hardware could go down, and so what do you do? It has to move over really quickly, has to figure out, have the guarantees of its API and its endpoints are all going to be the same no matter what. All of these things have to exist for the code, or for your application to live in the cloud.
+One big benefit that adopting container orchestration gives you is things like the scheduler are able to look into the system and understand, hey, based on resources I have available in this area, it would be smarter for me to start more containers over here versus over here, right? When you have these larger complex things and you’re trying to kind of think of all your resources as kind of like a sea of compute.
 
-That's something that I find to be very fascinating and that's something that really excites me, is not trying to make a barge, but rather trying to make a schooner when you're making an app. Something that can, instead of taking over the waves, can be buffeted by the waves and still continue.
+The container orchestration is not only able to get you to a desired state but also to do it in a way that is, at least in most cases, as desirable as possible, right? As far as using resources effectively and a term that we often times throughout there, which is Vin Packing, right? The idea of ensuring that we can know the resources a container needs and pack them together really tightly, so that we’re utilizing the potential hardware or cloud resources that we’re paying for every month. 
 
-[00:28:46] KN: Yeah. It's a little more reactive. I think we see this in Kubernetes a lot. When I interviewed Joe a couple years ago, Joe Beda for the book to get a quote from him, he said, this magic phrase that has stuck with me over the past few years, which is “goal-seeking behavior.” If you look at a Kubernetes object, they all use this concept in Go called embedding. 
+A lot of times, the adoption of container orchestration is this really elegant way to move our workloads around but at the same time, it’s a way to really utilize the things we’re paying for and potentially cut costs over time as well.
 
-Every Kubernetes object has a status in the spec. All it is is it’s what's actually going on, versus what did I tell it, what do I want to go on. Then all we're doing is just like you said with your analogy, is we're just trying to be reactive to that and build to that.
+[0:20:57.5] CC: Yeah, this is one thing that I find fascinating with at least Kubernetes because I haven’t used the other orchestrators. We can boot up let’s say, four machines, and four instances of a machine and deploy Kubernetes on it and tell Kubernetes, “I want these many nodes, these many pods and have this container with apps obviously, or services running in the containers.”
 
-[00:29:23] JR: That's something I wonder if people don't think about a lot. They don't they think about the spec, but not the status part. I think the status part is as important, or more important maybe than the spec.
+I don’t need to specify even where anything’s going to go. It just spreads the load and keeps managing and monitoring and managing what needs to go where to better utilize the instances.
 
-[00:29:32] KN: It totally is. Because I mean, a status like, if you have one potentiality for status, your control loop is going to be relatively trivial. As you start understanding more of the problems that you could see and your code starts to mature and harden, those statuses get more complex and you get more edge cases and your code matures and your code hardens. Then we can take that and globally in these larger cloud native patterns. It's really cool.
+[0:21:46.2] NL: I think that’s actually an important distinction between the different container orchestrators that exist out there. If I recall correctly, I believe that Mesosphere has a mechanism that can kind of better load balance your containers that are running in the cluster.
 
-[00:29:58] NL: Yeah. Carlisia, you’re a developer who's now just getting into the cloud native ecosystem. What are your thoughts on developing with cloud native practices in mind?
+At least better than – it can make a kind of a more informed decision on like the state of the cluster and where it took place things than Kubernetes does and that might be one of the key differences between the two. That’s something that I hear a lot in the Kubernetes community. Someone’s like, “I noticed that all of my resources are kind of being put on to one computer and then the rest of them aren’t even being utilized at all, what’s up with that?”
 
-[00:30:09] CC: I’m not sure I can answer that. When I started developing for Kubernetes, I was like, “What is a pod?” What comes first? How does this all fit together? I joined the project [inaudible 00:30:24]. I don't have to think about that. It's basically moving the project along. I don't have to think what I have to do differently from the way I did things before.
+I think there’s something there that’s important to understand which is the Vin packing that Josh was talking about. Also, I pointed like that because on my screen, Josh is right next to me but that might not be the case so I might just look like I’m pointing out from the space.vIt’s important to know that from the capacity of at least in Kubernetes and like most of these orchestrators, if there are resources to be utilized, the orchestrator doesn’t care for the most part. 
 
-[00:30:36] DC: One thing that I think you probably ran into in working with the application is the management of state and how that relates to – where you actually end up coupling that state. Before in development, you might just assume that there is a database somewhere that you would have to interact with. That database is a way of actually pushing that state off of the code that you're actually going to work with. In this way, that you might think of being able to write multiple consumers of state, or multiple things that are going to mutate state and all share that same database.
+Mesosphere has the ability to kind of load balance, as I said but as long as the resources that are available on one computer are the same as any other computer. If one of them is getting like super utilized and the other ones aren’t, it doesn’t really matter, it doesn’t affect the functionality of the cluster at all, right? One meg here and one meg there, essentially the same.
 
-This is one of the patterns that comes up all the time when we start talking about cloud native architectures, is because we have to really be very careful about how we manage that state and mainly, because one of the other big benefits of it is the ability to horizontally scale things that are going to mutate, or consume state.
+[0:23:11.7] CC: What does the orchestrator do when let’s say I have four instances and I have what I have, I stuffed a bunch of consigners in there and I’m thinking, for this instance, this will give me plenty of memory but I have a leaky app and all of a sudden, my RAM blows up. What happens?
 
-[00:31:29] CC: My brain is in its infancy as it relates to Kubernetes. All that I see is APIs all the way down. It's just APIs all the way down. It’s not very different than as a developer for me, is not very much more complex than developing against the database that sits behind. Ask me again a year from now and I will have a more interesting answer.
+[0:23:34.1] NL: This actually ties into why I look into an orchestration from a cloud native perspective. This is kind of where, container orchestration is cloud native. It takes into account the elastic nature of your resources. If you have this application that’s blowing up, either you can have limits to how many resources the application can utilize, or you can use auto scaling.
 
-[00:31:59] KN: This is so fascinating, right? I remember a couple years ago when Kubernetes was first coming out and listening to some of the original “Elders of Kubernetes,” and even some of the stuff that we were working on at this time. One of the things that they said was we hope one day, somebody doesn't have to care about what's passed these APIs and gets to look at Kubernetes as APIs only. Then they hear that come from you authentically, it's like, “Hey, that's our success statement there. We nailed it.” It's really cool.
+In Kubernetes, we have something called Horizontal Plot Auto Scaling and some of the other tools, I’m sure they have the same, but the idea is like, as you’re using more and more resources in the pod, it is taking up this much memory. It then needs to create a new pod, right? Or a new container, right? So a new container needs to get orchestrated and then another one, another one, another one. 
 
-[00:32:30] CC: Yeah. I don’t understood their patterns and I probably should be more cognizant about these patterns are, even if it's just to articulate them. To me, my day-to-day challenge is understanding the API, understanding what library call do I make to make this happen and how – which is just programming 101 almost. Not different from any other regular project.
+Now, if you have a really aggressive application that is acting kind of maliciously that’s not great because it will take up all the resources in your cluster and that’s not good. But if you just have a very spiky application, it could grow with its needs and then come back down, and no one has to know about it essentially. Your orchestrator can make that happen for you. I think that is really cool. 
 
-[00:33:01] JR: Yeah. That is something that's nice about programming with Kubernetes in mind, because a lot of times you can use the source code as documentation. I hate to say that particularly is a non-developer. I'm a sysadmin first getting into development and documentation is key in my mind. There's been more than a few times where I'm like, “How do I do this?” You can look in the source code for pretty much any application that you're using that's in Kubernetes, or around the Kubernetes ecosystem. The API for that application is there and it'll tell you what you need to do, right? It’s like, “Oh, this is how you format your config file. Got it.”
+[0:24:40.9] CC: It is and what if I am reaching the limits of my resources. I mean there are only so many pods that can stuff in four instances or two instances. So what if I am reaching the limits of my resources? What happens then? How is an orchestrator going to help me? 
 
-[00:33:39] CC: At the same time, I don't want to minimize that knowing what the patterns are is very useful. I haven't had to do any design for Valero for our projects. Maybe if I had, I would have to be forced to look into that. I'm still getting to know the codebase and developing features, but no major design that I had to lead at least.
+[0:24:58.6] JR: Yeah, the nice thing is we can – and most of these orchestrators set some type of parameter around potential CPU that we want to make available in memory, that we want to make available for the app and what is nice about this is at least speaking to Kubernetes, and I am sure it is similar for others, just using some of the underlying technologies that are existent in Linux like Nicholas has mentioned C groups. 
 
-I think with time, I will recognize those patterns and it will make it easier for me to understand what is happening. What I was saying is that not understanding the patterns that are behind the design of those APIs doesn't preclude me at all so call against it, against them.
+We have the ability when CPU gets too high to potentially throttle it and slow it down or at least limit the amount of CPU it can use in given cycles and with memory, if we start over committing, we now have the ability to potentially kill the application if it is starting to take up more memory than it actually should be allowed to take up. What’s interesting about Kubernetes and other orchestrators is their self-healing model is that sometimes when apps are doing really bad things, like leaking memory all over the place, you might not detect it right away, right? Because it is actually going to potentially limit or kill the app and self-heal it by bringing it back up. 
 
-[00:34:21] KN: I feel this is the heart of cloud native. I think we totally nailed it. The heart of cloud native is in the APIs and your ability to interact with the APIs. That's what makes it programmable and that's what makes – gives you the interface for you and your software to interact with that.
+So it might seem like your app is still online and you don’t necessarily realize that under the hood, Kubernetes was actually restarting it and trying to continually bring it to a state of health, right? So you have a lot of abilities. It is like everything that Nicholas just said about reading how much information or resource the app is taking and potentially scaling based on that, or even setting like hard limits to say, “I want to throttle my app or even potentially kill my app if it starts to act badly and use up more than it should.” So it is a really cool kind of declarative way to approach resource limiting. 
 
-[00:34:36] DC: Yeah, I agree with that. API first. On the topic of cloud native, what about the Cloud Native Computing Foundation? What are our thoughts on the CNCF and what is the CNCF? Josh, you have any thoughts on that?
+[0:26:29.2] NL: And that is actually something that I don’t think a lot of people including myself work on that much is the throttling aspect, right? Most people are like, “Okay, well whatever. Just take up as many resources as we need.” That’s what it’s there for but maybe you shouldn’t always be doing that. Not every application needs to expand horizontally or vertically, if it’s safe or said. It could be that the application is acting poorly, and they need to be like, “No, you actually don’t need that many resources.”
 
-[00:34:52] JR: Yeah. I haven't really been as close to the CNCF as I probably should, to be honest with you. One of the great things that the CNCF has put together are programs around getting projects into this, I don't know if you would call it vendor neutral type program. Maybe somebody can correct me on that. Effectively, there's a lot of different categories, like networking and storage and runtimes for containers and things of that nature. There's a really cool landscape that can show off a lot of these different technologies.
+[0:26:56.4] CC: So let us say any or all of these things are happening, throttling and self-healing, how could I know? I mean I am asking this question, but I know the answer. I mean what tools do people actually use to be informed and notified of these events? 
 
-A lot of the categories, I'm guessing we'll be talking about on this podcast too, right? Things like, what does it mean to do cloud native networking and so on and so forth? That's my purview of the CNCF. Of course, they put on KubeCon, which is the most important thing to me. I'm sure someone else on this call can talk deeper at an organization level what they do.
+[0:27:15.9] NL: So this is something I think we are going to get on another episode but just to come breach this into something that – I am also very excited. I am just a very excitable person really, I’m like, people say I’m just like a puppy and they’re not wrong. 
 
-[00:35:41] KN: I'm happy to jump in here. I've been working with them for I think three years now. I think first, it's important to know that they are a subsidiary of the Linux Foundation. The Linux Foundation is the original open source, nonprofit here, and then the CNCF is one of many, like Apache is another one that is underneath the broader Linux Foundation umbrella.
+[0:27:27.1] CC: That’s why you’re here Nic. 
 
-I think the whole point of – or the CNCF is to be this neutral party that can help us as we start to grow and mature the ecosystem. Obviously, money is going to be involved here. Obviously, companies are going to be looking out for their best interest. It makes sense to have somebody managing the software that is outside, or external of these revenue-driven companies. That's where I think the CNCF comes into play. I think that's its main responsibility is. 
+[0:27:29.0] NL: What? Me? Who said that? Is observation or observability. So monitoring, alerting, inflecting into your cluster to know what is happening, right? So you could, as Josh was saying like under the hood these things could be happening and the orchestrator is reconciling your cluster and your resource utilization for you and you might not know it but if you have observation and you have monitoring going on, you could see like, “Oh hey this pod is like restarting every 20 minutes.” 
 
-What happens when somebody from company A and somebody from Company B disagree with the direction that the software should go? The CNCF can come in and say, “Hey, you know what? Let's find a happy medium in here and let's find a solution that works for both folks and let's try to do this the best we can.” I think a lot of this came from lessons we learned the hard way with Linux. In a weird way, we did – we are in version 2.0, but we were able to take advantage of some of the priority here.
+Like it shouldn’t, it doesn’t need to restart every 20 minutes, like clearly the application is still running. So that is not a bad thing but maybe we should fix that, right? So you can be aware of what’s going on, right? 
 
-[00:36:57] NL: Do you have any examples of a time in the CNCF jumped in and mediated between two companies?
+[0:28:10.3] CC: And I know that there are tools that provide monitoring and observation but Kubernetes itself doesn’t provide that, right? Those are things that we hook into Kubernetes. 
 
-[00:37:02] KN: Yeah. I think the steering committee, the Kubernetes steering committee is a great example of this. It's a relatively new thing. It hasn't been around for a very long time. You look at the history of Kubernetes and we used to have this incubation process that has since been retired. We've tried a lot of solutions and the CNCF has been pretty instrumental and guiding the shape of how we're going to manage, solve governance for such a monolithic project. As Kubernetes grows, the problem space grows and more people get involved. We're having to come up with new ways of managing that.
+[0:28:21.0] NL: Yes. Yeah that is correct because Kubernetes, and like any of these other orchestraters, are doing what they should be doing, which is being the best orchestrator they could. Having like that package now that you are getting into something that is more like a product and there is nothing wrong with products but that is not what these projects are here to be, right? 
 
-I think that's not necessarily a concrete example of two specific companies, but I think that's more of as people get involved, the things that used to work for us in the past are no longer working. The CNCF is able to recognize that and guide us out of that.
+[0:28:40.2] CC: How do you distinguish between the project and the product? 
 
-[00:37:48] DC: Cool. That’s such a very good perspective on the CNCF that I didn't have before. Because like Josh, my perspective with CNCF was well, they put on that really cool party three times a year.
+[0:28:43.0] NL: Now that is interesting. Josh, you want to take this one? 
 
-[00:37:58] KN: I mean, they definitely are great at throwing parties.
+[0:28:45.7] CC: You opened the door. 
 
-[00:38:03] NL: They are that.
+[0:28:47.0] JR: Yeah, I’ll start and then I actually think Nicholas, you might be the best one to speak to this with your background in Open Shift quite frankly, right? So it is kind of like these orchestrators are primitive in a way for how we eventually build a platform and that platform is a larger thing that includes potential monitoring, maybe plugins to continuous integration and continuous delivery. 
 
-[00:38:04] CC: My perspective of the CNCF is from participating in the Kubernetes meetup here in San Diego. I’m trying to revive our meetup, which is really hard to do, but different topic. I know that they try to make it easier for people to find meetups, because they have on meetup.com, they have an organization. I don't know what the proper name is, but if you go there and you put your zip code, you'll find any meetup that's associated with them. My meetup here in San Diego is associated, can be easily found.
+There’s a lot of groups or companies that have kind of that whole story or at least parts of that story, packaged up together, right? I mean we do it at the MWare with some of our enterprise offerings around TKS and then Open Shift, at least in my mind, it does that as well. Maybe Nicholas you can speak to that a little bit?
 
-They try to give a little bit of money for swags. We also give out ads for meetup. They offer help for finding speakers and they also have a speaker catalog on their website. They try to help in those ways, which I think is very helpful, very valuable.
+[0:29:27.3] NL: Yeah, so from an Open Shift perspective at least when I was using it, it was trying to be everything you would need to monitor, or to not monitor, but to run a container orchestration system, right? So it has a Docker registry built it. It has monitoring built it. It has some rudimentary charge built in, Ingress, all of these things that don’t necessarily come with Kubernetes like the option Kubernetes. It has a solution around that. 
 
-[00:39:06] DC: Yeah, I agree. I know about CNCF, mostly just from interacting with folks who are working on its behalf. Working at meeting a bunch of the people who are working on the Kubernetes project, on behalf of the CNCF, folks like Ihor and people like that, which are constantly amazingly with the amount of work that they do on behalf of the CNCF. I think it's been really good seeing what it means to provide governance over a project. I think that really highlights – that's really highlighted by the way that Kubernetes itself has managed.
+And I think that is the difference between like project or just an orchestrator and a product. A product is trying to solve a grander enterprise problem versus a project or in this case, an orchestrator, is going to solve one problem and that problem is how do I get these containers to run in a way that my customers – not my customers really, my users expect them to run.
 
-I think a lot of us on the call have probably worked with OpenStack and remember some of the crazy battles that went on between vendors around particular components in that stack. I've yet to actually really see that level of noise creep into the Kubernetes situation. I think squarely on the CNCF around managing governance, and also run the community for just making it accessible enough thing that people can plug into it, without actually having to get into a battle about taking ownership of CNI, for example. Nobody should own CNI. That should be its own project under its own governance.
+[0:30:18.3] CC: Yeah, fair enough. 
 
-How you satisfy the needs for something like container networking should be a project that you develop as a company, and you can make the very best one that you could make it even attract as many customers to that as you want. Fundamentally, the way that your interface to that major project should be something that is abstracted in such a way that it isn't owned by any one company. There should be a contact in an API, that sort of thing.
+[0:30:19.5] NL: And what do you think on the topic, Carlisia? 
 
-[00:40:50] KN: Yeah. I think the best analogy I ever heard was like, “We’re just building USB plugs.”
+[0:30:22.0] CC: Oh it sounds an awful lot to me like a product is you get money for it and the projects you don’t. 
 
-[00:40:54] DC: That's actually really great.
+[0:30:28.1] NL: That is actually very – you’re right, honestly that is really the main distinction. One of them is money based. 
 
-[00:40:56] JR: To that point Duffie, I think what's interesting is more and more companies are looking to the CNCF to determine what they're going to place their bets on from a technology perspective, right? Because they've been so burned historically from some project owned by one vendor and they don't really know where it's going to end up and so on and so forth. It's really become a very serious thing when people consider the technologies they're going to bet their business on.
+[0:30:34.6] CC: But your description, the descriptions you make for it are very valid – it is very valid because a project by itself may not have enough value for let’s say companies and bundling this project with that project and the other project, which ultimately you’re building the product with a purpose, right? You will have a purpose with that product to have a specific audience for their product set of users. So it is very distinct from taking one part of that product and calling it a product because maybe it is not enough to address and solve problems. 
 
-[00:41:23] DC: Yeah. When a project is absorbed into the CNCF, or donated to the CNCF, I guess. There are a number of projects that this has happened to. Obviously, if you see that iChart that is the CNCF landscape, there's just tons of things happening inside of there. It's a really interesting process, but I think that from my part, I remember recently seeing Sysdig Falco show up in that list and seeing them donate – seeing Sysdig donate Falco to the CNCF was probably one of the first times that I've actually have really tried to see what happens when that happens.
+[0:31:20.3] JR: Yeah, I think that is an important distinction. It is almost like what Nicholas and I were talking about was more about the distinction between what an orchestrator is and what a full platform would be, right? And I think to Carlisia’s point about how we plug in the monitoring and stuff is really important because just like we were talking about with the cloud native landscape in our last podcast, Kubernetes is just one piece of the overall puzzle. 
 
-I think that some of the neat stuff here that happens is that now this is an open source project. It's under the governance of the CNCF. It feels to me more an approachable project, right? I don't feel I have to deal with Sysdig directly to interact with Falco, or to contribute to it. It opens that ecosystem up around this idea, or the genesis of the idea that they built around Falco, which I think is really powerful. What do you all think of that?
+Kubernetes isn’t your whole platform start to finish, right? It is just the container orchestration portion and you have a lot to build and hook into that to make it a full platform that your company might be onboarding developer workloads onto it. It is just really one piece of that overall puzzle. 
 
-[00:42:21] KN: I think, to look at it from a different perspective, that's one example of when the CNCF helps a project liberate itself. There's plenty of other examples out there where the CNCF is an opt-in feature, that is only there if we need it. I think cluster API, which I'm sure we're going to talk about this in a later episode. I mean, just a quick overview is a lot of different vendors implementing the same API and making that composable and modular.
+[0:32:01.0] CC: That is beautifully put Josh. 
 
-I mean, nowhere along the way in the history of that project has the CNCF had to come and step in. We’ve been able to operate independently of that. I think because the CNCF is even there, we all are under this working agreement of we're going to take everybody's concerns into consideration and we're going to take everybody’s use case in some consideration, work together as an ecosystem. I think it's just even having that in place, whether or not you use it or not is a different story.
+[0:32:02.9] NL: Yeah, very nicely put. So I’ve got a question for you guys. We’ve been beating around the bush as it were but to me, it seems apparent that in the world of container orchestration, Kubernetes has come out on top. That isn’t to say that it’s the end, right? There could be something that comes out that actually beats Kubernetes, right? But for now, it seems like everyone is looking at Kubernetes and I am curious why it is that you think that – you all might think that Kubernetes took the top space. 
 
-[00:43:14] CC: Do you all know any project under the CNCF?
+[0:32:32.7] CC: I am scratching my chin. 
 
-[00:43:17] KN: I have one.
+[0:32:35.1] NL: Scratching chin emoji. 
 
-[00:43:19] JR: Well, I've heard of this one. It's called Kubernetes.
+[0:32:38.3] JR: Exactly, one thing for sure is I just think Kubernetes did the community thing really, really well and not that it is all about community. It is obviously about technical choices and things of that nature but I think they did, not to say they’re perfect, but they did a really good job of being very inclusive and getting people to join this community and give feedback and the structure of the special interest groups where people get together and focus on various areas of Kubernetes, like scheduling or cluster life cycle and things like that. 
 
-[00:43:21] CC: Is it called Kubernetes or Kubernetes?
+And it is interesting because the community just grew so quickly in my mind, that it just made this massive push into the market because there were so many humans behind it pushing it along. So I think at least among other things, community was one of the biggest. 
 
-[00:43:24] JR: It’s called Kubernetes.
+[0:33:24.0] CC: I can’t say that I was paying attention in monitoring that space so I don’t know. Of course, I can make guesses, what Josh just said sounds very plausible that he had Google behind it. I am sure it didn’t hurt. Not that we need to be fan boys and fan girls of Google but having a company like that sponsor and put resources behind the project gives a signal that “Okay, this is going to be here for a while.” Even though Google has a reputation of discontinuing things, but at the same time, I think that is significant. 
 
-[00:43:26] CC: Wow. That’s not what Duffie thinks.
+What else? Definitely the community. I didn’t follow the community from the beginning so only this last year and something, almost two years that I have been working with Velero, that I get to see how the community is and it’s amazing. It’s crazy, so organized. Yeah and it is not perfect, nothing is perfect but it’s incredible. The enthusiasm and the organization and the transparency, it is amazing. 
 
-[00:43:29] DC: I don’t say it that way. No, it's been pretty fascinating seeing just the breadth of projects that are under there. In fact, I was just recently noticing that OpenEBS is up for joining the CNCF. There seems to be – it's fascinating that the things that are being generated through the CNCF and going through that life cycle as a project sometimes overlap with one another and it's very – it seems it's a delicate balance that the CNCF would have to play to keep from playing favorites. Because part of the charter of CNCF is to promote the project, right?
+[0:34:36.6] NL: Yeah, absolutely and I agree with actually both of your points. It’s corporate sponsorship not just Google I mean, I’ll get to this in a second and the community as well and also some of the functionality. But it was both the corporate sponsorship of Google and Red Hat in the early days and not to tap my old you know, “Yeah we did it.” But it Red Hat had a big play into early Kubernetes as a supporter and so what that did is establish, “Hey, Kubernetes is at least enterprised.” 
 
-I'm always curious to see and I'm fascinated to see how this plays out as we see projects that are normally competitive with one another under the auspice of the same organization, like a CNCF. How do they play this in such a way that they remain neutral, even it would – it seems like it would take a lot of intention.
+An enterprise perspective project, right? It is not just, “Hey, this is some open source project. It may or may not work. If it doesn’t, you are on your own.” If you had a company like Google and Red Hat who are both endorsing this project, suddenly enterprises were more interested in taking it onboard, like it was more of a viable concept. 
 
-[00:44:31] KN: Yeah. Well, there's a difference between just being a CNCF project and being an official project, or a graduated project. There's different tiers. For instance, Kubicorn, a tool that I wrote, we just adopted the CNCF, like I think a code of conduct and there was another file I had to include in the repo and poof, were magically CNCF now. It's easy to get onboard. Once you're onboard, there's legal implications that come with that. There totally is this tier ladder stature that I'm not even super familiar with. That’s how officially CNCF you can be as your product grows and matures.
+[0:35:29.4] CC: I’m glad you are here Nic to correct me and make that addition. 
 
-[00:45:06] NL: What are some of the code of conduct that you have to do to be part of the CNCF?
+[0:35:34.4] NL: Oh well, yeah I was not correcting you at all. I think – 
 
-[00:45:11] KN: There's a repo on it. I can maybe find it and add it to the notes after this, but there's this whole tutorial that you can go through and it tells you everything you need to add and what the expectations are and what the implications are for everything.
+[0:35:37.2] CC: No because I didn’t clue into the fact that – I mean I see Red Hat all over the place but I don’t know the dimension of involvement that they had from the beginning, because at the beginning, I was an outsider to all of this.
 
-[00:45:24] NL: Awesome.
+[0:35:50.8] NL: Yeah, so for perspective, Open Shift 300, which is when I first started getting into it, is based on Kubernetes 1-2, which is pretty early. They were big like they put a lot of resources into the development of the community and for the development of the functionality that exists, right? The horizontal pod auto-scale that we still use today is due in the large part to the contributions of Red Hat, right? The engineering at Red Hat is responsible for that piece, among other things. 
 
-[00:45:25] CC: Well, Valero is a CNCF project. We follow the what is it? The covenant?
+And so with them at play, kind of getting their community and Google’s community coming together and then able to organize this community that I think is a big piece of what took this off or what allowed Kubernetes to take off. That is how grammar works. There is also some pieces of functionality that I think were novel to Kubernetes in the early days, things like Ingres. The way the Kubelet worked was actually kind of unique, like how low level the commands that are being issued by the Kubelet were pretty unique. 
 
-[00:45:32] KN: Yeah, I think that’s what it is.
+And so it allowed for people to adopt it like the things that were happening from the Kubelet perspective like changes to your IP tables, running a container, changing the C groups and all of these things, those are all well known by people at the time and so there wasn’t anything like arcane happening. It was just, “Hey, this process just runs these commands and that is how it reconciles say, right? And so I think that that kind of functionality really got people to trust what was happening. 
 
-[00:45:34] CC: Yes. Which is the same that Kubernetes follows. I am not sure if there can be others that can be adopted, but this is definitely one.
+And so, you know it’s like I think the trust and transparency are the big things that people keyed into. The trust comes from the enterprise sponsorship, and also the fact that what was happening from a rudimentary standpoint was pretty simple and so people could wrap their heads around it and then transparency was having this community. Everything happens in the open, everything is recorded and accessible by everyone, right? It wasn’t just like some behind the scenes things happened. 
 
-[00:45:45] NL: Yeah. According to Aaron Crickenberger, who was the Release Lead for Kubernetes 1.14, the CNCF code of conduct can be summarized as don't be a jerk.
+[0:37:50.7] JR: Yeah and I think that piece is super important, like Nicholas and I, we came from Coreless or our lineage around like open source Kubernetes is not too dissimilar. We spend a lot of time working with customers in pure upstream open source Kubernetes and actually taking some of their issues and requirements to the community and then helping shape the direction of Kubernetes in micro kind of ways, but still important ways to that company. 
 
-[00:45:59] KN: Yeah. I mean, there's more to it than that, but –
+And I think companies seeing through the CNCF and seeing through just community leadership and involvement that the things that they care about aren’t just going through a single vendor to make a decision as to whether that thing should be included, but it is being part of a larger community discussion, breeds a lot of confidence in this project in the long term. I think at the end of the day, we started with there will be container orchestrator that many of us use. Or maybe there will be a couple, right? 
 
-[00:46:01] NL: That was him.
+There is no question, we need to solve container orchestration as an overall problem and companies are at this point where they are still placing a bet on what they want to use and because of the community, because of the involvement, because of the ability to adopt the project to potential business requirements, I feel like more large and small medium organizations are willing to put their money on Kubernetes as a whole. 
 
-[00:46:02] KN: Yeah. This is something that I remember seeing an open source my entire career, open source comes with this implication of you need to be well-rounded and polite and listen and be able to take others’ just thoughts and concerns into consideration. I think we just are getting used to working like that as an engineering industry.
+And I don’t think they felt as confident finding some other projects, like Open Stack and then historical Masos perhaps. I am just projecting based on conversations I’ve had but that is why I think a lot of folks are really excited about the future for Kubernetes. 
 
-[00:46:23] NL: Agreed. Yeah. Which is a great point. It's something that I hadn't really thought of. The idea of development back in the day, it seems like before, there was such a thing as the CNCF are cloud native. It seemed that things were combative, or people were just trying to push their agenda as much as possible. Bully their way through. That doesn't seem that happens as much anymore. Do you guys have any thoughts on that?
+[0:39:21.3] NL: Yeah that is an excellent point. 
 
-[00:46:50] DC: I think what you're highlighting is more the open source piece than the cloud native piece, which I – because I think that when you're working – open source, I think has been described a few times as a force multiplier for software development and software adoption. I think of these things are very true. If you look at a lot of the big successful closed source projects, they have – the way that people in this room and maybe people listening to this podcast might perceive them, it's definitely just fundamentally differently than some open source project. 
+[0:39:23.0] CC: Let’s stick with the theme of projecting in the future and we are going to have to wrap up soon otherwise it is going to be a two hour, I mean this could be a two-hour show. But let’s not make our audience go through that. We’ll have part two. What about, we talk all the time, and people who are in this area, we talk about all the time how everybody knows Kubernetes and da-da-da, but I want to challenge you two, do you think that everybody knows Kubernetes? 
 
-Mainly, because it feels it's more of a community-driven thing and it also feels you're not in a place where you're beholden to a set of developers that you don't know that are not interested in your best, and in what's best for you, or your organization to achieve whatever they set out to do.
+Everybody knows the purpose of Kubernetes, everybody knows if they should be using Kubernetes or not, how are people able to make an informed decision if they should be using Kubernetes? Because I don’t think everybody knows Kubernetes. I think the majority of companies, in terms of volume, because smaller companies I would guess they outnumber the bigger companies and technologists – I think a lot of people are not clear on what this is. 
 
-With open source, you can be a part of the voice of that project, right? You can jump in and say, “You know, it would really be great if this thing has this feature, or I really like how you would do this thing.” It really feels a lot more interactive and inclusive.
+That’s why we are here but what do we tell them? We have to have an episode to discover that, now that I am thinking about it, but we could wrap this up with some seed ideas for that. 
 
-[00:47:54] KN: I think that that is a natural segue to this idea of we build everything behind the scenes and then hey, it's this new open source project, that everything is done. I don't really think that's open source. We see some of these open source projects out there. If you go look at the git commit history, it's all everybody from the same company, or the same organization. To me, that's saying that while granted the source code might be technically open source, the actual act of engineering and architecting the software is not done as a group with multiple buyers into it.
+[0:40:46.9] NL: So that is a great idea and something that I’ve been playing around with introducing myself, is when do you not use container orchestration, right? Just because container orchestration exists doesn’t mean necessarily – 
 
-[00:48:29] NL: Yeah, that's a great point.
+[0:40:58.0] CC: If you don’t have containers. 
 
-[00:48:31] DC: Yeah. One of the things I really appreciate about Heptio actually is that all of the projects that we developed there were – that the developer chat for that was all kept in some neutral space, like the Kubernetes Slack, which I thought was really powerful. Because it means that not only is it open source and you can contribute code to a project, but if you want to talk to people who are also being paid to develop that project, you can just go to the channel and talk to them, right? It's more than open source. It's open community. I thought that was really great.
+[0:40:59.1] NL: Yeah, one, if you don’t have containers. That is another starter.
 
-[00:48:59] KN: Yeah. That's a really great way of putting it.
+[0:41:02.5] CC: It is a real legit thing to say because some people ask me, “Should I start with Kubernetes or containers?” that’s the level of education that we must provide.
 
-[00:49:01] CC: With that said though, I hate to be a party pooper, but I think we need to say goodbye.
+[0:41:15.5] NL: Yeah, absolutely and that is something we actually run into a lot in the field is when we are engaging with our customers, part of our job is to help containerize their applications if they are not already there. Trying to help them do that in a logical manner. But for instance, to give an example, my fiancé’s company uses Docker, but they don’t use Kubernetes or any kind of orchestration because they don’t need to. 
 
-[00:49:07] KN: Yeah. I think we should wrap it up.
+Like the amount of the resources that they are going to be using and the amount of and the type of work that they are doing, it doesn’t make sense to use an orchestrator. I have actually talked to some of the engineers about it because they were like, “Oh tell me about this Kubernetes thing” and I’m like, “This is what it is” blah-blah-blah. I finally came up with a metaphor where it’s like your company uses the containers as a shovel. 
 
-[00:49:09] JR: Yeah.
+If we brought it into like, let us say we’re ploughing a field, right? You’ve got a plow, if you already use Kubernetes that would be like trying to plow the field with a nuclear bomb. It is way more complicated than you need to do. Sure, you can clear a lot of land with a giant bomb but that is way more than you guys need, right? And I think that for me that’s the drawing line. It is like if the complexity makes sense for you to do like, if you’re trying to all of a sudden, establish a farm. 
 
-[00:49:10] CC: I would like to re-emphasize that you can go to the issues list and add requests for what you want us to talk about.
+Not to say that you should use a bomb to plow land but hey, if you need to clear a lot of land a bomb can work, right? That is a terrible metaphor, I am sorry. That went off the rails really fast. 
 
-[00:49:20] DC: We should also probably link our HackMD from there, so that if you want to comment on something that we talked about during this episode, feel free to leave comments in it and we'll try to revisit those comments maybe in our next episode.
+[0:42:41.3] CC: It wasn’t too bad. 
 
-[00:49:30] CC: Exactly. That's a good point. We will drop a link the HackMD page on the corresponding issue. There is going to be an issue for each episode, so just look for that.
+[0:42:43.8] NL: I actually think that. 
 
-[00:49:42] KN: Awesome. Well, thanks for joining everyone.
+[0:42:46.7] JR: I think, one thing that I will say and this is coming from experience working with organizations is let’s assume that you have justified Kubernetes for yourself, and by the way, I super echo everything that Nicholas just said, you have to be really careful and determine do you actually need to take this thing on? Because it is so hard to do in a lot of ways, right? But let us assume you have taken it on. I think an interesting thing to have empathy about as often times infrastructure dev ops people is you might know Kubernetes really, really well. 
 
-[00:49:45] NL: All right. Thank you.
+But that doesn’t mean your thousands and thousands of developers have any idea what Kubernetes is at all and that is a massive disconnect we see in organizations all the time where they are trying to onboard folks onto Kubernetes, and they haven’t fully abstracted Kubernetes away, which some companies do and that could be a really good pattern too. Like developers deploy their apps, they don’t even know Kubernetes are running them under the hood. That is a really neat pattern as well.
 
-[00:49:45] CC: Thank you. I'm really glad to be here.
+But assuming they are just trying to bring developers onto Kubernetes, they don’t really have the same amount of empathy for them and they just think like, “This should be really easy. It is just a bunch of yemel files, you’ll figure it out,” but they totally forget about all of the complexities that they originally learned about. Like how does pod to pod networking work and things like that. 
 
-[00:49:48] DC: Hope you enjoyed the episode and I look forward to a bunch more.
+I just think that to your question Carlisia, it is interesting because one massive group in a company can know a lot about Kubernetes and forget what it was like to learn how something like Kubernetes or container orchestration worked. I think a lot of that is bridging the gap and really having some amount of education to bring everyone up to speed, even in the same organization. 
 
-[END OF EPISODE]
+[0:44:21.2] CC: I am dying to have an episode on just that alone because it is quite challenging. When you are faced with Kubernetes, I mean the very first thing is that there are terminologies that you haven’t seen before and they’re like, “How does that map to what I already know?” and then sometimes it doesn’t map. It is completely new so. 
 
-[00:49:52] KN: Thank you for listening to The Kubelets Cloud Native Podcast. Find us on Twitter @TheKubelets and on the kubelets.io website, where you'll find transcripts and show notes. We'll be back next week. Stay tuned by subscribing.
+[0:44:43.1] JR: Yeah and when the benefits aren’t super obvious to you, it is really hard to get bought in and be willing to invest your own time and energy into it, right? And we forget that it is just not super obvious why Kubernetes makes sense for a lot of folks. 
+
+[0:44:56.6] NL: Yeah, absolutely. That is a good point that even I sometimes forget like when someone says, “Well, why would I want Kubernetes?” I’m like, “Why wouldn’t you want Kubernetes?” like duh, it works so well in my brain why don’t you get it? But it is good to take a step back out of yourself and you know, be empathetic to the people you’re talking about in the community. 
+
+I think Carlisia, you mentioned that we should be wrapping this up pretty soon and I think I totally agree. Before we go, I want to say if you want to contribute to any container orchestration about Kubernetes in specific since that is the one we want to work with the most, we totally encourage you to start contributing to these projects. Like with Kubernetes, we have the Kubernetes-Kubernetes Repo that has a lot of information on how to start contributing. I believe that Mesosphere has their own repos and the information online available for them. 
+
+And I don’t know, I am not sure if there is much in a way of Docker or Swarm anymore that you can contribute to. I am not sure, but for Kubernetes, we have the Kubernetes-Kubernetes Repo and the Kubernetes Slack channel K8S at slack.k8s.io. Please join us and start talking about your container orchestration journey. 
+
+[0:46:08.6] CC: And Kates by the way is K8S and I am going to say that because at some events and some people were up in the stage and they’re like, “Kates this, Kates that” and I am sitting with someone in the back and I’m like, “Who’s Kate?” 
+
+[0:46:24.3] NL: Or I have seen people who are like, “K-eight-S” is the acronym and what that means is that there is eight letters between K and S in Kubernetes. That is all that means. I have seen some people do K8 and it drives me up every wall. I actually start constructing walls and it continues to drive me up them. I am in an infinite regression of walls. 
+
+[0:46:44.6] CC: All right everybody, thank you for listening. It’s great that you are here, and we are going to be back with more cloud native goodness. 
+
+[0:46:53.8] NL: Yeah, absolutely. All right, cheers. 
+
+[0:46:56.0] JR: Thanks. 
+
+[0:46:56.8] CC: Goodbye. 
+
+[END OF INTERVIEW]
+
+[0:46:58.7] ANNOUNCER: Thank you for listening to the Podlets Cloud Native Podcast. Find us on Twitter @thepodlets and on the Podlets.io website where you will find transcripts and show notes. We’ll be back next week. Stay tuned by subscribing. 
+
+[END]
+
+[0:02:36.0] CC: I meditate too, it’s great.
+
+[0:02:38.2] NL: Yeah, it’s good. All right, anything interesting in the cloud native space that you guys have found in the last week?
+
+[0:02:43.6] CC: I have a talk that was accepted for KubeCon China.
+
+[0:02:47.4] NL: Awesome, congratulations.
+
+[0:02:49.6] JR: Congrats.
+
+[0:02:50.6] CC: Yeah, it’s a joint talk with Steven Wong also from Thea Moore. We’re going to talk about data recovery, data protection, recovery, migration in Velero.
+
+[0:03:03.9] NL: That’s great. He’s been coming to the Cloud Native Social Hour pretty regularly. That’s awesome to see some more cross interaction.
+
+[0:03:11.6] CC: Yeah, he is awesome, so knowledgeable.
+
+[0:03:14.0] NL: Great. And Josh?
+
+[0:03:15.5] JR: Very cool. I was actually looking this week since I’m in kind of the Kubernetes mindset, for something that can kind of add a TTL to any Kubernetes resource. So think of something like a service account in Kubernetes and I want to attach a TTL to it such that in four hours, it effectively got swept up and is no longer existent in the system.
+
+There’s some interesting ways that actually Kube ADM, one of the bootstrapping tools, does this. I was trying to kind of replicate that for their tokens, there’s a project by one of these Landau folks. Jacobs, I don’t know if that’s his last of first name, sorry in advance for butchering it, but he’s got a project called Kube Janitor that does effectively that.
+
+With annotations, you can put a TTL on them, your resources and then Kube Janitor will just come through and sweep that up. Which I thought a really cool idea. That was an interesting thing that I saw, it’s no new news, I think it’s been around for a while but it’s the first time that I had run into it.
+
+[0:04:07.6] NL: Nice. For me, our cohost Duffy, turned me on to a tool called Chaos Blade. Recently, I’ve been getting more and more into Chaos engineering and this is apparently an easy to use Chaos engineering toolkit. Something I’ve only just started looking at but I’m pretty excited. I’ll probably play around with that a bit more.
+
+[0:04:25.2] JR: Cool, awesome.
+
+[0:04:26.9] NL: Yeah, this week on the podcast, we are talking about container orchestration and kind of what that is, right? For me, container orchestration is the idea that you need your workloads to run somewhere but you don’t necessarily need to care where they’re running and the way that this has been done traditionally, prior to container orchestration, was like scheduling VM’s or making sure these processes run on certain computers, right?
+
+There’s a lot of automation around that like, when containers came around, we needed some way to make sure that they’re running and it also enabled us to not need to care so much about how things get started in all that. Everything was kind of packaged in a container I think. They need to just be some way to run them. That’s kind of where container orchestration came in, is that kind of your guys’ take on that as well?
+
+[0:05:18.3] CC: Yeah, basically, when we say we are orchestrating containers, we basically tell them how to behave, right? For example, I have this container here and I’m going to declare that if it fails, I want it to come back up in this container over there, if you fail just keep that state, don’t do anything and then I might say hey, I want two of you, three of you, I want to – the orchestration part is really just dictating behavior and state.
+
+[0:05:48.6] NL: Yeah, absolutely.
+
+[0:05:49.9] JR: Yeah. I think one interesting thing that came with the advent of containers is, we used to have this notion of you know, what server is my application going to land on or then eventually, you know, what virtual machine is my app eventually going to land on and we think kind of in this units of virtual machines and the paradigm shift a bit, at least in my experience has been now that you have the container unit and you can run many of those on one virtual machine, right?
+
+Your concern about orchestration is not just putting it on machine A and putting it on machine B but it’s kind of like packing multiple of this containers, perhaps on the same virtual machine or same host. The orchestration notion is beyond just the conventional system construct of a different host each time, it’s really interesting.
+
+[0:06:34.0] NL: Yeah, I think it might be important for us actually to take a step back. I realized I kind of jumped right into it, but we should probably settle what a container is, right? Before we can talk about how we can orchestrate them.
+
+A container is basically just a tar ball honestly. That is a packaged application with the instructions for it to run on any system that can accept that tar ball. Containers are broken down into a couple of Linux constructs, C groups and name space, so C groups four, making sure the process runs in its own dedicated memory and then or just like isolated memory. Then name spaces for things like network isolation. 
+
+So that the network traffic that’s going on in the container doesn’t cross over to other processes. Very controlled process initiation based on these instruction. That’s kind of what a container is, a lot of people think that they’re like, kind of like a VM, I’ve heard that a few times where like, “Oh how do I deploy it?” What’s the VMDK for a container? It’s just a process that runs on a computer in a very controlled fashion, that’s literally it. 
+
+[0:07:43.9] JR: Yeah, it’s kind of interesting to think like, at what point in which we kind of started using containers and seeing containers. I’d be curious for either two of you, Carlisia especially, what was your first exposure to the unit of a container and why were you starting to consider using a container versus just a virtual machine or a process?
+
+[0:08:03.0] CC: Frankly, I don’t remember. My first time seeing a container has been a long time but I don’t remember. But probably maybe trying to do some application like some toy application that – an example application. I remember that I was working on an application that we had the option to stuff it into a container as well, but I personally didn’t make the development. 
+
+I wasn’t using it for development. My first usage of container really was about three years ago when I was working for CDN and a CDN as you might imagine has many different parts, so it has very low-level software running to higher level software, right? Really, sometimes, well, not sometimes, it has kernel level applications in systems, and it has API level system. For you to develop one part of it is it was really handy to be able to stuff our different systems into containers and have containers stuck to each other.
+
+We weren’t using the introduction. This was for development, but it was amazing, it was fantastic, we would have applications developed and go. Different systems that needed to talk to each other and we would have applications in C and I think that is to remember but it was amazing. Everything in containers and then we have a tool as well, they were sort of like Kubernetes, it wasn’t Kubernetes.
+
+It was developed in house. That orchestrated all of these things and you know, we simply failed, bringing back up and did a bunch of other things as well. I cannot explain the difference of working like that. It’s so much faster and so I could be a lot more autonomous, being able to run everything myself. I didn’t depend on having access to its server. I ran everything on my laptop, it was fantastic.
+
+[0:10:17.6] NL: Awesome. The first time I ran into a container was back when I was working for Red Hat, right when Open Shift Three CEO came out, that’s when Open Shift kind of moved from the in-house version of Open Shift to adopting Kubernetes. I had been working mostly in the virtualization like infrastructure world like doing a Red Hat enterprise virtualization manager, which is kind of like a Red Hat take on B Sphere, you know, kind of.
+
+I was very used to virtualization and spinning things up. There is some aspects of creating a VM and creating a container that were very similar. It took me awhile for my brain to click. Once I started using open chip to kind of click into like, “Oh this is how they’re different, right?” Whereas, if you’ve just started looking at it, “Well what’s kind of the difference?” They’re all just like, in my command line, they all just come up as like lists of units, right? 
+
+This is a processing unit, that’s a processing unit right there. They’re kind of similar but once you start really getting into the use of it, it was so much different. I had heard like during this process of switching over to these two tools, I had heard of Docker and I was like, it’s something I’ll take a look at and finally, by shifting over to it, I finally was starting to – like oh this is what docker is, this is how we use these and then like, kind of digging into containers there.
+
+It was an interesting switch from an infrastructure standpoint to like, this is how people use containers and then that kind of actually started getting me into development. Now that I didn’t have to care about all this overhead of like where do I put my application, if I want my application around on my computer versus your computer, how do I make sure that the packages are the same bubble?
+
+Once there was that easy way to kind of say, I just want this run everywhere, no matter what, hopefully, that really just like, fascinated me and it kind of took off from there. Josh, what about you?
+
+[0:12:11.6] JR: Yeah, my experience wasn’t to dissimilar. What was interesting is the space I was working in was a lot of legacy Java applications, so we kind of came into containers probably a little bit later than what some of you all did. What was always interesting about it is, you know, we started to really see the value of containers just like Carlisia was saying, we started packaging these apps up and they ran the same in every environment and just really changed our workflow around. 
+
+Initially, it was just like, let’s figure out a way to simply start these containers on different hosts, whether it be like Answerable or even someone going out a host and typing Docker Run, you know, that was how we got these processes to start. As the adoption of containers grew and more and more containers started to come to life in this company, the need for orchestration finally became obvious, right?
+I had heard about this project called Kubernetes, I’d heard a bit about Swarm, Mesos and it was always just like I don’t understand why you’d ever need something this complex, right? But eventually you hit this like inflection point where it just becomes insanely obvious, that your life is potentially going to be just chaos without something that can actually figure out, hey, you need to run this container, let me figure out where to put it and make sure that it starts.
+
+I thought that was like a really interesting progression. It used to be really hard also to navigate the options because there were a lot of options and there still are, there’s Swarm Kubernetes, Open Shift, Mesos, so on and so forth.
+
+[0:13:31.9] NL: Yeah, that’s actually a good point to what I’m talking about is that, container orchestration, it seems like we’re all kind of building up to the same point where when containers were kind of taking off, everyone started to see like this is great. But how do I do this at scale? Even like remotely at scale. 
+
+A bunch of people started doing their own thing. So there was Kubernetes, which is the open source version aboard with some changes to make a more friendly for other people, there’s Docker, Docker Swarm and then Mesos, Rancher. But then, Carlisia, your team had their own orchestration, a lot of other companies have their own orchestration as well so it’s not just – you don’t need like this project to do or any of these projects to do container orchestration. You can do it on your own if you need to, right? 
+
+For example, you could take a look at Uber, they aren’t using a project, they’ve rolled their own container orchestration at scale and I think that’s the same, that’s crazy to me but that’s awesome for them to have pulled that off, right?
+
+[0:14:29.4] CC: Yeah, absolutely. When I think of container orchestration, there is the management part and the scaling part because when you think about management for example, I might need a whole set of services to be up and running before I can run the set of services. The orchestration is going to manage that for me. Make sure that the services come up, they’re up and now this set gets kicked off.
+
+If I don’t need to scale, I still need to do this, right? There is usually some sort of dependency. Then in the scaling part which is also – I mean, it’s important for a lot of companies but it’s not important for a lot of companies smaller sized companies, right? 
+
+[0:15:18.7] JR: Maybe we can talk a bit about what kind of information container orchestration works with to determine what it should do, if that sort of makes sense? Like what kinds of things are we telling these systems about and then what is it doing to act on that information?
+
+[0:15:38.0] NL: Yeah, please, go ahead and dive into that a bit more.
+
+[0:15:41.0] JR: Yeah, I guess it seems like the common approach that we run into, at least with Kubernetes and I think it’s true for a lot of these different systems, is the notion of reconciling state, right? We start of kind of with declarative definition if you will of what we want the world to look like and that could be some app running with some amount of replicas and you want it to have a certain amount of CPU and memory available.
+
+Then, these orchestrators usually can just take that declarative notion and sort of act on it, right? I know Nicholas, you’re really close to Kubernetes, would you want to speak to like how exactly it acts on those things like when you give it that declarative API object? What it’s going to do behind the scenes?
+
+[0:16:24.6] NL: Yeah, in Kubernetes, there’s a couple of different systems at play. This is something that I find really fascinating. There’s a lot of reconciliation loops in many different places. In Kubernetes when you first declare to Kubernetes that you want something to happen, you talk to the API server.
+
+The API server then modifies the etcd data store, right? The data store is just, simply ley value pair brain, it’s like the brain of your Kubernetes, right? Only the API server, as far as I’m aware and remembering off the top of my head, that’s the only thing that actually directly communicates to the etcd server. That might be incorrect but for the purpose of this – 
+
+[0:17:04.3] CC: I think that’s correct.
+
+[0:17:06.8] NL: Okay, good. I was suddenly second guessing myself. The API directly can be considered sort of make the changes. Then the controller manager is in a reconciliation loop, saying like, here’s what I think the world looks like and if the world changes based on what etcd is saying, the controller manager maintains actual state and etcd controls expected states. This is where we want to be. If actual state and expected state are different, the controller manager reconciles that. Either it will delete something or add something to the cluster at large to make sure that that state exists.
+
+[0:17:47.6] CC: Based on what’s in the etcd database?
+
+[0:17:50.4] NL: Yes, exactly. It will – the controller manager, based on all the many controllers that are just themselves reconciliation nubs, if any of them are you know, different, it will then kick of something to the schedule which will then inform the various nodes in the cluster, what changes they need to do to reconcile state. Those changes occur, control managers sees that actual state matches expected state and everyone’s fat, dumb and happy.
+
+[0:18:17.3] CC: We actually didn’t talk much about other container orchestrators other than Kubernetes but I’m wondering because I’m not familiar with any others, but others come to mind, Docker, Swarm and Mesosphere, do they operate in the same way? 
+
+[0:18:36.7] NL: Josh, I think you had some more experience than I did with at least, I believe it was Mesosphere?
+
+[0:18:41.8] JR: No, unfortunately not.
+
+[0:18:43.1] NL: I thought – okay, I thought that you had used in your previous life, you’d use at least one other?
+
+[0:18:49.0] JR: No, we did some small proof of concepts on Swarm but we never go very far along with it.
+
+[0:18:54.1] NL: Yeah, I actually, to be honest, I don’t really know much of the difference between like Rancho Lab, Mesosphere and Docker Swarm. I believe that they all act very similarly to Kubernetes but in slightly different way and this is something that I meant to take a look at before, talking about it but I just ran out of time, I’ll be honest.
+
+[0:19:12.8] CC: I guess we’re going to need Part Two to this episode.
+
+[0:19:15.7] NL: This is a big topic, we’ll definitely have to come back and kind of launch on this a bit more. I think they’re all orchestration and all these orchestrators work in the same function, right? Or the same fashion. There’s what you want to happen, what actually exists, how do we get that change to occur, right? 
+
+[0:19:33.8] CC: Was that what you meant, Josh?
+
+[0:19:35.4] JR: Yeah, exactly. I think the one thing to add too is the systems are generally making like really informed decisions when trying to reconcile desired state. By really informed decisions, I mean, they’re obviously aware of a lot about the compute resources available to them.
+
+One big benefit that adopting container orchestration gives you is things like the scheduler are able to look into the system and understand, hey, based on resources I have available in this area, it would be smarter for me to start more containers over here versus over here, right? When you have these larger complex things and you’re trying to kind of think of all your resources as kind of like a sea of compute.
+
+The container orchestration is not only able to get you to a desired state but also to do it in a way that is, at least in most cases, as desirable as possible, right? As far as using resources effectively and a term that we often times throughout there, which is Vin Packing, right? The idea of ensuring that we can know the resources a container needs and pack them together really tightly, so that we’re utilizing the potential hardware or cloud resources that we’re paying for every month. 
+
+A lot of times, the adoption of container orchestration is this really elegant way to move our workloads around but at the same time, it’s a way to really utilize the things we’re paying for and potentially cut costs over time as well.
+
+[0:20:57.5] CC: Yeah, this is one thing that I find fascinating with at least Kubernetes because I haven’t used the other orchestrators. We can boot up let’s say, four machines, and four instances of a machine and deploy Kubernetes on it and tell Kubernetes, “I want these many nodes, these many pods and have this container with apps obviously, or services running in the containers.”
+
+I don’t need to specify even where anything’s going to go. It just spreads the load and keeps managing and monitoring and managing what needs to go where to better utilize the instances.
+
+[0:21:46.2] NL: I think that’s actually an important distinction between the different container orchestrators that exist out there. If I recall correctly, I believe that Mesosphere has a mechanism that can kind of better load balance your containers that are running in the cluster.
+
+At least better than – it can make a kind of a more informed decision on like the state of the cluster and where it took place things than Kubernetes does and that might be one of the key differences between the two. That’s something that I hear a lot in the Kubernetes community. Someone’s like, “I noticed that all of my resources are kind of being put on to one computer and then the rest of them aren’t even being utilized at all, what’s up with that?”
+
+I think there’s something there that’s important to understand which is the Vin packing that Josh was talking about. Also, I pointed like that because on my screen, Josh is right next to me but that might not be the case so I might just look like I’m pointing out from the space.vIt’s important to know that from the capacity of at least in Kubernetes and like most of these orchestrators, if there are resources to be utilized, the orchestrator doesn’t care for the most part. 
+
+Mesosphere has the ability to kind of load balance, as I said but as long as the resources that are available on one computer are the same as any other computer. If one of them is getting like super utilized and the other ones aren’t, it doesn’t really matter, it doesn’t affect the functionality of the cluster at all, right? One meg here and one meg there, essentially the same.
+
+[0:23:11.7] CC: What does the orchestrator do when let’s say I have four instances and I have what I have, I stuffed a bunch of consigners in there and I’m thinking, for this instance, this will give me plenty of memory but I have a leaky app and all of a sudden, my RAM blows up. What happens?
+
+[0:23:34.1] NL: This actually ties into why I look into an orchestration from a cloud native perspective. This is kind of where, container orchestration is cloud native. It takes into account the elastic nature of your resources. If you have this application that’s blowing up, either you can have limits to how many resources the application can utilize, or you can use auto scaling.
+
+In Kubernetes, we have something called Horizontal Plot Auto Scaling and some of the other tools, I’m sure they have the same, but the idea is like, as you’re using more and more resources in the pod, it is taking up this much memory. It then needs to create a new pod, right? Or a new container, right? So a new container needs to get orchestrated and then another one, another one, another one. 
+
+Now, if you have a really aggressive application that is acting kind of maliciously that’s not great because it will take up all the resources in your cluster and that’s not good. But if you just have a very spiky application, it could grow with its needs and then come back down, and no one has to know about it essentially. Your orchestrator can make that happen for you. I think that is really cool. 
+
+[0:24:40.9] CC: It is and what if I am reaching the limits of my resources. I mean there are only so many pods that can stuff in four instances or two instances. So what if I am reaching the limits of my resources? What happens then? How is an orchestrator going to help me? 
+
+[0:24:58.6] JR: Yeah, the nice thing is we can – and most of these orchestrators set some type of parameter around potential CPU that we want to make available in memory, that we want to make available for the app and what is nice about this is at least speaking to Kubernetes, and I am sure it is similar for others, just using some of the underlying technologies that are existent in Linux like Nicholas has mentioned C groups. 
+
+We have the ability when CPU gets too high to potentially throttle it and slow it down or at least limit the amount of CPU it can use in given cycles and with memory, if we start over committing, we now have the ability to potentially kill the application if it is starting to take up more memory than it actually should be allowed to take up. What’s interesting about Kubernetes and other orchestrators is their self-healing model is that sometimes when apps are doing really bad things, like leaking memory all over the place, you might not detect it right away, right? Because it is actually going to potentially limit or kill the app and self-heal it by bringing it back up. 
+
+So it might seem like your app is still online and you don’t necessarily realize that under the hood, Kubernetes was actually restarting it and trying to continually bring it to a state of health, right? So you have a lot of abilities. It is like everything that Nicholas just said about reading how much information or resource the app is taking and potentially scaling based on that, or even setting like hard limits to say, “I want to throttle my app or even potentially kill my app if it starts to act badly and use up more than it should.” So it is a really cool kind of declarative way to approach resource limiting. 
+
+[0:26:29.2] NL: And that is actually something that I don’t think a lot of people including myself work on that much is the throttling aspect, right? Most people are like, “Okay, well whatever. Just take up as many resources as we need.” That’s what it’s there for but maybe you shouldn’t always be doing that. Not every application needs to expand horizontally or vertically, if it’s safe or said. It could be that the application is acting poorly, and they need to be like, “No, you actually don’t need that many resources.”
+
+[0:26:56.4] CC: So let us say any or all of these things are happening, throttling and self-healing, how could I know? I mean I am asking this question, but I know the answer. I mean what tools do people actually use to be informed and notified of these events? 
+
+[0:27:15.9] NL: So this is something I think we are going to get on another episode but just to come breach this into something that – I am also very excited. I am just a very excitable person really, I’m like, people say I’m just like a puppy and they’re not wrong. 
+
+[0:27:27.1] CC: That’s why you’re here Nic. 
+
+[0:27:29.0] NL: What? Me? Who said that? Is observation or observability. So monitoring, alerting, inflecting into your cluster to know what is happening, right? So you could, as Josh was saying like under the hood these things could be happening and the orchestrator is reconciling your cluster and your resource utilization for you and you might not know it but if you have observation and you have monitoring going on, you could see like, “Oh hey this pod is like restarting every 20 minutes.” 
+
+Like it shouldn’t, it doesn’t need to restart every 20 minutes, like clearly the application is still running. So that is not a bad thing but maybe we should fix that, right? So you can be aware of what’s going on, right? 
+
+[0:28:10.3] CC: And I know that there are tools that provide monitoring and observation but Kubernetes itself doesn’t provide that, right? Those are things that we hook into Kubernetes. 
+
+[0:28:21.0] NL: Yes. Yeah that is correct because Kubernetes, and like any of these other orchestraters, are doing what they should be doing, which is being the best orchestrator they could. Having like that package now that you are getting into something that is more like a product and there is nothing wrong with products but that is not what these projects are here to be, right? 
+
+[0:28:40.2] CC: How do you distinguish between the project and the product? 
+
+[0:28:43.0] NL: Now that is interesting. Josh, you want to take this one? 
+
+[0:28:45.7] CC: You opened the door. 
+
+[0:28:47.0] JR: Yeah, I’ll start and then I actually think Nicholas, you might be the best one to speak to this with your background in Open Shift quite frankly, right? So it is kind of like these orchestrators are primitive in a way for how we eventually build a platform and that platform is a larger thing that includes potential monitoring, maybe plugins to continuous integration and continuous delivery. 
+
+There’s a lot of groups or companies that have kind of that whole story or at least parts of that story, packaged up together, right? I mean we do it at the MWare with some of our enterprise offerings around TKS and then Open Shift, at least in my mind, it does that as well. Maybe Nicholas you can speak to that a little bit?
+
+[0:29:27.3] NL: Yeah, so from an Open Shift perspective at least when I was using it, it was trying to be everything you would need to monitor, or to not monitor, but to run a container orchestration system, right? So it has a Docker registry built it. It has monitoring built it. It has some rudimentary charge built in, Ingress, all of these things that don’t necessarily come with Kubernetes like the option Kubernetes. It has a solution around that. 
+
+And I think that is the difference between like project or just an orchestrator and a product. A product is trying to solve a grander enterprise problem versus a project or in this case, an orchestrator, is going to solve one problem and that problem is how do I get these containers to run in a way that my customers – not my customers really, my users expect them to run.
+
+[0:30:18.3] CC: Yeah, fair enough. 
+
+[0:30:19.5] NL: And what do you think on the topic, Carlisia? 
+
+[0:30:22.0] CC: Oh it sounds an awful lot to me like a product is you get money for it and the projects you don’t. 
+
+[0:30:28.1] NL: That is actually very – you’re right, honestly that is really the main distinction. One of them is money based. 
+
+[0:30:34.6] CC: But your description, the descriptions you make for it are very valid – it is very valid because a project by itself may not have enough value for let’s say companies and bundling this project with that project and the other project, which ultimately you’re building the product with a purpose, right? You will have a purpose with that product to have a specific audience for their product set of users. So it is very distinct from taking one part of that product and calling it a product because maybe it is not enough to address and solve problems. 
+
+[0:31:20.3] JR: Yeah, I think that is an important distinction. It is almost like what Nicholas and I were talking about was more about the distinction between what an orchestrator is and what a full platform would be, right? And I think to Carlisia’s point about how we plug in the monitoring and stuff is really important because just like we were talking about with the cloud native landscape in our last podcast, Kubernetes is just one piece of the overall puzzle. 
+
+Kubernetes isn’t your whole platform start to finish, right? It is just the container orchestration portion and you have a lot to build and hook into that to make it a full platform that your company might be onboarding developer workloads onto it. It is just really one piece of that overall puzzle. 
+
+[0:32:01.0] CC: That is beautifully put Josh. 
+
+[0:32:02.9] NL: Yeah, very nicely put. So I’ve got a question for you guys. We’ve been beating around the bush as it were but to me, it seems apparent that in the world of container orchestration, Kubernetes has come out on top. That isn’t to say that it’s the end, right? There could be something that comes out that actually beats Kubernetes, right? But for now, it seems like everyone is looking at Kubernetes and I am curious why it is that you think that – you all might think that Kubernetes took the top space. 
+
+[0:32:32.7] CC: I am scratching my chin. 
+
+[0:32:35.1] NL: Scratching chin emoji. 
+
+[0:32:38.3] JR: Exactly, one thing for sure is I just think Kubernetes did the community thing really, really well and not that it is all about community. It is obviously about technical choices and things of that nature but I think they did, not to say they’re perfect, but they did a really good job of being very inclusive and getting people to join this community and give feedback and the structure of the special interest groups where people get together and focus on various areas of Kubernetes, like scheduling or cluster life cycle and things like that. 
+
+And it is interesting because the community just grew so quickly in my mind, that it just made this massive push into the market because there were so many humans behind it pushing it along. So I think at least among other things, community was one of the biggest. 
+
+[0:33:24.0] CC: I can’t say that I was paying attention in monitoring that space so I don’t know. Of course, I can make guesses, what Josh just said sounds very plausible that he had Google behind it. I am sure it didn’t hurt. Not that we need to be fan boys and fan girls of Google but having a company like that sponsor and put resources behind the project gives a signal that “Okay, this is going to be here for a while.” Even though Google has a reputation of discontinuing things, but at the same time, I think that is significant. 
+
+What else? Definitely the community. I didn’t follow the community from the beginning so only this last year and something, almost two years that I have been working with Velero, that I get to see how the community is and it’s amazing. It’s crazy, so organized. Yeah and it is not perfect, nothing is perfect but it’s incredible. The enthusiasm and the organization and the transparency, it is amazing. 
+
+[0:34:36.6] NL: Yeah, absolutely and I agree with actually both of your points. It’s corporate sponsorship not just Google I mean, I’ll get to this in a second and the community as well and also some of the functionality. But it was both the corporate sponsorship of Google and Red Hat in the early days and not to tap my old you know, “Yeah we did it.” But it Red Hat had a big play into early Kubernetes as a supporter and so what that did is establish, “Hey, Kubernetes is at least enterprised.” 
+
+An enterprise perspective project, right? It is not just, “Hey, this is some open source project. It may or may not work. If it doesn’t, you are on your own.” If you had a company like Google and Red Hat who are both endorsing this project, suddenly enterprises were more interested in taking it onboard, like it was more of a viable concept. 
+
+[0:35:29.4] CC: I’m glad you are here Nic to correct me and make that addition. 
+
+[0:35:34.4] NL: Oh well, yeah I was not correcting you at all. I think – 
+
+[0:35:37.2] CC: No because I didn’t clue into the fact that – I mean I see Red Hat all over the place but I don’t know the dimension of involvement that they had from the beginning, because at the beginning, I was an outsider to all of this.
+
+[0:35:50.8] NL: Yeah, so for perspective, Open Shift 300, which is when I first started getting into it, is based on Kubernetes 1-2, which is pretty early. They were big like they put a lot of resources into the development of the community and for the development of the functionality that exists, right? The horizontal pod auto-scale that we still use today is due in the large part to the contributions of Red Hat, right? The engineering at Red Hat is responsible for that piece, among other things. 
+
+And so with them at play, kind of getting their community and Google’s community coming together and then able to organize this community that I think is a big piece of what took this off or what allowed Kubernetes to take off. That is how grammar works. There is also some pieces of functionality that I think were novel to Kubernetes in the early days, things like Ingres. The way the Kubelet worked was actually kind of unique, like how low level the commands that are being issued by the Kubelet were pretty unique. 
+
+And so it allowed for people to adopt it like the things that were happening from the Kubelet perspective like changes to your IP tables, running a container, changing the C groups and all of these things, those are all well known by people at the time and so there wasn’t anything like arcane happening. It was just, “Hey, this process just runs these commands and that is how it reconciles say, right? And so I think that that kind of functionality really got people to trust what was happening. 
+
+And so, you know it’s like I think the trust and transparency are the big things that people keyed into. The trust comes from the enterprise sponsorship, and also the fact that what was happening from a rudimentary standpoint was pretty simple and so people could wrap their heads around it and then transparency was having this community. Everything happens in the open, everything is recorded and accessible by everyone, right? It wasn’t just like some behind the scenes things happened. 
+
+[0:37:50.7] JR: Yeah and I think that piece is super important, like Nicholas and I, we came from Coreless or our lineage around like open source Kubernetes is not too dissimilar. We spend a lot of time working with customers in pure upstream open source Kubernetes and actually taking some of their issues and requirements to the community and then helping shape the direction of Kubernetes in micro kind of ways, but still important ways to that company. 
+
+And I think companies seeing through the CNCF and seeing through just community leadership and involvement that the things that they care about aren’t just going through a single vendor to make a decision as to whether that thing should be included, but it is being part of a larger community discussion, breeds a lot of confidence in this project in the long term. I think at the end of the day, we started with there will be container orchestrator that many of us use. Or maybe there will be a couple, right? 
+
+There is no question, we need to solve container orchestration as an overall problem and companies are at this point where they are still placing a bet on what they want to use and because of the community, because of the involvement, because of the ability to adopt the project to potential business requirements, I feel like more large and small medium organizations are willing to put their money on Kubernetes as a whole. 
+
+And I don’t think they felt as confident finding some other projects, like Open Stack and then historical Masos perhaps. I am just projecting based on conversations I’ve had but that is why I think a lot of folks are really excited about the future for Kubernetes. 
+
+[0:39:21.3] NL: Yeah that is an excellent point. 
+
+[0:39:23.0] CC: Let’s stick with the theme of projecting in the future and we are going to have to wrap up soon otherwise it is going to be a two hour, I mean this could be a two-hour show. But let’s not make our audience go through that. We’ll have part two. What about, we talk all the time, and people who are in this area, we talk about all the time how everybody knows Kubernetes and da-da-da, but I want to challenge you two, do you think that everybody knows Kubernetes? 
+
+Everybody knows the purpose of Kubernetes, everybody knows if they should be using Kubernetes or not, how are people able to make an informed decision if they should be using Kubernetes? Because I don’t think everybody knows Kubernetes. I think the majority of companies, in terms of volume, because smaller companies I would guess they outnumber the bigger companies and technologists – I think a lot of people are not clear on what this is. 
+
+That’s why we are here but what do we tell them? We have to have an episode to discover that, now that I am thinking about it, but we could wrap this up with some seed ideas for that. 
+
+[0:40:46.9] NL: So that is a great idea and something that I’ve been playing around with introducing myself, is when do you not use container orchestration, right? Just because container orchestration exists doesn’t mean necessarily – 
+
+[0:40:58.0] CC: If you don’t have containers. 
+
+[0:40:59.1] NL: Yeah, one, if you don’t have containers. That is another starter.
+
+[0:41:02.5] CC: It is a real legit thing to say because some people ask me, “Should I start with Kubernetes or containers?” that’s the level of education that we must provide.
+
+[0:41:15.5] NL: Yeah, absolutely and that is something we actually run into a lot in the field is when we are engaging with our customers, part of our job is to help containerize their applications if they are not already there. Trying to help them do that in a logical manner. But for instance, to give an example, my fiancé’s company uses Docker, but they don’t use Kubernetes or any kind of orchestration because they don’t need to. 
+
+Like the amount of the resources that they are going to be using and the amount of and the type of work that they are doing, it doesn’t make sense to use an orchestrator. I have actually talked to some of the engineers about it because they were like, “Oh tell me about this Kubernetes thing” and I’m like, “This is what it is” blah-blah-blah. I finally came up with a metaphor where it’s like your company uses the containers as a shovel. 
+
+If we brought it into like, let us say we’re ploughing a field, right? You’ve got a plow, if you already use Kubernetes that would be like trying to plow the field with a nuclear bomb. It is way more complicated than you need to do. Sure, you can clear a lot of land with a giant bomb but that is way more than you guys need, right? And I think that for me that’s the drawing line. It is like if the complexity makes sense for you to do like, if you’re trying to all of a sudden, establish a farm. 
+
+Not to say that you should use a bomb to plow land but hey, if you need to clear a lot of land a bomb can work, right? That is a terrible metaphor, I am sorry. That went off the rails really fast. 
+
+[0:42:41.3] CC: It wasn’t too bad. 
+
+[0:42:43.8] NL: I actually think that. 
+
+[0:42:46.7] JR: I think, one thing that I will say and this is coming from experience working with organizations is let’s assume that you have justified Kubernetes for yourself, and by the way, I super echo everything that Nicholas just said, you have to be really careful and determine do you actually need to take this thing on? Because it is so hard to do in a lot of ways, right? But let us assume you have taken it on. I think an interesting thing to have empathy about as often times infrastructure dev ops people is you might know Kubernetes really, really well. 
+
+But that doesn’t mean your thousands and thousands of developers have any idea what Kubernetes is at all and that is a massive disconnect we see in organizations all the time where they are trying to onboard folks onto Kubernetes, and they haven’t fully abstracted Kubernetes away, which some companies do and that could be a really good pattern too. Like developers deploy their apps, they don’t even know Kubernetes are running them under the hood. That is a really neat pattern as well.
+
+But assuming they are just trying to bring developers onto Kubernetes, they don’t really have the same amount of empathy for them and they just think like, “This should be really easy. It is just a bunch of yemel files, you’ll figure it out,” but they totally forget about all of the complexities that they originally learned about. Like how does pod to pod networking work and things like that. 
+
+I just think that to your question Carlisia, it is interesting because one massive group in a company can know a lot about Kubernetes and forget what it was like to learn how something like Kubernetes or container orchestration worked. I think a lot of that is bridging the gap and really having some amount of education to bring everyone up to speed, even in the same organization. 
+
+[0:44:21.2] CC: I am dying to have an episode on just that alone because it is quite challenging. When you are faced with Kubernetes, I mean the very first thing is that there are terminologies that you haven’t seen before and they’re like, “How does that map to what I already know?” and then sometimes it doesn’t map. It is completely new so. 
+
+[0:44:43.1] JR: Yeah and when the benefits aren’t super obvious to you, it is really hard to get bought in and be willing to invest your own time and energy into it, right? And we forget that it is just not super obvious why Kubernetes makes sense for a lot of folks. 
+
+[0:44:56.6] NL: Yeah, absolutely. That is a good point that even I sometimes forget like when someone says, “Well, why would I want Kubernetes?” I’m like, “Why wouldn’t you want Kubernetes?” like duh, it works so well in my brain why don’t you get it? But it is good to take a step back out of yourself and you know, be empathetic to the people you’re talking about in the community. 
+
+I think Carlisia, you mentioned that we should be wrapping this up pretty soon and I think I totally agree. Before we go, I want to say if you want to contribute to any container orchestration about Kubernetes in specific since that is the one we want to work with the most, we totally encourage you to start contributing to these projects. Like with Kubernetes, we have the Kubernetes-Kubernetes Repo that has a lot of information on how to start contributing. I believe that Mesosphere has their own repos and the information online available for them. 
+
+And I don’t know, I am not sure if there is much in a way of Docker or Swarm anymore that you can contribute to. I am not sure, but for Kubernetes, we have the Kubernetes-Kubernetes Repo and the Kubernetes Slack channel K8S at slack.k8s.io. Please join us and start talking about your container orchestration journey. 
+
+[0:46:08.6] CC: And Kates by the way is K8S and I am going to say that because at some events and some people were up in the stage and they’re like, “Kates this, Kates that” and I am sitting with someone in the back and I’m like, “Who’s Kate?” 
+
+[0:46:24.3] NL: Or I have seen people who are like, “K-eight-S” is the acronym and what that means is that there is eight letters between K and S in Kubernetes. That is all that means. I have seen some people do K8 and it drives me up every wall. I actually start constructing walls and it continues to drive me up them. I am in an infinite regression of walls. 
+
+[0:46:44.6] CC: All right everybody, thank you for listening. It’s great that you are here, and we are going to be back with more cloud native goodness. 
+
+[0:46:53.8] NL: Yeah, absolutely. All right, cheers. 
+
+[0:46:56.0] JR: Thanks. 
+
+[0:46:56.8] CC: Goodbye. 
+
+[END OF INTERVIEW]
+
+[0:46:58.7] ANNOUNCER: Thank you for listening to The Podlets Cloud Native Podcast. Find us on Twitter https://twitter.com/ThePodlets and on the https://thepodlets.io website where you will find transcripts and show notes. We’ll be back next week. Stay tuned by subscribing.
 
 [END]
