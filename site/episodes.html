@@ -14,7 +14,8 @@ id: episodes
   <div class="section section-card promo-cards">
     <div class="section-content">
       <div class="row" id="ajax-target">
-        {% for episode in site.episodes %}
+        {% assign latest = site.episodes | reverse %}
+        {% for episode in latest %}
           {% include episode-card.html %}
         {% endfor %}
       </div>

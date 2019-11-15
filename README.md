@@ -2,7 +2,7 @@
 
 # The Podlets Podcast
 
-Exploring Cloud Native, one buzzword at a time!
+Exploring cloud native, one buzzword at a time!
 
 ## Ways to suggest an episode
 
