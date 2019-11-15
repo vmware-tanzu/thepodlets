@@ -65,6 +65,9 @@ podcast_links:
   - icon: rss-lg
     url: https://www.omnycontent.com/d/playlist/3451a52d-88b7-400a-9a02-aa610027e5d0/6662044f-706b-4890-a3f8-aa9a0004642b/bf774da5-66a7-4b5d-b0e9-aa9a0004aa39/podcast.rss
     alt: RSS
+  - icon: github
+    url: https://github.com/vmware-tanzu/thepodlets
+    alt: Github
 # assign highlighted episodes here by episode ID. limited to 3 on home page, selected from the top down.
 # also appears on the about page.
 highlighted: 
