@@ -4,6 +4,45 @@ episode_number: 4
 title: Understanding Observability
 description: Observability - what the term means, how it relates to the process of software development, and the importance of investing in a culture of observability.
 notes: Welcome to the fourth episode of The Podlets podcast! Today we speak to the topic of observability - what the term means, how it relates to the process of software development, and the importance of investing in a culture of observability. Each of us has a slightly different take on what exactly observability is, but roughly we agree that it is a set of tools that you can use to observe the interactions and behavior of distributed systems. Kris gives some handy analogies to help understand the growing need for observability due to rising scale and complexity. We then look at the three pillars of observability, and what each of these pillars look like in the process of testing and running a program. We also think more about how observability applies to the external problems that might arise in a system. Next up, we cover how implementing observability in teams is a cultural process, and how it is important to have a culture that accepts the necessity of failure and extensive time spend problem-solving in coding. Finally, the conversation shifts to how having a higher culture of observability can do away with the old problem of calling the dinosaur in a team who knows the code backward every time an error crops up. 
+hosts: 
+    - name: Carlisia Campos
+      url: https://twitter.com/carlisia 
+    - name: Kris Nóva
+      url: https://twitter.com/kris-nova
+    - name: Duffie Cooley
+      url: https://twitter.com/mauilion
+points:
+    - Duffy and Kris’s different interpretations of observability.
+    - Why we should bake observability into applications before a catastrophic failure.
+    - Observability is becoming more necessary due to scale and complexity.
+    - New infrastructures require new security systems.
+    - Observability is a term for new ways of observing code to catch failures as they happen.
+    - The three pillars of observability: events, metrics, and traceability.
+    - How events, metrics, and traceability play out in an example of a WordPress blog.
+    - Why metrics and events are necessary for observing patterns in problems.
+    - Measuring time series data and how it is managed in a similar way to git deltas.
+    - Why the ephemerality of events in cloud-native architectures urges a new way of thinking.
+    - Countering exterior application issues such as a hard drive getting bumped.
+    - The role of tracing in correlating internal and external issues with a system.
+    - Tracing is about understanding all the bits that are being touched in a problem.
+    - Kubernetes can be broken down into three things: compute, network and storage.
+    - How human experience is a major factor in good observability.
+    - The fact that embracing observability and chaos engineering is a cultural practice.
+    - Understanding observability and chaos testing through the laser metaphor.
+    - The more valuable the application, the higher the need for observability.
+    - The necessity for a cultural turn toward seeing the importance of observability.
+    - Seeming bad at debugging vs convincing teams to implement observability.
+    - The value of having empathy for how the difficulty of software engineering.
+    - Developing more intuition by spending time debugging.
+    - The way automated observability tools can possibly help with developing intuition.
+    - How observability and having common tools removes or normalizes the problem of ‘the guy’
+links:
+    - name: Velero
+      url: https://www.velero.io
+    - name: Cloud Native Infrastructure
+      url: https://www.amazon.com/Cloud-Native-Infrastructure-Applications-Environment/dp/1491984309
+    - name: Distributed Systems Observability
+      url: https://www.goodreads.com/book/show/40182805-distributed-systems-observability
 # video: https://www.youtube.com/embed/dQw4w9WgXcQ
 # related: # appears in sidebar, no limit in related episodes. identify by `episode_id`
 # - 001-cloud-native
@@ -25,7 +64,7 @@ EPISODE 04
 
 [0:01:03.2] CN: Hey everyone, I’m Kris Nova. I’m a developer advocate. I code a lot. I hang out in Kubernetes.
 
-[0:01:09.7] CC: I don’t want to be left out. I’m an engineer in the open source project called Valero that does backup and recovery for your Kubernetes applications. So, observability, why do we care?
+[0:01:09.7] CC: I don’t want to be left out. I’m an engineer in the open source project called Velero that does backup and recovery for your Kubernetes applications. So, observability, why do we care?
 
 [0:01:25.6] KN: That’s the million-dollar question right there honestly.
 
@@ -328,8 +367,6 @@ If somebody has a broken Kubernetes cluster, Kris and I are both going to approa
 
 [END OF INTERVIEW]
 
-[0:44:08.7] ANNOUNCER: Thank you for listening to the Podlets Cloud Native Podcast. Find us on Twitter @thepodlets and on the Podlets.io website, that is the Podlets, all together, where you will find transcripts and show notes. We’ll be back next week. Stay tuned by subscribing. 
+[0:44:08.7] ANNOUNCER: Thank you for listening to The Podlets Cloud Native Podcast. Find us on Twitter https://twitter.com/ThePodlets and on the https://thepodlets.io website, where you'll find transcripts and show notes. We'll be back next week. Stay tuned by subscribing
 
 [END]
-
-
