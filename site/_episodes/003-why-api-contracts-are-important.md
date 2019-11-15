@@ -2,8 +2,60 @@
 episode_id: 003-why-api-contracts-are-important
 episode_number: 3
 title: Why Contracts Are Important
-description: In this episode of the Podlets Podcast, we are diving into contracts and some of the building blocks of the Cloud-Native application. 
+description: The focus today is on the importance of contracts and how API's help us and fit into the cloud native space. 
 notes: In this episode of the Podlets Podcast, we are diving into contracts and some of the building blocks of the Cloud-Native application. The focus is on the importance of contracts and how API's help us and fit into the cloud native space. We start off by considering the role of the API at the center of a project and some definitions of what we consider to be an API in this sense. This question of API-first development sheds some light onto Kubernetes and what necessitated its birth. We also get into picking appropriate architecture according to the work at hand, Kubernetes' declarative nature and how micro-services aid the problems often experienced in more monolithic work. The conversation also covers some of these particular issues, while considering possible benefits of the monolith development structure. We talk about company structures, Conway's Law and best practices for avoiding the pitfalls of these, so for all this and a whole lot more on the subject of API's and contracts, listen in with us, today!
+hosts: 
+    - name: Carlisia Campos
+      url: https://twitter.com/carlisia 
+    - name: Josh Rosso
+      url: https://twitter.com/joshrosso
+    - name: Duffie Cooley
+      url: https://twitter.com/mauilion
+    - name: Patrick Barker
+      url: https://twitter.com/pbarkerco
+points:
+   - Reasons that it is critical to start with APIs at the center. 
+   - Building out the user interface and how the steps in the process fit together. 
+   - Picking the way to approach your design based on the specifics of that job. 
+   - A discussion of what we consider to qualify as an API in the cloud-native space. 
+   - The benefit of public APIs and more transparent understanding. 
+   - Comparing the declarative nature of Kubernetes with more imperative models. 
+   - Creating and accepting pods, querying APIs and the cycle of Kubernetes. 
+   - The huge impact of the declarative model and correlation to other steps forward. 
+   - The power of the list and watch pattern in Kubernetes. 
+   - Discipline and making sure things are not misplaced with monoliths.
+   - How micro-services goes a long way to eradicate some of the confusion that arises in monoliths.  
+   - Counteracting issues that arise out of a company's own architecture. 
+   - The care that is needed as soon as there is any networking between services. 
+   - Considering the handling of an API's lifecycle through its changes. 
+   - Independently deploying outside of the monolith model and the dangers to a system.
+   - Making a service a consumer of a centralized API and flipping the model.
+links:
+    - name: The Podlets on Twitter
+      url: https://twitter.com/thepodlets 
+    - name: Nicera
+      url: https://www.nicera.co.jp/  
+    - name: Swagger
+      url: https://swagger.io/tools/swagger-ui/ 
+    - name: Jeff Bezos
+      url: https://www.forbes.com/profile/jeff-bezos/ 
+    - name: AWS
+      url: https://aws.amazon.com/ 
+    - name: Kubernetes
+      url: https://kubernetes.io/ 
+    - name: Go Language
+      url: https://golang.org/ 
+    - name: Hacker Noon
+      url: https://hackernoon.com/ 
+    - name: Kafka
+      url: https://kafka.apache.org/ 
+    - name: etcd
+      url: https://etcd.io/ 
+    - name: Conway’s Law
+      url: https://medium.com/better-practices/how-to-dissolve-communication-barriers-in-your-api-development-organization-3347179b4ecc 
+    - name: Java
+      url: https://www.java.com/ 
+
 # related: # appears in sidebar, no limit in related episodes. identify by `episode_id`
 # - 001-cloud-native
 ---
@@ -244,7 +296,6 @@ There’s lots of different ways for you to let me know that service B is done d
 
 [END OF INTERVIEW]
 
-[0:35:49.2] ANNOUNCER: Thank you for listening to the Podlets Cloud Native Podcast. Find us on Twitter @thepodlets and on the Podlets.io website where you will find transcripts and show notes. We’ll be back next week. Stay tuned by subscribing. 
+[0:35:49.2] ANNOUNCER: Thank you for listening to The Podlets Cloud Native Podcast. Find us on Twitter https://twitter.com/ThePodlets and on the https://thepodlets.io website, where you'll find transcripts and show notes. We'll be back next week. Stay tuned by subscribing.
 
 [END]
-
