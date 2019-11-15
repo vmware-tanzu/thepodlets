@@ -29,33 +29,60 @@ points:
     - The code of conduct that you need to adopt to be part of the CNCF.
     - And much more!
 links:
-    - url: Kubernetes — https://kubernetes.io/
-    - url: The Podlets on Twitter — https://twitter.com/thepodlets 
-    - url: VMware — https://www.vmware.com/
-    - url: Nicholas Lane on LinkedIn — https://www.linkedin.com/in/nicholas-ross-lane
-    - url: Red Hat — https://www.redhat.com/
-    - url: CoreOS — https://coreos.com/
-    - url: Duffie Cooley on LinkedIn — https://www.linkedin.com/in/mauilion
-    - url: Apache Mesos — http://mesos.apache.org/
-    - url: Kris Nova on LinkedIn — https://www.linkedin.com/in/kris-nova
-    - url: SolidFire — https://www.solidfire.com/
-    - url: NetApp — https://www.netapp.com/us/index.aspx
-    - url: Microsoft Azure — https://azure.microsoft.com/
-    - url: Carlisia Campos on LinkedIn — https://www.linkedin.com/in/carlisia
-    - url: Fastly — https://www.fastly.com/
-    - url: FreeBSD — https://www.freebsd.org/
-    - url: OpenStack — https://www.openstack.org/
-    - url: Open vSwitch — https://www.openvswitch.org/
-    - url: Istio — https://istio.io/
-    - url: The Kublets on GitHub — https://github.com/heptio/thekubelets
-    - url: Cloud Native Infrastructure on Amazon — https://www.amazon.com/Cloud-Native-Infrastructure-Applications-Environment/dp/1491984309
-    - url: Cloud Native Computing Foundation — https://www.cncf.io/
-    - url: Terraform — https://www.terraform.io/
-    - url: KubeCon — https://www.cncf.io/community/kubecon-cloudnativecon-events/
-    - url: The Linux Foundation — https://www.linuxfoundation.org/
-    - url: Sysdig — https://sysdig.com/opensource/falco/
-    - url: OpenEBS — https://openebs.io/
-    - url: Aaron Crickenberger — https://twitter.com/spiffxp
+    - name: Kubernetes
+      url: https://kubernetes.io/
+    - name: The Podlets on Twitter
+      url: https://twitter.com/thepodlets 
+    - name: VMware
+      url: https://www.vmware.com/
+    - name: Nicholas Lane on LinkedIn
+      url: https://www.linkedin.com/in/nicholas-ross-lane
+    - name: Red Hat
+      url: https://www.redhat.com/
+    - name: CoreOS
+      url: https://coreos.com/
+    - name: Duffie Cooley on LinkedIn
+      url: https://www.linkedin.com/in/mauilion
+    - name: Apache Mesos
+      url: http://mesos.apache.org/
+    - name: Kris Nóva on LinkedIn
+      url: https://www.linkedin.com/in/kris-nova
+    - name: SolidFire
+      url: https://www.solidfire.com/
+    - name: NetApp
+      url: https://www.netapp.com/us/index.aspx
+    - name: Microsoft Azure
+      url: https://azure.microsoft.com/
+    - name: Carlisia Campos on LinkedIn
+      url: https://www.linkedin.com/in/carlisia
+    - name: Fastly
+      url: https://www.fastly.com/
+    - name: FreeBSD
+      url: https://www.freebsd.org/
+    - name: OpenStack
+      url: https://www.openstack.org/
+    - name: Open vSwitch
+      url: https://www.openvswitch.org/
+    - name: Istio
+      url: https://istio.io/
+    - name: The Podlets on Github
+      url: https://github.com/vmware-tanzu/thepodlets
+    - name: Cloud Native Infrastructure on Amazon
+      url: https://www.amazon.com/Cloud-Native-Infrastructure-Applications-Environment/dp/1491984309
+    - name: Cloud Native Computing Foundation
+      url: https://www.cncf.io/
+    - name: Terraform
+      url: https://www.terraform.io/
+    - name: KubeCon
+      url: https://www.cncf.io/community/kubecon-cloudnativecon-events/
+    - name: The Linux Foundation
+      url: https://www.linuxfoundation.org/
+    - name: Sysdig
+      url: https://sysdig.com/opensource/falco/
+    - name: OpenEBS
+      url: https://openebs.io/
+    - name: Aaron Crickenberger
+      url: https://twitter.com/spiffxp
 # video: https://www.youtube.com/embed/dQw4w9WgXcQ
 # related: 
 # - 002-container-orchestration

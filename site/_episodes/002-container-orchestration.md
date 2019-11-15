@@ -26,19 +26,32 @@ points:
     - How to make an informed decision about using Kubernetes.
     - Find out when you should not be using container orchestration.
 links:
-    - url: Velero — https://github.com/vmware-tanzu/velero
-    - url: Youtube Premium — https://www.youtube.com/premium
-    - url: KubeCon China — https://01.org/events/2019/open-source-summit-china-kubecon/ cloudnativecon
-    - url: Steven Wong — https://twitter.com/cantbewong
-    - url: Cloud Native Social Hour — https://www.youtube.com/watch?v=wxBxcdeMOYE
-    - url: Kube Janitor — https://github.com/theMagicalKarp/kube-janitor
-    - url: Docker — https://www.docker.com/
-    - url: Mesosphere — https://d2iq.com/
-    - url: Red Hat — https://www.redhat.com/en
-    - url: Kubernetes VS Docker Swarm — https://thenewstack.io/kubernetes-vs-docker-swarm-whats- the-difference/
-    - url: Kubernetes Slack Channel — http://slack.k8s.io/
-    - url: Podlets Cloud Native Podcast — http://cloudnativepodcast.com/
-    - url: The Podlets on Twitter — https://twitter.com/thepodlets
+    - name: Velero
+      url: https://velero.io
+    - name: Youtube Premium
+      url: https://www.youtube.com/premium
+    - name: KubeCon China
+      url: https://01.org/events/2019/open-source-summit-china-kubecon/cloudnativecon
+    - name: Steven Wong
+      url: https://twitter.com/cantbewong
+    - name: Cloud Native Social Hour
+      url: https://www.youtube.com/watch?v=wxBxcdeMOYE
+    - name: Kube Janitor
+      url: https://github.com/theMagicalKarp/kube-janitor
+    - name: Docker
+      url: https://www.docker.com/
+    - name: Mesosphere
+      url: https://d2iq.com/
+    - name: Red Hat
+      url: https://www.redhat.com/en
+    - name: Kubernetes VS Docker Swarm
+      url: https://thenewstack.io/kubernetes-vs-docker-swarm-whats-the-difference/
+    - name: Kubernetes Slack Channel
+      url: http://slack.k8s.io/
+    - name: Cloud Native Podcast
+      url: http://cloudnativepodcast.com/
+    - name: The Podlets on Twitter 
+      url: https://twitter.com/thepodlets
 
 # video: https://www.youtube.com/embed/dQw4w9WgXcQ
 # related: # appears in sidebar, no limit in related episodes. identify by `episode_id`
