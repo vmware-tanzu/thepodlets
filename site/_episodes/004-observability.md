@@ -44,8 +44,8 @@ links:
     - name: Distributed Systems Observability
       url: https://www.goodreads.com/book/show/40182805-distributed-systems-observability
 # video: https://www.youtube.com/embed/dQw4w9WgXcQ
-# related: # appears in sidebar, no limit in related episodes. identify by `episode_id`
-# - 001-cloud-native
+related: # appears in sidebar, no limit in related episodes. identify by `episode_id`
+- 001-cloud-native
 ---
 
 EPISODE 04

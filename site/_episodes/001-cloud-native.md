@@ -83,10 +83,10 @@ links:
       url: https://openebs.io/
     - name: Aaron Crickenberger
       url: https://twitter.com/spiffxp
-# video: https://www.youtube.com/embed/dQw4w9WgXcQ
-# related: 
-# - 002-container-orchestration
-# - 004-observability
+video: https://www.youtube.com/embed/vZ77ZjbysmA
+related: 
+- 002-container-orchestration
+- 005-cloud-native-infrastructure
 ---
 
 EPISODE 01

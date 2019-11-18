@@ -20,7 +20,7 @@ podcast: the-podlets
 footer_social_links:
   Google Play:
     fa_icon: -icon google-play
-    url: https://www.googleplay.xom
+    url: https://playmusic.app.goo.gl/?ibi=com.google.PlayMusic&isi=691797987&ius=googleplaymusic&apn=com.google.android.music&link=https://play.google.com/music/m/Ianjullnevrto5lxvcfxtbuvx74?
   Twitter:
     fa_icon: fab fa-twitter
     url: https://twitter.com/thepodlets
@@ -29,7 +29,7 @@ footer_social_links:
     url: https://itunes.com/
   Spotify:
     fa_icon: fab fa-spotify
-    url: https://spotify.com/
+    url: https://open.spotify.com/show/3ad8E1z4rYMPqUYCLRVBSG
   RSS:
     fa_icon: fa fa-rss
     url: https://www.omnycontent.com/d/playlist/3451a52d-88b7-400a-9a02-aa610027e5d0/6662044f-706b-4890-a3f8-aa9a0004642b/bf774da5-66a7-4b5d-b0e9-aa9a0004aa39/podcast.rss
@@ -37,26 +37,26 @@ footer_social_links:
 podcast_links:
   primary:
   - icon: youtube 
-    url: https://youtube.com/
+    url: https://www.youtube.com/playlist?list=PL7bmigfV0EqSh-btGOy8BLG3lsF0ylfZ-
     alt: YouTube
-  - icon: itunes
-    url: https://itunes.com/
-    alt: iTunes
+  # - icon: itunes
+  #   url: https://itunes.com/
+  #   alt: iTunes
   - icon: spotify
-    url: https://spotify.com/
+    url: https://open.spotify.com/show/3ad8E1z4rYMPqUYCLRVBSG
     alt: Spotify
   secondary:
-  - icon: overcast
-    url: https://youtube.com
-    alt: Overcast
+  # - icon: overcast
+  #   url: XXXXXXXXXXXXXXXXXXXXX 
+  #   alt: Overcast
   - icon: google-podcasts
-    url: https://itunes.com/
+    url: https://www.google.com/podcasts?feed=aHR0cHM6Ly93d3cub21ueWNvbnRlbnQuY29tL2QvcGxheWxpc3QvMzQ1MWE1MmQtODhiNy00MDBhLTlhMDItYWE2MTAwMjdlNWQwLzY2NjIwNDRmLTcwNmItNDg5MC1hM2Y4LWFhOWEwMDA0NjQyYi9iZjc3NGRhNS02NmE3LTRiNWQtYjBlOS1hYTlhMDAwNGFhMzkvcG9kY2FzdC5yc3M%3d
     alt: Google Podcasts
-  - icon: android
-    url: https://spotify.com/
-    alt: Android
+  - icon: stitcher
+    url: https://www.stitcher.com/podcast/the-podlets
+    alt: Stitcher
   - icon: google-play
-    url: https://www.google.com/
+    url: https://playmusic.app.goo.gl/?ibi=com.google.PlayMusic&isi=691797987&ius=googleplaymusic&apn=com.google.android.music&link=https://play.google.com/music/m/Ianjullnevrto5lxvcfxtbuvx74?
     alt: Google Play
   tertiary: 
   - icon: twitter-lg
@@ -73,7 +73,7 @@ podcast_links:
 highlighted: 
 - 001-cloud-native
 - 002-container-orchestration
-  
+- 005-cloud-native-infrastructure  
 
 defaults:
   - scope:
