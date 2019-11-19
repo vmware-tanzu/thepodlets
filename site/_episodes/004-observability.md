@@ -8,7 +8,7 @@ hosts:
     - name: Carlisia Campos
       url: https://twitter.com/carlisia 
     - name: Kris Nóva
-      url: https://twitter.com/kris-nova
+      url: https://twitter.com/krisnova
     - name: Duffie Cooley
       url: https://twitter.com/mauilion
 points:
