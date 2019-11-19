@@ -46,9 +46,9 @@ podcast_links:
     url: https://open.spotify.com/show/3ad8E1z4rYMPqUYCLRVBSG
     alt: Spotify
   secondary:
-  # - icon: overcast
-  #   url: XXXXXXXXXXXXXXXXXXXXX 
-  #   alt: Overcast
+  - icon: overcast
+    url: https://overcast.fm/itunes1488167284/the-podlets-podcast
+    alt: Overcast
   - icon: google-podcasts
     url: https://www.google.com/podcasts?feed=aHR0cHM6Ly93d3cub21ueWNvbnRlbnQuY29tL2QvcGxheWxpc3QvMzQ1MWE1MmQtODhiNy00MDBhLTlhMDItYWE2MTAwMjdlNWQwLzY2NjIwNDRmLTcwNmItNDg5MC1hM2Y4LWFhOWEwMDA0NjQyYi9iZjc3NGRhNS02NmE3LTRiNWQtYjBlOS1hYTlhMDAwNGFhMzkvcG9kY2FzdC5yc3M%3d
     alt: Google Podcasts
