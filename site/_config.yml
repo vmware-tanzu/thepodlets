@@ -26,7 +26,7 @@ footer_social_links:
     url: https://twitter.com/thepodlets
   iTunes:
     fa_icon: -icon itunes
-    url: https://itunes.com/
+    url: https://podcasts.apple.com/us/podcast/the-podlets-podcast/id1488167284
   Spotify:
     fa_icon: fab fa-spotify
     url: https://open.spotify.com/show/3ad8E1z4rYMPqUYCLRVBSG
@@ -39,9 +39,9 @@ podcast_links:
   - icon: youtube 
     url: https://www.youtube.com/playlist?list=PL7bmigfV0EqSh-btGOy8BLG3lsF0ylfZ-
     alt: YouTube
-  # - icon: itunes
-  #   url: https://itunes.com/
-  #   alt: iTunes
+  - icon: itunes
+    url: https://podcasts.apple.com/us/podcast/the-podlets-podcast/id1488167284
+    alt: iTunes
   - icon: spotify
     url: https://open.spotify.com/show/3ad8E1z4rYMPqUYCLRVBSG
     alt: Spotify
