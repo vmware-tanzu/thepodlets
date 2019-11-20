@@ -14,7 +14,7 @@ hosts:
     - name: Duffie Cooley
       url: https://twitter.com/mauilion
     - name: Nicholas Lane
-      url: https://twitter.com/soggiest
+      url: https://twitter.com/apinick
 points:
     - An introduction to us, our career histories and how we got into the cloud native realm.
     - Contributing to open source and everyone’s favorite project they have worked on.

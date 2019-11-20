@@ -10,7 +10,7 @@ hosts:
     - name: Josh Rosso
       url: https://twitter.com/joshrosso
     - name: Nicholas Lane
-      url: https://twitter.com/soggiest
+      url: https://twitter.com/apinick
 points:
     - Discover why container orchestration first came about.
     - Find out exactly what a container is and how it functions.
@@ -53,7 +53,7 @@ links:
     - name: The Podlets on Twitter 
       url: https://twitter.com/thepodlets
 
-# video: https://www.youtube.com/embed/dQw4w9WgXcQ
+video: https://www.youtube.com/embed/_d77Jd6F5I0
 related: # appears in sidebar, no limit in related episodes. identify by `episode_id`
 - 001-cloud-native
 - 005-cloud-native-infrastructure

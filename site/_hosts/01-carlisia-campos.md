@@ -9,4 +9,4 @@ github: https://github.com/carlisia
 website: https://grokkingtech.io/
 current: true
 ---
-Carlisia is an engineer on the [Velero](https://velero.io/) open source project, a tool used for backup and recovery of Kubernetes clusters. She’s is a [CNCF](https://www.cncf.io/) ambassador, and organizes a Kubernetes meetup in her local town of San Diego. She is also a founding member of [GoBridge](https://github.com/gobridge/about-us/blob/master/README.md), a non-profit organization that focuses on programming education using the Go language.
+Carlisia is an engineer on the [Velero](https://velero.io/) open source project, a tool used for backup and recovery of Kubernetes clusters. She’s a [CNCF](https://www.cncf.io/) ambassador, and organizes a Kubernetes meetup in her local town of San Diego. She is also a founding member of [GoBridge](https://github.com/gobridge/about-us/blob/master/README.md), a non-profit organization that focuses on programming education using the Go language.

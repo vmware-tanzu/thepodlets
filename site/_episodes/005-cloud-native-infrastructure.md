@@ -10,7 +10,7 @@ hosts:
     - name: Duffie Cooley
       url: https://twitter.com/mauilion
     - name: Nicholas Lane
-      url: https://twitter.com/soggiest
+      url: https://twitter.com/apinick
 points:
     - A few perspectives on what cloud native infrastructure means.  
     - Thoughts about the future of admin roles in the cloud native space.  
