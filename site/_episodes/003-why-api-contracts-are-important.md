@@ -55,7 +55,7 @@ links:
       url: https://medium.com/better-practices/how-to-dissolve-communication-barriers-in-your-api-development-organization-3347179b4ecc 
     - name: Java
       url: https://www.java.com/ 
-
+video: https://www.youtube.com/embed/YFE2UB7g07A
 related: # appears in sidebar, no limit in related episodes. identify by `episode_id`
 - 001-cloud-native
 ---
