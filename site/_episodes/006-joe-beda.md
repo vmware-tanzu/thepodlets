@@ -90,7 +90,7 @@ links:
       url: https://harbour.github.io/
     - name: Demoscene
       url: https://www.vice.com/en_us/article/j5wgp7/who-killed-the-american-demoscene-synchrony-demoparty
-# video: https://www.youtube.com/embed/LpFrRRshDjo
+video: https://www.youtube.com/embed/DAUV2e4Q0Jw
 related: # appears in sidebar, no limit in related episodes. identify by `episode_id`
 - 001-cloud-native
 ---
