@@ -43,7 +43,7 @@ links:
       url: https://www.amazon.com/Cloud-Native-Infrastructure-Applications-Environment/dp/1491984309
     - name: Distributed Systems Observability
       url: https://www.goodreads.com/book/show/40182805-distributed-systems-observability
-# video: https://www.youtube.com/embed/dQw4w9WgXcQ
+video: https://www.youtube.com/embed/Eze64lKJltA
 related: # appears in sidebar, no limit in related episodes. identify by `episode_id`
 - 001-cloud-native
 ---
