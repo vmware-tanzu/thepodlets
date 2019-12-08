@@ -71,8 +71,8 @@ podcast_links:
 # assign highlighted episodes here by episode ID. limited to 3 on home page, selected from the top down.
 # also appears on the about page.
 highlighted: 
-- 001-cloud-native
-- 002-container-orchestration
+- 007-kubernetes-as-per-kelsey-hightower
+- 006-a-conversation-with-joe-beda
 - 005-cloud-native-infrastructure  
 
 defaults:
