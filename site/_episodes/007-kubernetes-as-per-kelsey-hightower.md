@@ -69,7 +69,7 @@ links:
       url: https://www.verizonwireless.com/
     - name: Spotify
       url: https://www.spotify.com/
-video: https://www.youtube.com/embed/yYzIOx0Bbg0-
+video: https://www.youtube.com/embed/yYzIOx0Bbg0
 related: # appears in sidebar, no limit in related episodes. identify by `episode_id`
 - 006-a-conversation-with-joe-beda
 - 005-cloud-native-infrastructure  
