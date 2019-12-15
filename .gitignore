@@ -6,6 +6,8 @@
 .vscode
 .vs
 
+site/_episodes/000-template.md
+
 *.log
 *.js.map
 *.css.map
