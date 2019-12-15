@@ -7,9 +7,6 @@ YT Link:
 Ep slug:
 Publish date:
 
-GITHUB
-- [ ] Open PR with check list
-
 YOUTUBE
 - [ ] Upload: YouTube as private
 - [ ] Description and metadata
@@ -24,16 +21,15 @@ PODCAST
 - [ ] Add to The Podlets playlist
 - [ ] Schedule episode release, Mon 8:30AM
 
-WEBSITE
-- [ ] Text: Website
-- [ ] Open PR
-
 PROMOTION
 - [ ] Tweet-schedule episode release announcement, Mon 8:30AM
 - [ ] Tweet-schedule YouTube release announcement, Tue 8:30AM
 
 - [ ] Quote cards
 - [ ] Tweet-schedule quotes
+
+GITHUB
+- [ ] PR ready to merge
 
 On Monday, after 8:00AM
 - [ ] Merge PR same day/time as YT schedule
