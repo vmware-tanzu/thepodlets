@@ -53,7 +53,7 @@ links:
 
 video: https://www.youtube.com/embed/gQatd9f_-Kg
 related: 
-- 006-joe-beda 
+- 006-a-conversation-with-joe-beda
 - 007-kubernetes-as-per-kelsey-hightower
 - 005-cloud-native-infrastructure
 ---
