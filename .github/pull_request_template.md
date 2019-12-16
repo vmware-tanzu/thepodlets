@@ -4,7 +4,7 @@ Ep #:
 Ep title:
 Website link:
 YT Link:
-Ep slug:
+Clip link:
 Publish date:
 
 YOUTUBE
@@ -30,6 +30,7 @@ PROMOTION
 
 GITHUB
 - [ ] PR ready to merge
+- [ ] Checked Netlify, PR ready to merge
 
 On Monday, after 8:00AM
 - [ ] Merge PR same day/time as YT schedule
