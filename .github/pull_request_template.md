@@ -29,7 +29,7 @@ PROMOTION
 - [ ] Tweet-schedule quotes
 
 GITHUB
-- [ ] PR ready to merge
+- [ ] Episode page/content added 
 - [ ] Checked Netlify, PR ready to merge
 
 On Monday, after 8:00AM
