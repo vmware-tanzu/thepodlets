@@ -11,7 +11,7 @@ hosts:
       url: https://twitter.com/bryanl
     - name: Josh Rosso
       url: https://twitter.com/joshrosso
-    - name: Bryan Liles
+    - name: Olive Power
       url: https://twitter.com/opowero
 points:
     - A little introduction to Olive and her background in engineering, architecture, and science. • Disaster recovery strategies and the portion of customers who are prepared.
