@@ -12,20 +12,20 @@ hosts:
     - name: Duffie Cooley
       url: https://twitter.com/mauilion 
 points:
-    -	A brief introduction to Craig's history and his work in the cloud native space. 
-    -	The questions that Craig believes more people should be asking about Kubernetes. 
-    -	Weighing the explosion of the Kubernetes space; fragmentation versus progress. 
-    -	The three pieces of enterprise software and aiming to enlarge the 'crystalline core'.
-    -	Craig's thoughts on specialized Kubernetes operating systems and their tradeoffs. 
-    -	Quantifying the readiness of an organization to implement Kubernetes. 
-    -	Craig's reflections on Heptio and the lessons he feels he learned in the process.
-    -	The skills shortage for Kubernetes and how companies are approaching this issue. 
-    -	Balancing the needs and level of the community and shipping products regularly.
-    -	Involvement in the open source community and the leap of faith that is inherent in the process. 
-    -	The question of microliths; making monoliths more complex and harder to manage. 
-    -	Masking problems with Kubernetes and how detrimental this can be to your code.  
-    -	Craig's thoughts on the future of the Kubernetes space and possible changes.
-    -	The two duty cycles of any technology; the readiness phase that follows the hype. 
+    - A brief introduction to Craig's history and his work in the cloud native space. 
+    - The questions that Craig believes more people should be asking about Kubernetes. 
+    - Weighing the explosion of the Kubernetes space; fragmentation versus progress. 
+    - The three pieces of enterprise software and aiming to enlarge the 'crystalline core'.
+    - Craig's thoughts on specialized Kubernetes operating systems and their tradeoffs. 
+    - Quantifying the readiness of an organization to implement Kubernetes. 
+    - Craig's reflections on Heptio and the lessons he feels he learned in the process.
+    - The skills shortage for Kubernetes and how companies are approaching this issue. 
+    - Balancing the needs and level of the community and shipping products regularly.
+    - Involvement in the open source community and the leap of faith that is inherent in the process. 
+    - The question of microliths; making monoliths more complex and harder to manage. 
+    - Masking problems with Kubernetes and how detrimental this can be to your code.  
+    - Craig's thoughts on the future of the Kubernetes space and possible changes.
+    - The two duty cycles of any technology; the readiness phase that follows the hype.
 links:
     - name: Craig McLuckie on LinkedIn
       url: https://www.linkedin.com/in/craigmcluckie
