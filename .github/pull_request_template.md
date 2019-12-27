@@ -2,9 +2,9 @@
 
 Ep #:
 Ep title:
-Website link:
-YT Link:
-Clip link:
+Website link: https://thepodlets.io/episodes/
+YT Link: https://www.youtube.com/watch?v=
+Clip link: https://omny.fm/shows/the-podlets/
 Publish date:
 
 YOUTUBE
