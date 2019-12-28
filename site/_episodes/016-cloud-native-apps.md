@@ -14,32 +14,33 @@ hosts:
     - name: Nicholas Lane
       url: https://twitter.com/apinick
 points:
-    -	What cloud native applications mean to Carlisia, Brian, Josh, and Nicholas.
-    -	Portability is a big factor of cloud native apps.
-    -	Cloud native applications can modify their infrastructure needs through API calls. 
-    -	Cloud native applications can work well with continuous delivery/deployment systems.
-    -	A component of cloud native applications is that they can modify the cloud. 
-    -	An application should be thought of as multiple processes that interact and link together.
-    -	It is possible resources will begin to be requested on-demand in cloud native apps.
-    -	An explanation of the commonly used term ‘monolith.’
-    -	Even as recently as five years ago, monoliths were still commonly used.
-    -	The differences between a microservice approach and a monolith approach.
-    -	The microservice approach requires thinking about the interface at the start, making it harder.
-    -	Some of the instances when using a monolith is the logical choice for an app.
-    -	A major problem with monoliths is that as functionality grows, so too does complexity.
-    -	Some other benefits and disadvantages of monolith apps.
-    -	In the long run, separating apps into microservices gives a greater range of flexibility.
-    -	A monolith can be a cloud native application as well.
-    -	Clarification on why Brian uses the term ‘microservices’ rather than cloud native.
-    -	‘Cloud native’ is an umbrella term and a set of principles rather than a strict definition.
-    -	If it can run confidently on someone else’s computer, it is likely a cloud native application.
-    -	Applying cloud native principles when building an app from scratch makes it simpler. 
-    -	It is difficult to adapt a monolith app into one which uses cloud native principles.
-    -	The applications which could never be adapted to use cloud native principles. 
-    -	A checklist of the key attributes of cloud native applications.
-    -	Cloud native principles are flexible and can be adapted to the context.
-    -	It is the responsibility of thought leaders to bring cloud native thinking into the mainstream. 
-    -	Kubernetes has the potential to allow us to see our data centers differently.
+    - What cloud native applications mean to Carlisia, Brian, Josh, and Nicholas.
+    - Portability is a big factor of cloud native apps.
+    - Cloud native applications can modify their infrastructure needs through API calls. 
+    - Cloud native applications can work well with continuous delivery/deployment systems.
+    - A component of cloud native applications is that they can modify the cloud. 
+    - An application should be thought of as multiple processes that interact and link together.
+    - It is possible resources will begin to be requested on-demand in cloud native apps.
+    - An explanation of the commonly used term ‘monolith.’
+    - Even as recently as five years ago, monoliths were still commonly used.
+    - The differences between a microservice approach and a monolith approach.
+    - The microservice approach requires thinking about the interface at the start, making it harder.
+    - Some of the instances when using a monolith is the logical choice for an app.
+    - A major problem with monoliths is that as functionality grows, so too does complexity.
+    - Some other benefits and disadvantages of monolith apps.
+    - In the long run, separating apps into microservices gives a greater range of flexibility.
+    - A monolith can be a cloud native application as well.
+    - Clarification on why Brian uses the term ‘microservices’ rather than cloud native.
+    - ‘Cloud native’ is an umbrella term and a set of principles rather than a strict definition.
+    - If it can run confidently on someone else’s computer, it is likely a cloud native application.
+    - Applying cloud native principles when building an app from scratch makes it simpler. 
+    - It is difficult to adapt a monolith app into one which uses cloud native principles.
+    - The applications which could never be adapted to use cloud native principles. 
+    - A checklist of the key attributes of cloud native applications.
+    - Cloud native principles are flexible and can be adapted to the context.
+    - It is the responsibility of thought leaders to bring cloud native thinking into the mainstream. 
+    - Kubernetes has the potential to allow us to see our data centers differently.
+
 links:
     - name: Red Hat
       url: https://www.redhat.com/en
