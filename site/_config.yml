@@ -1,10 +1,14 @@
 # Site settings
 title: The Podlets
+tagline: Exploring cloud native, one buzzword at a time!
 email:
 author: The Podlets Authors
-description:
-url:
+description: Cloud native technologies have unique elements. In the greater tech community, there is not only a lack of knowledge of concepts and certain technologies, but also misunderstanding and almost mysticism surrounding the space. The Podlets show aims to elucidate and demystify these elements to help people confidently embrace cloud native technology.
+url: https://thepodlets.io
 logo: podlets-logo.png
+twitter:
+  username: thepodlets
+  card: summary
 vm_logo: vm-logo.png
 gh_repo: https://github.com/vmware/Kubelets/
 hero: 
@@ -113,6 +117,7 @@ plugins:
   - jekyll-readme-index # use README.md as index.html
   - jekyll-titles-from-headings # pull the page title from the first Markdown heading when none is specified.
   - jekyll-paginate # pagination object for collections (e.g. posts)
+  - jekyll-seo-tag
 
 
 # Include these subdirectories
