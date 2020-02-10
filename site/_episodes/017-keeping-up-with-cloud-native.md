@@ -14,7 +14,7 @@ description: If you work in Kubernetes, cloud native, or any other fast-moving e
 notes: If you work in Kubernetes, cloud native, or any other fast-moving ecosystem, you might have found that keeping up to date with new developments can be incredibly challenging. We think this as well, and so we decided to make today’s episode a tribute to that challenge, as well as a space for sharing the best resources and practices we can think of to help manage it. Of course, there are audiences in this space who require information at various levels of depth, and fortunately the resources to suit each one exist. We get into the many different places we go in order to receive information at each part of the spectrum, such as SIG meetings on YouTube, our favorite Twitter authorities, the KubeWeekly blog, and the most helpful books out there. Another big talking point is the idea of habits or practices that can be helpful in consuming all this information, whether it be waiting for the release notes of a new version, tapping into different TLDR summaries of a topic, streaming videos, or actively writing posts as a way of clarifying and integrating newly learned concepts. In the end, there is no easy way, and passionate as you may be about staying in tune, burnout is a real possibility. So whether you’re just scratching the cloud native surface or up to your eyeballs in base code, join us for today’s conversation because you’re bound to find some use in the resources we share.
 hosts: 
     - name: Carlisia Campos
-     url: https://twitter.com/carlisia
+      url: https://twitter.com/carlisia
     - name: Duffie Cooley
       url: https://twitter.com/mauilion
     - name: Josh Rosso
@@ -25,18 +25,18 @@ hosts:
       url: https://twitter.com/embano1
 points:
     - Audiences and different levels of depth that our guests/hosts follow Kubernetes at.
-    - What ‘keeping up’ means: merely following news, or actually grasping every new concept?
+    - What ‘keeping up’ means, merely following news, or actually grasping every new concept?
     - The impossibility of truly keeping up with Kubernetes as it becomes ever more complex.
-    - Patterns used to keep up with new developments: the TWKD website, release notes, etc.
+    - Patterns used to keep up with new developments - the TWKD website, release notes, etc.
     - Twitter’s helpful provision of information, from opinions to tech content, all in one place.
     - How helpful Cindy Sridharan is on Twitter in her orientation toward distributed systems.
     - The active side of keeping up such as writing posts and helping newcomers.
     - More helpful Twitter accounts such as InfoSec.
     - How books provide one source of deep information as opposed to the noise on Twitter.
-    - Books: Programming Kubernetes; Managing Kubernetes; Kubernetes Best Practices.
-    - Another great resource for seeing Kubernetes in action: the KubeWeeky blog.
+    - Books - Programming Kubernetes; Managing Kubernetes; Kubernetes Best Practices.
+    - Another great resource for seeing Kubernetes in action - the KubeWeeky blog.
     - A call to watch the SIG playlists on the Kubernetes YouTube channel.
-    - Tooling: tab management and Michael’s self-built Twitter searcher.
+    - Tooling - tab management and Michael’s self-built Twitter searcher.
     - Live streaming and CTF live code demonstrations as another resource.
     - How to keep a team updated using platforms like Slack and Zoom.
     - The importance of organizing shared content on Slack.
@@ -85,7 +85,7 @@ links:
       url: https://github.com/kubernetes/community/blob/master/events/office-hours.md
     - name: think-v.com
       url: http://think-v.com/
-    - name: Panel Discussion: Care and Feeding: Burnout and Self Care in our Community
+    - name: Panel Discussion, Care and Feeding - Burnout and Self Care in our Community
       url: https://www.youtube.com/watch?v=jzzfGNFuwwE
     - name: Kubernetes Slack
       url: https://slack.k8s.io/
