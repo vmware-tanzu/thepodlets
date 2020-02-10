@@ -10,7 +10,7 @@ Publish date:
 YOUTUBE
 - [ ] Upload: YouTube as private
 - [ ] YT cover
-- [ ] Text and metadata
+- [ ] Text and metadata (Note: the slug for the website episode is the entire file name ex: https://thepodlets.io/episodes/010-dichotomy-of-security)
 - [ ] End-screen for YouTube
 - [ ] Schedule YouTube release, Mon 8:00AM (Note: do not add to playlist just yet)
 
