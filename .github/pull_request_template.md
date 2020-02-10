@@ -1,4 +1,4 @@
-# Playbook
+# Checklist 
 
 Ep #:
 Ep title:
@@ -12,7 +12,7 @@ YOUTUBE
 - [ ] YT cover
 - [ ] Text and metadata
 - [ ] End-screen for YouTube
-- [ ] Schedule YouTube release, Mon 8:00AM
+- [ ] Schedule YouTube release, Mon 8:00AM (Note: do not add to playlist just yet)
 
 PODCAST
 - [ ] Upload episode as private
