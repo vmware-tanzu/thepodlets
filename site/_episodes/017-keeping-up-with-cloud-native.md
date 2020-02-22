@@ -4,10 +4,10 @@
 # 2) No episode number in the title; add ep number to the "Episode number" field
 # 3) Keep it private, but set the date to publish (always on a Mon at 8:30AM)
 # 4) Add episode to playlist; save
-# 5) Fetch episode slug from Advanced settings > slug (note: it can be changed but never after the publish date)
+# 5) Fetch episode slug from Advanced settings > slug (note 1: it can be changed but never after the publish date; note 2: there should be no episode number in the slug)
 # 6) Paste the slug into episode_id below
 # 7) Commit and open a PR to get the remainder of the checklist 
-episode_id: 017-keeping-up-with-cloud-native
+episode_id: keeping-up-with-cloud-native
 episode_number: 17
 title: Keeping up with Cloud Native
 description: If you work in Kubernetes, cloud native, or any other fast-moving ecosystem, you might have found that keeping up to date with new developments can be incredibly challenging. We think this as well, and so we decided to make today’s episode a tribute to that challenge, as well as a space for sharing the best resources and practices we can think of to help manage it.  
