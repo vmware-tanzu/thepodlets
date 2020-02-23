@@ -15,6 +15,11 @@ title: Application Modernization with Chris Umbel and Shaun Anderson
 description: Our guests help companies to update their systems and move into more up-to-date setups through the Swift methodology and our conversation focusses on this journey from legacy code to a more manageable solution.  We lay the groundwork for the conversation, defining a few of the key terms and concerns that arise for typical clients and then Shaun and Chris share a bit about their approach to moving things forward. 
 # "notes" is the entire show notes:
 notes: Today on the show we are very lucky to be joined by Chris Umbel and Shaun Anderson from Pivotal to talk about app transformation and modernization! Our guests help companies to update their systems and move into more up-to-date setups through the Swift methodology and our conversation focusses on this journey from legacy code to a more manageable solution.  We lay the groundwork for the conversation, defining a few of the key terms and concerns that arise for typical clients and then Shaun and Chris share a bit about their approach to moving things forward. From there, we move into the Swift methodology and how it plays out on a project before considering the benefits of further modernization that can occur after the initial project. Chris and Shaun share their thoughts on measuring success, advantages of their system and how to avoid roll back towards legacy code. For all this and more, join us on The Podlets Podcast, today!
+guests: 
+    - name: Chris Umbel
+      url: https://twitter.com/chrisumbel
+    - name: Shaun Anderson
+      url: https://twitter.com/swiftbird68
 hosts: 
     - name: Carlisia Campos
       url: https://twitter.com/carlisia
@@ -25,16 +30,52 @@ hosts:
     - name: Olive Power
       url: https://twitter.com/opowero
 points:
-    - 
+    - A quick introduction to our two guests and their roles at Pivotal. 
+    - Differentiating between application organization and application transformation.
+    - Defining legacy and the important characteristics of technical debt and pain.
+    - The two-pronged approach at Pivotal; focusing on apps and the platform.
+    - The process of helping companies through app transformation and what it looks like.
+    - Overlap between the Java and .NET worlds; lessons to be applied to both.
+    - Breaking down the Swift methodology and how it is being used in app transformation. 
+    - Incremental releases and slow modernization to avoid roll back to legacy systems.  
+    - The advantages that the Swift methodology offers a new team. 
+    - Possibilities of further modernization and transformation after a successful implementation. 
+    - Measuring success in modernization projects in an organization using initial objectives. 
+ 
 # Be sure to check the episode's hackmd for additional links:
 links:
-    - name:
-      url: 
+    - name: Chris Umbel 
+      url: https://github.com/chrisumbel
+    - name: Shaun Anderson 
+      url: https://www.crunchbase.com/person/shaun-anderson
+    - name: Pivotal 
+      url: https://pivotal.io/
+    - name: VMware 
+      url: https://www.vmware.com/
+    - name: Michael Feathers 
+      url: https://michaelfeathers.silvrback.com/
+    - name: Steeltoe 
+      url: https://steeltoe.io/
+    - name: Alberto Brandolini 
+      url: https://leanpub.com/u/ziobrando
+    - name: Swiftbird 
+      url: https://www.swiftbird.us/
+    - name: EventStorming 
+      url: https://www.eventstorming.com/book/
+    - name: Stephen Hawking 
+      url: http://www.hawking.org.uk/
+    - name: Istio 
+      url: https://istio.io/
+    - name: Stateful and Stateless Workload Episode 
+      url: https://thepodlets.io/episodes/009-stateful-and-stateless/
+    - name: Pivotal Presentation on Application Transformation
+      url: https://content.pivotal.io/slides/application-transformation-workshop
+ 
 # Add only the YT id to the end of the URL below:
 video: https://www.youtube.com/embed/lkrZPfqdaqU
 related: 
-- 
-- 
+- 016-cloud-native-apps
+- 014-jobs-in-cloud-native
 ---
 EPISODE 19
 
