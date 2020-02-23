@@ -15,6 +15,10 @@ title:
 description: 
 # "notes" is the entire show notes:
 notes: 
+# Uncomment and add guests if any
+# guests:
+    # - name: 
+    #   url: 
 hosts: 
     - name: 
       url: 
