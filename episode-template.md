@@ -30,6 +30,7 @@ links:
       url: 
 # Add only the YT id to the end of the URL below:
 video: https://www.youtube.com/embed/
+# related needs to be the episode id of the episode, not the file name. Ex: 010-the-dichotomy-of-security
 related: 
 - 
 - 
