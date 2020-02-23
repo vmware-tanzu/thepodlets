@@ -90,8 +90,8 @@ links:
       url:  https://twitter.com/kelseyhightower/status/935252923721793536?s=2
 # Add only the YT id to the end of the URL below:
 video: https://www.youtube.com/embed/0LD3Ap1WgG0
-related: 
-- 017-keeping-up-with-cloud-native
+related:
+- 013-kubernetes-as-per-craig-mcluckie
 - 007-kubernetes-as-per-kelsey-hightower
 - 012-learning-distributed-systems
 ---
