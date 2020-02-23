@@ -71,7 +71,7 @@
               <div class="row justify-content-center">
                 <div class="col mb-2">
                     <font size="3">
-                      {% for host in page.guests %}
+                      {% for guest in page.guests %}
                         <li><a href="{{ guest.url }}" target="_blank">{{ guest.name }}</a></li>
                       {% endfor %}
                     </font>
