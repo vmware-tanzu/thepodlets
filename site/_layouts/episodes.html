@@ -79,6 +79,22 @@
               </div>
               {% endif %}
 
+              <!-- EPISODE GUESTS -->
+              {% if page.guests %}
+              <div class="row justify-content-center">
+                <div class="col mb-15"><h2 class="h3">Guests</h2></div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col mb-2">
+                    <font size="3">
+                      {% for host in page.guests %}
+                        <li><a href="{{ guest.url }}" target="_blank">{{ guest.name }}</a></li>
+                      {% endfor %}
+                    </font>
+                </div>
+              </div>
+              {% endif %}
+
               <!-- EPISODE KEY POINTS -->
               {% if page.points %}
               <div class="row justify-content-center">
