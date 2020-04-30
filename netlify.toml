@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "https://dashboard.thepodlets.io/*"
+  to = "https://www.notion.so/thepodlets"
+  status = 301
+  force = true
