@@ -1,4 +1,5 @@
 ---
+episode_id: kubernetes-sucks-for-developers-right-no
 # General note: look at other episode files and follow the same format
 # TODOs
 # 1) Upload mp3 file to omnystudio
@@ -7,17 +8,15 @@
 # 4) Add episode to playlist; save
 # 5) Fetch episode slug from Advanced settings > slug (note 1: it can be changed but never after the publish date; note 2: there should be no episode number in the slug)
 # 6) Paste the slug into episode_id below
-# 7) Commit and open a PR to get the remainder of the checklist 
-episode_id: kubernets-sucks-for-developers-right-no 
-episode_number: 21 
-title: Kubernets Sucks for Developers, Right? No.
+# 7) Commit and open a PR to get the remainder of the checklist
+episode_number: 21
+title: Kubernetes Sucks for Developers, Right? No.
 # "description" is a short version of the show notes:
 description: In this episode we focus on Kubernetes and its tooling with Ellen Körbes. Ellen believes that with the right set of tools at your disposal it is not actually necessary to completely understand all of Kubernetes or even be familiar with a lot of its functions. You do not have to start from the bottom every time you start a new project and developers who are new to Kubernetes need not becomes experts in it in order to take advantage of its benefits. 
 # "notes" is the entire show notes:
-notes: We are joined by Ellen Körbes for this episode, where we focus on Kubernetes and its tooling. Ellen has a position at Tilt where she works in developer relations. Before Tilt, she was doing closely related kinds of work at Garden, a similar company! Both companies are directly related to working with Kubernetes and Ellen is here to talk to us about why Kubernetes does not have to be the difficult thing that it is made out to be. According to her, this mostly comes down to tooling. Ellen believes that with the right set of tools at your disposal it is not actually necessary to completely understand all of Kubernetes or even be familiar with a lot of its functions. You do not have to start from the bottom every time you start a new project and developers who are new to Kubernetes need not becomes experts in it in order to take advantage of its benefits.
-The major goal for Ellen and Tilt is to get developers code up, running and live in as quick a time as possible. When the system is standing in the way this process can take much longer, whereas, with Tilt, Ellen believes the process should be around two seconds! Ellen comments on who should be using Kubernetes and who it would most benefit. We also discuss where Kubernetes should be run, either locally or externally, for best results and Tilt's part in the process of unit testing and feedback. We finish off peering into the future of Kubernetes, so make sure to join us for this highly informative and empowering chat!
+notes: We are joined by Ellen Körbes for this episode, where we focus on Kubernetes and its tooling. Ellen has a position at Tilt where she works in developer relations. Before Tilt, she was doing closely related kinds of work at Garden, a similar company! Both companies are directly related to working with Kubernetes and Ellen is here to talk to us about why Kubernetes does not have to be the difficult thing that it is made out to be. According to her, this mostly comes down to tooling. Ellen believes that with the right set of tools at your disposal it is not actually necessary to completely understand all of Kubernetes or even be familiar with a lot of its functions. You do not have to start from the bottom every time you start a new project and developers who are new to Kubernetes need not becomes experts in it in order to take advantage of its benefits. The major goal for Ellen and Tilt is to get developers code up, running and live in as quick a time as possible. When the system is standing in the way this process can take much longer, whereas, with Tilt, Ellen believes the process should be around two seconds! Ellen comments on who should be using Kubernetes and who it would most benefit. We also discuss where Kubernetes should be run, either locally or externally, for best results and Tilt's part in the process of unit testing and feedback. We finish off peering into the future of Kubernetes, so make sure to join us for this highly informative and empowering chat!
 # Uncomment and add guests if any
-# guests:
+guests:
     - name: Ellen Körbes
       url: https://twitter.com/ellenkorbes
 hosts: 
