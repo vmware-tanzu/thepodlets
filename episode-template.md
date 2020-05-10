@@ -7,7 +7,7 @@
 # 4) Add episode to playlist; save
 # 5) Fetch episode slug from Advanced settings > slug (note 1: it can be changed but never after the publish date; note 2: there should be no episode number in the slug)
 # 6) Paste the slug into episode_id below
-# 7) Commit and open a PR to get the remainder of the checklist 
+# 7) Commit 
 episode_id: 
 episode_number: 
 title: 
@@ -24,7 +24,7 @@ hosts:
       url: 
 points:
     - 
-# Be sure to check the episode's hackmd for additional links:
+# Be sure to check the episode's additional links in the notes:
 links:
     - name:
       url: 
