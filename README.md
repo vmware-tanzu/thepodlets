@@ -6,7 +6,7 @@ Exploring cloud native, one buzzword at a time!
 
 ## Ways to suggest an episode
 
-- Add an issue to this repository (much preferred!)
+- Visit our [Guest Central](https://www.notion.so/thepodlets/The-Podlets-Guest-Central-9cec18726e924863b559ef278cf695c9) (much preferred!)
 - Contact us on Twitter: [@thepodlets](https://twitter.com/thepodlets)
 - Email us at: info@thepodlets.io
 
