@@ -5,7 +5,7 @@ title: Cloud Native Infrastructure
 description: Where does code live and run and what does it mean to create a cloud native infrastructure? Tune in to find out! We also have a conversation about the future of administrative roles in the cloud native space.
 notes: This week on The Podlets Podcast, we talk about cloud native infrastructure. We were interested in discussing this because we’ve spent some time talking about the different ways that people can use cloud native tooling, but we wanted to get to the root of it, such as where code lives and runs and what it means to create cloud native infrastructure. We also have a conversation about the future of administrative roles in the cloud native space, and explain why there will always be a demand for people in this industry. We dive into the expense for companies when developers run their own scripts and use cloud services as required, and provide some pointers on how to keep costs at a minimum. Joining in, you’ll also learn what a well-constructed cloud native environment should look like, which resources to consult, and what infrastructure as code (IaC) really means. We compare containers to virtual machines and then weigh up the advantages and disadvantages of bare metal data centers versus using the cloud.
 hosts: 
-    - name: Carlisia Campos
+    - name: Carlisia Thompson
       url: https://twitter.com/carlisia 
     - name: Duffie Cooley
       url: https://twitter.com/mauilion
@@ -79,7 +79,7 @@ EPISODE 05
 
 [EPISODE]
 
-[0:00:41.1] NL: Hello and welcome to episode five of The Podlets Podcast, the podcast where we explore cloud native topics one topic at a time. This week, we’re going to the root of everything, money. No, I mean, infrastructure. My name is Nicholas Lane and joining me this week are Carlisia Campos.
+[0:00:41.1] NL: Hello and welcome to episode five of The Podlets Podcast, the podcast where we explore cloud native topics one topic at a time. This week, we’re going to the root of everything, money. No, I mean, infrastructure. My name is Nicholas Lane and joining me this week are Carlisia Thompson.
 
 [0:00:59.2] CC: Hi everybody.
 

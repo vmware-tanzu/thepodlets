@@ -5,7 +5,7 @@ title: Understanding Observability
 description: Observability - what the term means, how it relates to the process of software development, and the importance of investing in a culture of observability.
 notes: Welcome to the fourth episode of The Podlets podcast! Today we speak to the topic of observability - what the term means, how it relates to the process of software development, and the importance of investing in a culture of observability. Each of us has a slightly different take on what exactly observability is, but roughly we agree that it is a set of tools that you can use to observe the interactions and behavior of distributed systems. Kris gives some handy analogies to help understand the growing need for observability due to rising scale and complexity. We then look at the three pillars of observability, and what each of these pillars look like in the process of testing and running a program. We also think more about how observability applies to the external problems that might arise in a system. Next up, we cover how implementing observability in teams is a cultural process, and how it is important to have a culture that accepts the necessity of failure and extensive time spend problem-solving in coding. Finally, the conversation shifts to how having a higher culture of observability can do away with the old problem of calling the dinosaur in a team who knows the code backward every time an error crops up. 
 hosts: 
-    - name: Carlisia Campos
+    - name: Carlisia Thompson
       url: https://twitter.com/carlisia 
     - name: Kris Nóva
       url: https://twitter.com/krisnova
@@ -56,7 +56,7 @@ EPISODE 04
 
 [EPISODE]
 
-[0:00:40.5] CC: Hi everyone, welcome back to episode four. Today we’re going to talk about observability. I am Carlisia Campos. Today here on the show with me are Duffy Coolie. 
+[0:00:40.5] CC: Hi everyone, welcome back to episode four. Today we’re going to talk about observability. I am Carlisia Thompson. Today here on the show with me are Duffy Coolie. 
 
 [0:00:52.7] DC: How are you doing folks? I’m Duffy Coolie, I’m staff field engineer here at VMware and looking forward to this topic.
 

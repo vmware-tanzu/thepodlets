@@ -20,7 +20,7 @@ guests:
     - name: Ellen Körbes
       url: https://twitter.com/ellenkorbes
 hosts: 
-    - name: Carlisia Campos
+    - name: Carlisia Thompson
       url: https://twitter.com/carlisia
     - name: Duffie Cooley
       url: https://twitter.com/mauilion
@@ -113,7 +113,7 @@ Welcome to The Podlets Podcast, a weekly show that explores cloud native one buz
 
 [EPISODE]
 
-[0:00:41.8] CC: Hi, everybody. This is The Podlets. We are back this week with a special guest, Ellen Körbes. Ellen will introduce herself in a little bit. Also on the show, it’s myself, Carlisia Campos, Michael Gasch and Duffie Cooley.
+[0:00:41.8] CC: Hi, everybody. This is The Podlets. We are back this week with a special guest, Ellen Körbes. Ellen will introduce herself in a little bit. Also on the show, it’s myself, Carlisia Thompson, Michael Gasch and Duffie Cooley.
 
 [0:00:57.9] DC: Hey, everybody.
 

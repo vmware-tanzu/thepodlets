@@ -5,7 +5,7 @@ title: Disaster and Recovery
 description: In this episode we discuss some of the different ways that people are backing things up to suit theiwr individual needs, recovery time objectives and recovery point objectives, what high availability can offer your system and more! The team offers a bunch of great safety tips to keep things from falling through the cracks and we get into keeping things simple avoiding too much mutation of infrastructure and why testing your backups can make all the difference.
 notes: In this episode of The Podlets Podcast, we are talking about the very important topic of recovery from a disaster! A disaster can take many forms, from errors in software and hardware to natural disasters and acts of God. That being said that are better and worse ways of preparing for and preventing the inevitable problems that arise with your data. The message here is that issues will arise but through careful precaution and the right kind of infrastructure, the damage to your business can be minimal. We discuss some of the different ways that people are backing things up to suit their individual needs, recovery time objectives and recovery point objectives, what high availability can offer your system and more! The team offers a bunch of great safety tips to keep things from falling through the cracks and we get into keeping things simple avoiding too much mutation of infrastructure and why testing your backups can make all the difference. We naturally look at this question with an added focus on Kubernetes and go through a few tools that are currently available. So for anyone wanting to ensure safe data and a safe business, this episode is for you!
 hosts: 
-    - name: Carlisia Campos
+    - name: Carlisia Thompson
       url: https://twitter.com/carlisia 
     - name: Bryan Liles
       url: https://twitter.com/bryanl
@@ -67,7 +67,7 @@ EPISODE 08
 
 [EPISODE]
 
-[00:00:41] CC: Hi, everybody. We are back. This is episode number 8. Today we have on the show myself, Carlisia Campos and Josh.
+[00:00:41] CC: Hi, everybody. We are back. This is episode number 8. Today we have on the show myself, Carlisia Thompson and Josh.
 
 [00:00:51] JR: Hello, everyone.
 
@@ -313,7 +313,7 @@ We’re going to start having the software – The software is always available.
 
 Maybe you might need to investigate if it keeps stopping and starting and Kubernetes keeps bringing it back. The system is actually still fully functional in terms of end users. You as the operator might need to investigate why that’s so. But the actual endpoint is still that your application is still up and running. Things fail and it’s okay. That’s maybe a thing that’s changed from maybe 5 years ago, 10 years ago.
 
-[00:41:25] CC: This is a great conversation. I want to thank everybody, Olive Power, Josh Rosso, Brian Lyles. I’m Carlisia Campos singing off. Make sure to subscribe. This was Episode 8. We’ll be back next week. See you.
+[00:41:25] CC: This is a great conversation. I want to thank everybody, Olive Power, Josh Rosso, Brian Lyles. I’m Carlisia Thompson singing off. Make sure to subscribe. This was Episode 8. We’ll be back next week. See you.
 
 [END OF EPISODE]
 

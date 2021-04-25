@@ -16,7 +16,7 @@ description: The question of diving into Kubernetes is something that faces us a
 # "notes" is the entire show notes:
 notes: The question of diving into Kubernetes is something that faces us all in different ways. Whether you are already on the platform, are considering transitioning, or are thinking about what is best for your team moving forward, the possibilities and the learning-curve make it a somewhat difficult question to answer. In this episode, we discuss the topic and ultimately believe that an individual is the only one who can answer that question well. That being said, the capabilities of Kubernetes can be quite persuasive and if you are tempted then it is most definitely worth considering very seriously, at least. In our discussion, we cover some of the problems that Kubernetes solves, as well as some of the issues that might arise when moving into the Kubernetes space. The panel shares their thoughts on learning a new platform and compare it with other tricky installations and adoption periods. From there, we look at platforms and how Kubernetes fits and does not fit into a traditional definition of what a platform constitutes. The last part of this episode is spent considering the future of Kubernetes and how fast that future just might arrive. So for all this and a bunch more, join us on The Podlets Podcast, today!
 hosts: 
-    - name: Carlisia Campos
+    - name: Carlisia Thompson
       url: https://twitter.com/carlisia
     - name: Duffie Cooley
       url: https://twitter.com/mauilion
@@ -103,7 +103,7 @@ EPISODE 18
 
 [EPISODE]
 
-[0:00:41.9] JR: Hello everyone and welcome to The Podlets Podcast where we are going to be talking about should I Kubernetes? My name is Josh Rosso and I am very pleased to be joined by, Carlisia Campos.
+[0:00:41.9] JR: Hello everyone and welcome to The Podlets Podcast where we are going to be talking about should I Kubernetes? My name is Josh Rosso and I am very pleased to be joined by, Carlisia Thompson.
 
 [0:00:55.3] CC: Hi everybody.
 
@@ -357,7 +357,7 @@ But they could use it as a pause, okay that would enable me to do these thing th
 
 [0:45:34.9] JR: All right everyone, well that wraps it up for at least Part 1 of “Should I Kubernetes?” and we appreciate you listening. Thanks so much. Be sure to check out the show notes as Duffy mentioned for some of the articles we read preparing for this episode and TGIK links and all that good stuff. 
 
-So again, I am Josh Russo signing out, with us also Carlisia Campos.
+So again, I am Josh Russo signing out, with us also Carlisia Thompson.
 
 [0:45:55.8] CC: Bye everybody, it was great to be here. 
 

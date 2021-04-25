@@ -22,7 +22,7 @@ guests:
     - name: Andrew Rynhard
       url: https://twitter.com/andrewrynhard
 hosts: 
-    - name: Carlisia Campos
+    - name: Carlisia Thompson
       url: https://twitter.com/carlisia
     - name: Bryan Liles
       url: https://twitter.com/bryanl
@@ -61,7 +61,7 @@ links:
       url: https://www.linkedin.com/in/jedsalazar/
     - name: Bryan Liles on LinkedIn 
       url: https://www.linkedin.com/in/bryanliles/
-    - name: Carlisia Campos on LinkedIn 
+    - name: Carlisia Thompson on LinkedIn 
       url: https://www.linkedin.com/in/carlisia/
     - name: Red Hat 
       url: https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux
@@ -107,7 +107,7 @@ EPISODE 20
 
 [00:01:32] BL: Hi. 
 
-[00:01:33] CC: Hi. And me, Carlisia Campos. Who’d like to get the party started and kick this off?
+[00:01:33] CC: Hi. And me, Carlisia Thompson. Who’d like to get the party started and kick this off?
 
 [00:01:41] BL: Oh, I’m here. Let’s throw the gauntlet down. We’re talking about Kubernetes operating systems today. I have an operating system, a Mac, or I have Linux. I can run Kubernetes. What is a Kubernetes operating system and why should I even be thinking about this? 
 

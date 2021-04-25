@@ -5,7 +5,7 @@ title: The Dichotomy of Security
 description: Security is inherently dichotomous because it involves hardening an application to protect it from external threats, while at the same time ensuring agility and the ability to iterate as fast as possible. This in-built tension is the major focal point of today’s show. 
 notes: Security is inherently dichotomous because it involves hardening an application to protect it from external threats, while at the same time ensuring agility and the ability to iterate as fast as possible. This in-built tension is the major focal point of today’s show, where we talk about all things security. From our discussion, we discover that there are several reasons for this tension. The overarching problem with security is that the starting point is often rules and parameters, rather than understanding what the system is used for. This results in security being heavily constraining. For this to change, a culture shift is necessary, where security people and developers come around the same table and define what optimizing to each of them means. This, however, is much easier said than done as security is usually only brought in at the later stages of development. We also discuss why the problem of security needs to be reframed, the importance of defining what normal functionality is and issues around response and detection, along with many other security insights. The intersection of cloud native and security is an interesting one, so tune in today! 
 hosts: 
-    - name: Carlisia Campos
+    - name: Carlisia Thompson
       url: https://twitter.com/carlisia
     - name: Bryan Liles
       url: https://twitter.com/bryanl
@@ -87,7 +87,7 @@ EPISODE 10
 
 [0:00:57.0] BM: Hello
 
-[0:00:57.5] NL: And Carlisia Campos.
+[0:00:57.5] NL: And Carlisia Thompson.
 
 [0:00:59.4] CC: Glad to be here.
 

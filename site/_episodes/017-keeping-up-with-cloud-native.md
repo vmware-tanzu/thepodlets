@@ -13,7 +13,7 @@ title: Keeping up with Cloud Native
 description: If you work in Kubernetes, cloud native, or any other fast-moving ecosystem, you might have found that keeping up to date with new developments can be incredibly challenging. We think this as well, and so we decided to make today’s episode a tribute to that challenge, as well as a space for sharing the best resources and practices we can think of to help manage it.  
 notes: If you work in Kubernetes, cloud native, or any other fast-moving ecosystem, you might have found that keeping up to date with new developments can be incredibly challenging. We think this as well, and so we decided to make today’s episode a tribute to that challenge, as well as a space for sharing the best resources and practices we can think of to help manage it. Of course, there are audiences in this space who require information at various levels of depth, and fortunately the resources to suit each one exist. We get into the many different places we go in order to receive information at each part of the spectrum, such as SIG meetings on YouTube, our favorite Twitter authorities, the KubeWeekly blog, and the most helpful books out there. Another big talking point is the idea of habits or practices that can be helpful in consuming all this information, whether it be waiting for the release notes of a new version, tapping into different TLDR summaries of a topic, streaming videos, or actively writing posts as a way of clarifying and integrating newly learned concepts. In the end, there is no easy way, and passionate as you may be about staying in tune, burnout is a real possibility. So whether you’re just scratching the cloud native surface or up to your eyeballs in base code, join us for today’s conversation because you’re bound to find some use in the resources we share.
 hosts: 
-    - name: Carlisia Campos
+    - name: Carlisia Thompson
       url: https://twitter.com/carlisia
     - name: Duffie Cooley
       url: https://twitter.com/mauilion
@@ -160,7 +160,7 @@ EPISODE 17
 
 [0:00:56.6] OP: Hi.
 
-[0:00:57.4] DC: Carlisia Campos.
+[0:00:57.4] DC: Carlisia Thompson.
 
 [0:00:58.6] CC: Hi everybody.
 

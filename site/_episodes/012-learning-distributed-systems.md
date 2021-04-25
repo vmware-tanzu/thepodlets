@@ -56,7 +56,7 @@ notes: In this episode of The Podlets Podcast, we welcome Michael Gasch from VMw
         - Podcast, [Distributed Systems - Design Concepts - Sunil Kumar](https://www.amazon.com/Distributed-Systems-Concepts-Sunil-Kumar/dp/1842659332)
 
 hosts: 
-    - name: Carlisia Campos
+    - name: Carlisia Thompson
       url: https://twitter.com/carlisia 
     - name: Duffie Cooley
       url: https://twitter.com/mauilion
@@ -108,7 +108,7 @@ EPISODE 12
 
 [EPISODE]
 
-[00:00:41] CC: Hi, everybody. Welcome back. This is Episode 12, and we are going to talk about distributed systems without a degree or even with a degree, because who knows how much we learn in university. I am Carlisia Campos, one of your hosts. Today, I also have Duffie Cooley. Say hi, Duffie. 
+[00:00:41] CC: Hi, everybody. Welcome back. This is Episode 12, and we are going to talk about distributed systems without a degree or even with a degree, because who knows how much we learn in university. I am Carlisia Thompson, one of your hosts. Today, I also have Duffie Cooley. Say hi, Duffie. 
 
 [00:01:02] DC: Hey, everybody. 
 
@@ -379,7 +379,7 @@ So I think that to both of your points, it’s like you can enter this stage whe
 
 [00:46:30] DC: My pleasure. 
 
-[00:46:31] CC: Again, I’m Carlisia Campos. With us was Duffie Cooley and Michael Gesh. This was episode 12, and I hope to see you next time. Bye.
+[00:46:31] CC: Again, I’m Carlisia Thompson. With us was Duffie Cooley and Michael Gesh. This was episode 12, and I hope to see you next time. Bye.
 
 [00:46:41] DC: Bye. 
 

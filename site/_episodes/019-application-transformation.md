@@ -21,7 +21,7 @@ guests:
     - name: Shaun Anderson
       url: https://twitter.com/swiftbird68
 hosts: 
-    - name: Carlisia Campos
+    - name: Carlisia Thompson
       url: https://twitter.com/carlisia
     - name: Josh Rosso
       url: https://twitter.com/joshrosso
@@ -85,7 +85,7 @@ EPISODE 19
 
 [EPISODE]
 
-[0:00:41.0] CC: Hi, everybody. Welcome back to The Podlets. Today, we have an exciting show. It's myself on, Carlisia Campos. We have our usual guest hosts, Duffie Cooley, Olive Power and Josh Rosso. We also have two special guests, Chris Umbel. Did I say that right, Chris?
+[0:00:41.0] CC: Hi, everybody. Welcome back to The Podlets. Today, we have an exciting show. It's myself on, Carlisia Thompson. We have our usual guest hosts, Duffie Cooley, Olive Power and Josh Rosso. We also have two special guests, Chris Umbel. Did I say that right, Chris?
 
 [0:01:03.3] CU: Close enough.
 

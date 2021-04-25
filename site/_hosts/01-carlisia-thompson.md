@@ -1,6 +1,6 @@
 ---
 first_name: Carlisia
-last_name:  Campos
+last_name: Thompson 
 image: /img/hosts/carlisia-campos.jpg
 jobtitle: Senior Member of Technical Staff, engineer on the Velero OSS project
 twitter: https://twitter.com/carlisia

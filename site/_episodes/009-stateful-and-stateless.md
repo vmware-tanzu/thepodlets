@@ -5,7 +5,7 @@ title: Stateful and Stateless Workloads
 description: The purpose of today’s show is coming to a deeper understanding of the meaning of ‘stateful’ versus ‘stateless’ apps, and how they relate to the cloud native environment. We cover some definitions of ‘state’ initially and then move to consider how ideas of data persistence and co-ordination across apps complicate or elucidate understandings of ‘stateful’ and ‘stateless’. We then think about the challenging practice of running databases within Kubernetes clusters, which effectively results in an ephemeral system becoming stateful. You’ll then hear some clarifications of the meaning of operators and controllers, the role they play in mediating and regulating states, and also how important they are in a rapidly evolving but skills-scarce environment.  
 notes: This week on The Podlets Cloud Native Podcast we have Josh, Carlisia, Duffie, and Nick on the show, and are also happy to be joined by a newcomer, Brian Liles, who is a senior staff engineer at VMWare! The purpose of today’s show is coming to a deeper understanding of the meaning of ‘stateful’ versus ‘stateless’ apps, and how they relate to the cloud native environment. We cover some definitions of ‘state’ initially and then move to consider how ideas of data persistence and co-ordination across apps complicate or elucidate understandings of ‘stateful’ and ‘stateless’. We then think about the challenging practice of running databases within Kubernetes clusters, which effectively results in an ephemeral system becoming stateful. You’ll then hear some clarifications of the meaning of operators and controllers, the role they play in mediating and regulating states, and also how important they are in a rapidly evolving but skills-scarce environment. Another important theme in this conversation is the CAP theorem or the impossibility of consistency, availability and partition tolerance all at once, but the way different databases allow for different combinations of two out of the three. We then move on to chat about the fundamental connection between workloads and state and then end off with a quick consideration about how ideas of stateful and stateless play out in the context of networks. Today’s show is a real deep dive offering perspectives from some the most knowledgeable in the cloud native space so make sure to tune in!
 hosts: 
-    - name: Carlisia Campos
+    - name: Carlisia Thompson
       url: https://twitter.com/carlisia
     - name: Bryan Liles
       url: https://twitter.com/bryanl
@@ -325,7 +325,7 @@ There are lots of examples of this. I mean, Brian’s example of Google earlier.
 
 [00:42:54] NL: Thank you so much. This was really informative for me.  
 
-[00:42:56] JR: Carlisia Campos.
+[00:42:56] JR: Carlisia Thompson.
 
 [00:42:57] CCC: This was a great conversation. Bye, everybody. 
 

@@ -5,7 +5,7 @@ title: Why API Contracts Are Important
 description: The focus today is on the importance of contracts and how API's help us and fit into the cloud native space. 
 notes: In this episode of the Podlets Podcast, we are diving into contracts and some of the building blocks of the Cloud-Native application. The focus is on the importance of contracts and how API's help us and fit into the cloud native space. We start off by considering the role of the API at the center of a project and some definitions of what we consider to be an API in this sense. This question of API-first development sheds some light onto Kubernetes and what necessitated its birth. We also get into picking appropriate architecture according to the work at hand, Kubernetes' declarative nature and how micro-services aid the problems often experienced in more monolithic work. The conversation also covers some of these particular issues, while considering possible benefits of the monolith development structure. We talk about company structures, Conway's Law and best practices for avoiding the pitfalls of these, so for all this and a whole lot more on the subject of API's and contracts, listen in with us, today!
 hosts: 
-    - name: Carlisia Campos
+    - name: Carlisia Thompson
       url: https://twitter.com/carlisia 
     - name: Josh Rosso
       url: https://twitter.com/joshrosso
