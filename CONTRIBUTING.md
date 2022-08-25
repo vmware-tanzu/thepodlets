@@ -10,7 +10,7 @@ Any copyright notices in this repo should specify the authors as "the Heptio jav
 To sign your work, just add a line like this at the end of your commit message:
 
 ```
-Signed-off-by: Carlisia Campos <carlisia@vmware.com>
+Signed-off-by: Carlisia Thompson <carlisia@vmware.com>
 ```
 
 This can easily be done with the `--signoff` option to `git commit`.
